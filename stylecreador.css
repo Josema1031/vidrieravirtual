@@ -1,0 +1,104 @@
+body {
+      font-family: system-ui, Arial, sans-serif;
+      background: #0a0f1e;
+      color: #fff;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      margin: 10px 0 20px;
+      text-align: center;
+    }
+
+    .card {
+      background: #101935;
+      border: 1px solid #1f2a48;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 50%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #2b3b6b;
+      background: #0b1430;
+      color: #e6eefc;
+      margin-top: 6px;
+    }
+
+    button {
+      margin-top: 16px;
+      padding: 12px 18px;
+      border: 0;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      background: linear-gradient(135deg, #20f1f5, #2d8efd);
+      color: #0a0f1e;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .ok {
+      color: #66ffcc;
+      margin-top: 8px;
+    }
+
+    .small {
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+
+    a.link {
+      color: #66d9ff;
+      word-break: break-all;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    form {
+      display: grid;
+      gap: 16px;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 14px;
+        box-shadow: none;
+      }
+
+      input,
+      select,
+      button {
+        font-size: 16px;
+      }
+    }

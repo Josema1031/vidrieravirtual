@@ -204,14 +204,27 @@ async function cargarProductos() {
 }
 
 // ============================================
-// 🔍 EVENTO: buscador de productos
-// Filtra en tiempo real los productos por nombre
+// 🔍 EVENTO: buscador de productos (versión mejorada)
+// Evita duplicados y limpia el contenedor
 // ============================================
 document.getElementById("buscador").addEventListener("input", e => {
-  const texto = e.target.value.toLowerCase();
-  const filtrados = productosCargados.filter(p => p.nombre.toLowerCase().includes(texto));
+  const texto = e.target.value.toLowerCase().trim();
+  const contenedor = document.getElementById("contenedor-productos");
+
+  // 🧹 Limpiar el contenedor antes de renderizar nuevamente
+  if (contenedor) contenedor.innerHTML = "";
+
+  // 🧩 Filtrar evitando duplicados por nombre
+  const filtrados = productosCargados.filter((p, index, self) =>
+    p.nombre.toLowerCase().includes(texto) &&
+    index === self.findIndex(
+      x => x.nombre.toLowerCase() === p.nombre.toLowerCase()
+    )
+  );
+
   mostrarProductos(filtrados);
 });
+
 
 // ============================================
 // 💾 FUNCIÓN: guardar carrito en localStorage

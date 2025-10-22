@@ -47,7 +47,7 @@ const UNIDADES_POR_RUBRO = {
   carniceria: ["Kg", "Grs","Docena", "Unidad", "Porción"],
   verduleria: ["Kg", "Grs", "Bolsa","Docena", "Unidad"],
   polleria: ["Kg", "Grs","Unidad", "Pack"],
-  kiosko: ["Unidad", "Pack", "Caja"],
+  kiosko: ["Unidad","Kg", "Grs", "Pack", "Caja"],
   mates: ["Unidad", "Combo", "Set"],
   default: ["Unidad", "Kg", "Grs"]
 };
@@ -362,16 +362,28 @@ async function mostrarProductos() {
 document.getElementById("buscador-admin").addEventListener("input", function () {
   const texto = this.value.toLowerCase().trim();
 
-  const filtrados = productos.filter(prod =>
-    (prod.nombre || "").toLowerCase().includes(texto) ||
-    (prod.categoria || "").toLowerCase().includes(texto) ||
-    (prod.tipoVenta && prod.tipoVenta.toLowerCase().includes(texto))
+  // 🧹 Limpia la tabla antes de volver a renderizar
+  const tbody = document.querySelector("#tabla-productos tbody");
+  if (tbody) tbody.innerHTML = "";
+
+  // 🧩 Filtra evitando duplicados por nombre
+  const filtrados = productos.filter((prod, index, self) =>
+    (
+      (prod.nombre || "").toLowerCase().includes(texto) ||
+      (prod.categoria || "").toLowerCase().includes(texto) ||
+      (prod.tipoVenta && prod.tipoVenta.toLowerCase().includes(texto))
+    ) &&
+    // evita mostrar el mismo producto dos veces si hay duplicado en el array
+    index === self.findIndex(
+      p => p.nombre && p.nombre.toLowerCase() === (prod.nombre || "").toLowerCase()
+    )
   );
 
-
-  paginaActual = 1; // Reinicia a la primera página
-  renderTabla(filtrados, true); // <-- nuevo parámetro
+  // 🔁 Reinicia la paginación y muestra los resultados filtrados
+  paginaActual = 1;
+  renderTabla(filtrados, true);
 });
+
 
 
 // ✏️ EDITAR PRODUCTO
@@ -923,10 +935,10 @@ function renderGraficoCategorias(productos) {
 async function cargarCategorias() {
   // 🏷️ Categorías predeterminadas por rubro
   const CATEGORIAS_POR_RUBRO = {
-    carniceria: ["Todos", "Carne", "Cerdo", "Pollo", "Embutidos", "Ofertas"],
+    carniceria: ["Todos", "Carne", "Cerdo", "Pollo", "Embutidos","Achuras", "Ofertas"],
     verduleria: ["Todos", "Frutas", "Verduras", "Hortalizas", "Hierbas", "Ofertas"],
-    polleria: ["Todos", "Pollo Fresco", "Milanesas", "Supremas", "Menudencias", "Ofertas"],
-    kiosko: ["Todos", "Golosinas", "Bebidas", "Snacks", "Cigarrillos", "Ofertas"],
+    polleria: ["Todos", "Pollo","Preparados", "Menudencias", "Congelado","Ofertas"],
+    kiosko: ["Todos", "Golosinas", "Bebidas", "Snacks", "Cigarrillos","Lácteos","Almacen","Limpieza","Ofertas"],
     ropa: ["Todos", "Hombre", "Mujer", "Niños", "Accesorios", "Ofertas"],
     mates: ["Todos", "Mates", "Bombillas", "Termos", "Combos", "Ofertas"]
   };

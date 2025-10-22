@@ -138,5 +138,180 @@
     "categoria": "Bebidas",
     "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/quilmes%201l.jpg?raw=true",
     "stock": 22
+  },
+  
+  {
+    "nombre": "Leche entera 1L",
+    "precio": 2500,
+    "categoria": "Lácteos",
+    "imagen": "https://i.postimg.cc/CxMT3C9n/serenisima-clasica-751-95fea92d1a27f8e9ab15710914346750-1024-1024.webp",
+    "stock": 45
+  },
+  {
+    "nombre": "Yogur Ilolay sabor vainilla 170g",
+    "precio": 1300,
+    "categoria": "Lácteos",
+    "imagen": "https://i.postimg.cc/CM6qBJsT/Yogur-Ilolay-firme-vainilla-190g.png",
+    "stock": 30
+  },
+  {
+    "nombre": "Queso crema 200g",
+    "precio": 2800,
+    "categoria": "Lácteos",
+    "imagen": "https://elnenearg.vtexassets.com/arquivos/ids/167548/QUESO-CREMA-TREGAR-X280GR-1-12421.jpg?v=638284017720770000",
+    "stock": 20
+  },
+  {
+    "nombre": "Manteca La Serenísima 200 Gr.",
+    "precio": 2600,
+    "categoria": "Lácteos",
+    "imagen": "https://ardiaprod.vtexassets.com/arquivos/ids/343490/Manteca-La-Serenisima-200-Gr-_1.jpg?v=638732574938170000",
+    "stock": 25
+  },
+  
+  {
+    "nombre": " Arroz Lucchetti Largo Fino, bolsa de 500 g",
+    "precio": 2000,
+    "categoria": "Almacen",
+    "imagen": "https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/1280x1280/products/3468/8864/largo__93411.1653915951.jpg?c=2?imbypass=on",
+    "stock": 60
+  },
+  {
+    "nombre": "Fideo Spaghetti 500g",
+    "precio": 1700,
+    "categoria": "Almacen",
+    "imagen": "https://arjosimarprod.vtexassets.com/arquivos/ids/156628/Fideos-Spaghetti-Lucchetti-500-gr-1-4136.jpg?v=637389710669500000",
+    "stock": 55
+  },
+  {
+    "nombre": "Aceite De Girasol Pureza 1.5 L",
+    "precio": 4500,
+    "categoria": "Almacen",
+    "imagen": "https://masonlineprod.vtexassets.com/arquivos/ids/241395-800-auto?v=637867897739230000&width=800&height=auto&aspect=true",
+    "stock": 22
+  },
+  {
+    "nombre": "Sal Fina Celusal Paquete 500 gr",
+    "precio": 900,
+    "categoria": "Almacen",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRq0owGZqaNvekLyr4ikRuLCR5wGfqp_yYNYg&s",
+    "stock": 70
+  },
+  {
+    "nombre": "Azucar Ledesma 1 Kg.",
+    "precio": 1500,
+    "categoria": "Almacen",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/313/507/products/ledesma-7c680a848f80a07c4617363639813572-640-0.webp",
+    "stock": 45
+  },
+  {
+    "nombre": "Harina de trigo Favorita 1kg",
+    "precio": 1800,
+    "categoria": "Almacen",
+    "imagen": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3230238_f.jpg",
+    "stock": 50
+  },
+  {
+    "nombre": "Atún Bahia al agua 170g",
+    "precio": 3400,
+    "categoria": "Almacen",
+    "imagen": "https://www.almacendelsol.com.ar/wp-content/uploads/2021/09/7795933000298.jpg",
+    "stock": 28
+  },
+  {
+    "nombre": "Sardinas en aceite caracas x 120g",
+    "precio": 3100,
+    "categoria": "Almacen",
+    "imagen": "https://www.dipal.com.ar/assets/archivos/productos/41200.jpg",
+    "stock": 30
+  },
+  
+  {
+    "nombre": "Tomate triturado lata 400g",
+    "precio": 2100,
+    "categoria": "Almacen",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00046100/00046126.jpg",
+    "stock": 40
+  },
+ 
+  {
+    "nombre": "Detergente Magistral Ultra Limón Botella 750 Ml",
+    "precio": 4900,
+    "categoria": "Limpieza",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/826347-800-600?v=638551209644270000&width=800&height=600&aspect=true",
+    "stock": 28
+  },
+  {
+    "nombre": "Lavandina Ayudín Original 1 Lt",
+    "precio": 3200,
+    "categoria": "Limpieza",
+    "imagen": "https://ardiaprod.vtexassets.com/arquivos/ids/307482/Lavandina-Ayudin-Original-1-Lt-_2.jpg?v=638878561062930000",
+    "stock": 35
+  },
+  {
+    "nombre": "Esponja Scotch Brite limpieza profunda cocina 1 u",
+    "precio": 1500,
+    "categoria": "Limpieza",
+    "imagen": "https://carrefourar.vtexassets.com/arquivos/ids/166724/7891040028931_02.jpg?v=637467731192200000",
+    "stock": 40
+  },
+  
+  {
+    "nombre": "Desodorante De Ambientes GLADE Aerosol Vainilla 380ml ",
+    "precio": 2100,
+    "categoria": "Limpieza",
+    "imagen": "hhttps://static.cotodigital3.com.ar/sitios/fotos/large/00579900/00579965.jpg",
+    "stock": 33
+  },
+  {
+    "nombre": "Shampoo PANTENE Hidratación Botella 400 ML",
+    "precio": 6200,
+    "categoria": "Limpieza",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00294900/00294953.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Acondicionador PANTENE Brillo Extremo Botella 400 ML ",
+    "precio": 6100,
+    "categoria": "Limpieza",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00294900/00294959.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Jabon Liquido Antibacterial Fresh Rexona Bom 250 Ml",
+    "precio": 1900,
+    "categoria": "Limpieza",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00525500/00525555.jpg",
+    "stock": 45
+  },
+  {
+    "nombre": "Cepillo de dientes adulto",
+    "precio": 1700,
+    "categoria": "Limpieza",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT04wZq9TA9sJE4Hqc35aO_LlCXClBUMUB7Pw&s",
+    "stock": 60
+  },
+  {
+    "nombre": "Colgate Extra Clean Cepillo Dental Adulto 1 Un",
+    "precio": 2500,
+    "categoria": "Limpieza",
+    "imagen": "https://example.com/imag/crema_dental_90g.jpg",
+    "stock": 38
+  },
+  {
+    "nombre": "Desodorante Antitranspirante NIVEA Men Invisible B&W Roll On X 50 Ml",
+  "precio": 3900,
+    "categoria": "Limpieza",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00224500/00224534.jpg",
+    "stock": 30
+  },
+  {
+    "nombre": "Afeitadora 2u",
+    "precio": 4800,
+    "categoria": "Limpieza",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00260800/00260877.jpg",
+    "stock": 18
   }
+  
 ]
+

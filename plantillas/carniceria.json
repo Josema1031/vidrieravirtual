@@ -2,17 +2,337 @@
   {
     "nombre": "Asado de tira",
     "precio": 6200,
-    "categoria": "Cortes vacunos",
+    "categoria": "Carne",
     "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/asado%20de%20tira.jpg?raw=true",
     "stock": 20
   },
   {
-    "nombre": "Milanesa de nalga",
+    "nombre": "Carne picada Comun",
+    "precio": 5600,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/wvFtjPx6/carne-picada-comun.jpg",
+    "stock": 25
+  },
+   {
+    "nombre": "Costilla",
+    "precio": 6300,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/rskL7F29/costilla.jpg",
+    "stock": 12
+  },
+  {
+    "nombre": "Garrón delantero",
+    "precio": 4500,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/4yJSzKTw/garron-delantero.jpg",
+    "stock": 17
+  },
+  {
+    "nombre": "Tortuguita",
     "precio": 5500,
-    "categoria": "Preparados",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/milanesa%20de%20nalga.jpg?raw=true",
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/kGzW7Zwp/tortuguita.jpg",
+    "stock": 13
+  },
+  {
+    "nombre": "Costeleta",
+    "precio": 6200,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/Njgj5DVz/costeleta-de-novillo.jpg",
+    "stock": 19
+  },
+  {
+    "nombre": "Aguja",
+    "precio": 5400,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/50tzL1RG/aguja.jpg",
+    "stock": 18
+  },
+   {
+    "nombre": "Cogote",
+    "precio": 4700,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/Z5FvQCk1/cogote.jpg",
+    "stock": 14
+  },
+  {
+    "nombre": "Pecho",
+    "precio": 5300,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/wjcwgXRh/pecho-de-novillo.jpg",
+    "stock": 22
+  },
+  {
+    "nombre": "Carne picada Especial",
+    "precio": 8600,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/dVmJFCVT/carne-picada-especial.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Osobuco",
+    "precio": 4800,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/9059Dkv3/osobuco.jpg",
+    "stock": 22
+  },
+  {
+    "nombre": "Marucha",
+    "precio": 4900,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/c4G7CKST/marucha.jpg",
+    "stock": 16
+  },
+  {
+    "nombre": "Falda",
+    "precio": 5200,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/CxPfG5W4/falda.jpg",
+    "stock": 18
+  },
+  {
+    "nombre": "Bife de chorizo",
+    "precio": 6500,
+    "categoria": "Carne",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/bife%20de%20chorizo.jpg?raw=true",
+    "stock": 18
+  },
+  {
+    "nombre": "Tapa de cuadril/Picaña",
+    "precio": 6100,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/bYDLsc2Y/tapa-de-cuadril-pica-a.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Bife ancho",
+    "precio": 6400,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/0jthQSNR/bife-ancho.jpg",
     "stock": 15
   },
+  {
+    "nombre": "Peceto",
+    "precio": 7000,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/3J3yz2hc/peceto.jpg",
+    "stock": 12
+  },
+  {
+    "nombre": "Lomo",
+    "precio": 8500,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/VLHY4tkW/lomo-de-novillo.jpg",
+    "stock": 12
+  },
+  {
+    "nombre": "Colita de cuadril",
+    "precio": 6800,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/5yKM7cbV/colita-de-cuadril.jpg",
+    "stock": 16
+  },
+  {
+    "nombre": "Bola de lomo",
+    "precio": 6400,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/2yr6RNs1/bola-de-lomo.jpg",
+    "stock": 18
+  },
+  {
+    "nombre": "Cuadrada",
+    "precio": 6000,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/1323RFxn/cuadrada.jpg",
+    "stock": 14
+  },
+  {
+    "nombre": "Vacío",
+    "precio": 6300,
+    "categoria": "Carne",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/vacio.jpg?raw=true",
+    "stock": 20
+  },
+  {
+    "nombre": "Matambre",
+    "precio": 6100,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/XJdbjWp6/matambre.jpg",
+    "stock": 15
+  },
+  {
+    "nombre": "Entraña",
+    "precio": 6900,
+    "categoria": "Carne",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/entra%C3%B1a.jpg?raw=true",
+    "stock": 18
+  },
+  {
+    "nombre": "Tapa de asado",
+    "precio": 5800,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/rm6BYHgJ/tapa-de-asado.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Nalga",
+    "precio": 6600,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/K8Kh10BF/nalga.jpg",
+    "stock": 22
+  },
+  {
+    "nombre": "Paleta",
+    "precio": 5900,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/G2nRwv4f/paleta.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Roast beef",
+    "precio": 5700,
+    "categoria": "Carne",
+    "imagen": "https://i.postimg.cc/G3JLRgJF/Roast-beef.jpg",
+    "stock": 15
+  },
+
+  {
+    "nombre": "Bondiola de cerdo",
+    "precio": 6200,
+    "categoria": "Cerdo",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/bondiola%20de%20cerdo.jpg?raw=true",
+    "stock": 12
+  },
+  {
+    "nombre": "Costilla de cerdo",
+    "precio": 5800,
+    "categoria": "Cerdo",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/costilla%20de%20cerdo.jpg?raw=true",
+    "stock": 20
+  },
+  {
+    "nombre": "Panceta",
+    "precio": 6500,
+    "categoria": "Cerdo",
+    "imagen": "https://i.postimg.cc/L63ny6bg/panceta-de-cerdo.jpg",
+    "stock": 18
+  },
+  {
+    "nombre": "Solomillo",
+    "precio": 7200,
+    "categoria": "Cerdo",
+    "imagen": "https://i.postimg.cc/sD7p3r0y/solomillo-de-cerdo.jpg",
+    "stock": 10
+  },
+  {
+    "nombre": "Jamón crudo",
+    "precio": 8900,
+    "categoria": "Cerdo",
+    "imagen": "https://i.postimg.cc/Jn5q7WhR/jamon-crudo.jpg",
+    "stock": 8
+  },
+  {
+    "nombre": "Jamón cocido",
+    "precio": 7200,
+    "categoria": "Cerdo",
+    "imagen": "https://i.postimg.cc/mk0h0PGT/jamon-de-cerdo.jpg",
+    "stock": 10
+  },
+  {
+    "nombre": "Lomo de cerdo",
+    "precio": 7000,
+    "categoria": "Cerdo",
+    "imagen": "https://i.postimg.cc/KcLbNqsq/lomo-de-cerdo.jpg",
+    "stock": 12
+  },
+  
+ {
+    "nombre": "Costillitas de Cerdo",
+    "precio": 6800,
+    "categoria": "Cerdo",
+    "imagen": "https://i.postimg.cc/tJsrCMnF/pechito-de-cerdo.jpg",
+    "stock": 10
+  },
+  {
+    "nombre": "Carré",
+    "precio": 6100,
+    "categoria": "Cerdo",
+    "imagen": "https://i.postimg.cc/65k9ws4w/carre-de-cerdo.jpg",
+    "stock": 15
+  },
+  {
+    "nombre": "Churrasquito de cerdo",
+    "precio": 5800,
+    "categoria": "Cerdo",
+    "imagen": "https://i.postimg.cc/cJDMgcSZ/churrasquito-de-cerdo.jpg",
+    "stock": 14
+  },
+
+  {
+    "nombre": "Pechuga de pollo",
+    "precio": 4200,
+    "categoria": "Pollo",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/pechuga.jpg?raw=true",
+    "stock": 25
+  },
+  
+  {
+    "nombre": "Pollo entero",
+    "precio": 5600,
+    "categoria": "Pollo",
+    "imagen": "https://i.postimg.cc/KjxwN2jb/pollo-entero.jpg",
+    "stock": 12
+  },
+  {
+    "nombre": "Patamuslo",
+    "precio": 4000,
+    "categoria": "Pollo",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/pata%20y%20muslo.jpg?raw=true",
+    "stock": 18
+  },
+  {
+    "nombre": "Pata de pollo",
+    "precio": 2500,
+    "categoria": "Pollo",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/pata%20y%20muslo.jpg?raw=true",
+    "stock": 20
+  },
+  {
+    "nombre": "Milanesa de pollo",
+    "precio": 4700,
+    "categoria": "Pollo",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/milanesa%20de%20nalga.jpg?raw=true",
+    "stock": 16
+  },
+  {
+    "nombre": "Pollo trozado",
+    "precio": 4400,
+    "categoria": "Pollo",
+    "imagen": "https://i.postimg.cc/zvzK7t10/pollo-trozado.jpg",
+    "stock": 10
+  },
+   {
+    "nombre": "Suprema de pollo",
+    "precio": 4500,
+    "categoria": "Pollo",
+    "imagen": "https://i.postimg.cc/R084ZjNR/suprema-de-pollo.jpg",
+    "stock": 20
+  },
+   {
+    "nombre": "Muslo de pollo",
+    "precio": 3800,
+    "categoria": "Pollo",
+    "imagen": "https://i.postimg.cc/3xvZqG2K/muslo-de-pollo.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Ala de pollo",
+    "precio": 3500,
+    "categoria": "Pollo",
+    "imagen": "https://i.postimg.cc/Fs95N9Tm/alita-de-pollo.jpg",
+    "stock": 30
+  },
+
   {
     "nombre": "Chorizo parrillero",
     "precio": 3800,
@@ -21,110 +341,68 @@
     "stock": 25
   },
   {
-    "nombre": "Vacio",
-    "precio": 6700,
-    "categoria": "Cortes vacunos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/vacio.jpg?raw=true",
-    "stock": 18
-  },
-  {
-    "nombre": "Matambre",
-    "precio": 5900,
-    "categoria": "Cortes vacunos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/matambre.jpg?raw=true",
-    "stock": 10
-  },
-  {
-    "nombre": "Bondiola de cerdo",
-    "precio": 6200,
-    "categoria": "Cerdo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/bondiola%20de%20cerdo.jpg?raw=true",
-    "stock": 12
-  },
-  
-  {
-    "nombre": "Pechuga de pollo",
-    "precio": 4200,
-    "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/pechuga.jpg?raw=true",
-    "stock": 25
-  },
-  {
-    "nombre": "Pata y Muslo de pollo",
-    "precio": 3900,
-    "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/pata%20y%20muslo.jpg?raw=true",
-    "stock": 30
-  },
-  {
-    "nombre": "Hamburguesas caseras",
-    "precio": 5200,
-    "categoria": "Preparados",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/hamburguesa%20casera.jpg?raw=true",
-    "stock": 20
+    "nombre": "Morcilla",
+    "precio": 3600,
+    "categoria": "Embutidos",
+    "imagen": "https://i.postimg.cc/CK61BwhV/morcilla.jpg",
+    "stock": 15
   },
   {
     "nombre": "Salchicha parrillera",
-    "precio": 3500,
+    "precio": 3700,
     "categoria": "Embutidos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/salchicha%20parrillera.jpg?raw=true",
+    "imagen": "https://i.postimg.cc/PJndYxBq/salchicha-parrillera.jpg",
     "stock": 18
   },
   {
-    "nombre": "Morcilla",
-    "precio": 3400,
+    "nombre": "Salame picado grueso",
+    "precio": 4900,
     "categoria": "Embutidos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/morcilla.jpg?raw=true",
-    "stock": 12
-  },
-  {
-    "nombre": "Bife de chorizo",
-    "precio": 7100,
-    "categoria": "Cortes vacunos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/bife%20de%20chorizo.jpg?raw=true",
-    "stock": 16
-  },
-  {
-    "nombre": "Tapa de asado",
-    "precio": 6500,
-    "categoria": "Cortes vacunos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/tapa%20de%20asado.jpg?raw=true",
-    "stock": 14
-  },
-  {
-    "nombre": "Entraña",
-    "precio": 6800,
-    "categoria": "Cortes vacunos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/entra%C3%B1a.jpg?raw=true",
-    "stock": 9
-  },
-  {
-    "nombre": "Chinchulines",
-    "precio": 2800,
-    "categoria": "Achuras",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/chinchulines.jpg?raw=true",
-    "stock": 20
-  },
-  {
-    "nombre": "Riñones",
-    "precio": 2500,
-    "categoria": "Achuras",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/ri%C3%B1ones.jpg?raw=true",
-    "stock": 12
-  },
-  {
-    "nombre": "Lomo",
-    "precio": 7800,
-    "categoria": "Cortes vacunos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/lomo.jpg?raw=true",
-    "stock": 8
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/salame%20casero.jpg?raw=true",
+    "stock": 10
   },
   
   {
-    "nombre": "Salame casero",
-    "precio": 5600,
+    "nombre": "Chinchulines",
+    "precio": 3400,
+    "categoria": "Achuras",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/chinchulines.jpg?raw=true",
+    "stock": 15
+  },
+  {
+    "nombre": "Tripa gorda",
+    "precio": 3500,
+    "categoria": "Achuras",
+    "imagen": "https://i.postimg.cc/wB5YKRg0/tripa-gorda.jpg",
+    "stock": 15
+  },
+  {
+    "nombre": "Hígado",
+    "precio": 2900,
+    "categoria": "Achuras",
+    "imagen": "https://i.postimg.cc/257M9pxC/higado.jpg",
+    "stock": 15
+  },
+  {
+    "nombre": "Mollejas",
+    "precio": 7200,
+    "categoria": "Achuras",
+    "imagen": "https://i.postimg.cc/XJD2tnGH/molleja.jpg",
+    "stock": 10
+  },
+  {
+    "nombre": "Longaniza",
+    "precio": 4200,
     "categoria": "Embutidos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/salame%20casero.jpg?raw=true",
-    "stock": 17
+    "imagen": "https://i.postimg.cc/J7YtBdvB/longaniza.jpg",
+    "stock": 15
+  },
+  {
+    "nombre": "Riñones",
+    "precio": 3300,
+    "categoria": "Achuras",
+    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/ri%C3%B1ones.jpg?raw=true",
+    "stock": 12
   }
+  
 ]

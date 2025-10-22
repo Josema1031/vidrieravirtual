@@ -125,7 +125,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
     import {
       getFirestore, collection, getDocs, doc, getDoc, deleteDoc,
-      query, orderBy, limit, startAfter
+      query, orderBy, limit, startAfter,onSnapshot
     } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
     import QRCode from "https://esm.sh/qrcode@1.5.3";
 
@@ -198,12 +198,15 @@
   total++;
 
   // 🔹 Obtener documento principal y subdocumento config/datos
-  const tiendaDoc = await getDoc(it.ref);
-  const data = tiendaDoc.exists() ? tiendaDoc.data() : {};
+  // 🔹 Carga los documentos en paralelo para reducir tiempo
+const [tiendaDoc, configSnap] = await Promise.all([
+  getDoc(it.ref),
+  getDoc(doc(db, "tiendas", tiendaId, "config", "datos"))
+]);
 
-  const configRef = doc(db, "tiendas", tiendaId, "config", "datos");
-  const configSnap = await getDoc(configRef);
-  const config = configSnap.exists() ? configSnap.data() : {}; // ✅ ahora siempre definido
+const data = tiendaDoc.exists() ? tiendaDoc.data() : {};
+const config = configSnap.exists() ? configSnap.data() : {};
+
   // 🔹 Obtener rubro desde config
 const rubro = config.rubro || "—";
 
@@ -369,7 +372,8 @@ window.graficoTiendasInstance = new Chart(ctx, {
       await deleteDoc(doc(db, "tiendas", tiendaId));
 
       modalMensaje(`✅ Tienda "${tiendaId}" eliminada completamente.`, "#28a745");
-      await loadPage(true); // refresca tabla
+   
+
     } catch (error) {
       console.error("❌ Error al eliminar tienda:", error);
       modalMensaje("❌ No se pudo eliminar completamente la tienda.", "#dc3545");
@@ -444,8 +448,20 @@ window.cambiarPlan = async function (tiendaId, planActual) {
 };
 
 
-    // init
-    loadPage(true);
+  // 🟢 Optimización: actualiza en tiempo real sin recargar toda la tabla
+
+onSnapshot(collection(db, "tiendas"), async (snapshot) => {
+  try {
+    const tiendas = snapshot.docs.map(d => ({ id: d.id, ref: d.ref }));
+    cacheTiendas = tiendas;
+    await renderTabla(tiendas);
+    $("loader").style.display = "none";
+    $("tabla").style.display = "table";
+  } catch (error) {
+    console.error("Error al actualizar tiendas en tiempo real:", error);
+  }
+});
+
   </script>
 </body>
 </html>

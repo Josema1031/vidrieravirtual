@@ -1,142 +1,330 @@
 [
   {
-    "nombre": "Tomate redondo",
+    "nombre": "Tomate redondo Kg",
     "precio": 1800,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2016/03/05/22/24/tomatoes-1239181_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000684.jpg",
     "stock": 40
   },
   {
-    "nombre": "Lechuga criolla",
+    "nombre": "Lechuga Criolla X Kg",
     "precio": 1200,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2018/05/18/17/50/lettuce-3417363_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000649.jpg",
     "stock": 30
   },
   {
-    "nombre": "Zanahoria",
+    "nombre": "Zanahoria X Kg",
     "precio": 1100,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2017/04/04/17/57/carrots-2209652_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000686.jpg",
     "stock": 45
   },
   {
-    "nombre": "Papa blanca",
+    "nombre": "Papa Blanca X kg",
     "precio": 950,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2016/07/13/08/56/potatoes-1515659_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000695.jpg",
     "stock": 50
   },
   {
-    "nombre": "Cebolla",
+    "nombre": "Cebolla X kg",
     "precio": 900,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2017/09/26/13/51/onion-2784123_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000602.jpg",
     "stock": 35
   },
   {
-    "nombre": "Pimiento rojo",
+    "nombre": "Pimiento rojo X kg",
     "precio": 2200,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2017/03/02/20/40/red-peppers-2113562_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000671.jpg",
     "stock": 25
   },
   {
-    "nombre": "Acelga",
+    "nombre": "Morrón verde X kg",
+    "precio": 1900,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000672.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Acelga X Maso",
     "precio": 1300,
-    "categoria": "Hortalizas",
-    "imagen": "https://cdn.pixabay.com/photo/2020/05/03/08/23/chard-5123893_1280.jpg",
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00040100/00040156.jpg",
     "stock": 20
   },
+ 
   {
-    "nombre": "Espinaca",
-    "precio": 1400,
-    "categoria": "Hortalizas",
-    "imagen": "https://cdn.pixabay.com/photo/2016/08/22/12/39/spinach-1611027_1280.jpg",
-    "stock": 20
-  },
-  {
-    "nombre": "Manzana roja",
+    "nombre": "Manzana roja X Kg",
     "precio": 2300,
     "categoria": "Frutas",
-    "imagen": "https://cdn.pixabay.com/photo/2016/02/22/17/25/apple-1218166_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000529.jpg",
     "stock": 40
   },
   {
-    "nombre": "Banana",
+    "nombre": "Banana X Kg",
     "precio": 2100,
     "categoria": "Frutas",
-    "imagen": "https://cdn.pixabay.com/photo/2016/02/23/17/38/bananas-1218133_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000400/00000446.jpg",
     "stock": 35
   },
   {
-    "nombre": "Naranja jugosa",
+    "nombre": "Naranja X Kg",
     "precio": 1700,
     "categoria": "Frutas",
-    "imagen": "https://cdn.pixabay.com/photo/2017/01/20/15/06/orange-1995056_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00061000/00061005.jpg",
     "stock": 45
   },
   {
-    "nombre": "Mandarina",
+    "nombre": "Mandarina X Kg",
     "precio": 1500,
     "categoria": "Frutas",
-    "imagen": "https://cdn.pixabay.com/photo/2016/02/19/11/19/mandarins-1208336_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000502.jpg",
     "stock": 38
   },
   {
-    "nombre": "Papa negra",
+    "nombre": "Papa negra X Kg",
     "precio": 950,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2014/03/24/17/13/potato-295601_1280.png",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00060900/00060947.jpg",
     "stock": 40
   },
   {
-    "nombre": "Zapallo cabutia",
+    "nombre": "Zapallo Redondo X Kg",
     "precio": 1800,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2019/10/30/16/49/pumpkin-4589154_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00017600/00017625.jpg",
     "stock": 15
   },
   {
-    "nombre": "Batata",
+    "nombre": "Batata X Kg",
     "precio": 1300,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2018/01/15/07/51/sweet-potato-3084117_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00072000/00072044.jpg",
     "stock": 25
   },
   {
-    "nombre": "Perejil",
+    "nombre": "Perejil X Maso",
     "precio": 600,
     "categoria": "Hierbas",
-    "imagen": "https://cdn.pixabay.com/photo/2015/03/26/09/54/parsley-690034_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00047500/00047599.jpg",
     "stock": 50
   },
   {
-    "nombre": "Apio",
+    "nombre": "Apio X Kg",
     "precio": 1200,
     "categoria": "Hortalizas",
-    "imagen": "https://cdn.pixabay.com/photo/2017/07/13/11/58/celery-2494017_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000588.jpg",
     "stock": 22
   },
   {
-    "nombre": "Limón",
+    "nombre": "Limón X Kg",
     "precio": 1500,
     "categoria": "Frutas",
-    "imagen": "https://cdn.pixabay.com/photo/2017/01/20/15/06/lemon-1995056_1280.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000400/00000499.jpg",
     "stock": 30
   },
   {
     "nombre": "Ajo",
     "precio": 900,
     "categoria": "Verduras",
-    "imagen": "https://cdn.pixabay.com/photo/2017/05/23/13/43/garlic-2332109_1280.jpg",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg5a_L0NIiOwJzt2ElRzkjf8OhfSk8j5z4hQ&s",
     "stock": 45
   },
+  
   {
-    "nombre": "Cilantro",
-    "precio": 700,
-    "categoria": "Hierbas",
-    "imagen": "https://cdn.pixabay.com/photo/2018/03/23/08/43/coriander-3252896_1280.jpg",
+    "nombre": "Durazno X kg",
+    "precio": 2500,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000700/00000702.jpg",
+    "stock": 40
+  },
+  {
+    "nombre": "Melón amarillo X kg",
+    "precio": 2600,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000538.jpg",
+    "stock": 25
+  },
+  
+  {
+    "nombre": "Pera X kg",
+    "precio": 2200,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000544.jpg",
     "stock": 35
+  },
+  {
+    "nombre": "Ciruela X kg",
+    "precio": 2600,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000400/00000452.jpg",
+    "stock": 40
+  },
+  {
+    "nombre": "Ananá X kg",
+    "precio": 3000,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00017500/00017541.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Sandía X kg",
+    "precio": 2500,
+    "categoria": "Frutas",
+    "imagen": "https://images.rappi.com.ar/products/527924-1562879200371.png",
+    "stock": 20
+  },
+  {
+    "nombre": "Melón verde X kg",
+    "precio": 2700,
+    "categoria": "Frutas",
+    "imagen": "https://freshtoa.com/img/products/178/MELON%20VERDE.webp",
+    "stock": 22
+  },
+  {
+    "nombre": "Frutilla X kg",
+    "precio": 2800,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00038400/00038405.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Cereza X kg",
+    "precio": 3200,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000400/00000450.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Durazno pelón X kg",
+    "precio": 2700,
+    "categoria": "Frutas",
+    "imagen": "https://greenshop.ar/wp-content/uploads/2024/06/pelones-blancos.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Mango X kg",
+    "precio": 2900,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000573.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Kiwi X kg",
+    "precio": 2400,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000400/00000496.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Uva morada X kg",
+    "precio": 2700,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000553.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Uva blanca X kg",
+    "precio": 2600,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000550.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Pomelo X kg",
+    "precio": 1800,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000549.jpg",
+    "stock": 30
+  },
+  {
+    "nombre": "Palta (aguacate) X kg",
+    "precio": 3500,
+    "categoria": "Frutas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000541.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Pepino X kg",
+    "precio": 1300,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000665.jpg",
+    "stock": 40
+  },
+  {
+    "nombre": "Berenjena X kg",
+    "precio": 1700,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000593.jpg",
+    "stock": 30
+  },
+  {
+    "nombre": "Repollo blanco X kg",
+    "precio": 1300,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000678.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Repollo morado X kg",
+    "precio": 1400,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000680.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Choclo X kg",
+    "precio": 1800,
+    "categoria": "Verduras",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVFNfF7oD3pt897eTGdE-iaZp66lhvL7ls1w&s",
+    "stock": 25
+  },
+  {
+    "nombre": "Brócoli X kg",
+    "precio": 1600,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000500/00000598.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Coliflor X kg",
+    "precio": 1500,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000648.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Rabanito X kg",
+    "precio": 1100,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000646.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Remolacha X kg",
+    "precio": 1200,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000677.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Calabacín X kg",
+    "precio": 1400,
+    "categoria": "Verduras",
+    "imagen": "https://hiperlibertad.vtexassets.com/arquivos/ids/176849/CALABACIN-ANQUITO-X-700G-1-10009.jpg?v=637546273193100000",
+    "stock": 20
+  },
+  
+    {
+    "nombre": "Albahaca X kg",
+    "precio": 800,
+    "categoria": "Hierbas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00037200/00037201.jpg",
+    "stock": 30
   }
+  
 ]
+
