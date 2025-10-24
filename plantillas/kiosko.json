@@ -21,12 +21,209 @@
     "stock": 50
   },
   {
+    "nombre": "Agua Mineral  Glaciar  2 L",
+    "precio": 975,
+    "categoria": "Bebidas",
+    "imagen": "https://images.rappi.com.ar/products/24a62b02-3ef2-4246-b664-93a33ce870d2.jpg?d=300x300&e=webp&q=10",
+    "stock": 60
+  },
+  {
+    "nombre": "GGaseosa Coca-Cola Sabor Original 2,25 Lt",
+    "precio": 1237,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00014400/00014450.jpg",
+    "stock": 45
+  },
+  {
+    "nombre": "Amargo Terma Light Limón 1,75 L",
+    "precio": 1923,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00544000/00544044.jpg",
+    "stock": 30
+  },
+  {
+    "nombre": "Cerveza Lata Heineken 473 cc",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00049900/00049950.jpg",
+    "stock": 50
+  },
+  {
+    "nombre": "Cerveza Lager Imperial Lata 710 CC",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00489100/00489179.jpg",
+    "stock": 50
+  },
+  {
+    "nombre": "Cerveza Lager Pura Malta Amstel 473ml",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00578800/00578893.jpg",
+    "stock": 50
+  },
+  {
+    "nombre": "Cerveza Stella Artois Pack Latas 473 CC ",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00478400/00478424.jpg",
+    "stock": 50
+  },
+  {
+    "nombre": "Cerveza Red Andes Lata 473 CC ",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00483200/00483288.jpg",
+    "stock": 50
+  },
+   {
+    "nombre": "Cerveza Amber Lager Patagonia Lata 473 CC",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00483700/00483790.jpg",
+    "stock": 50
+  },
+   {
+    "nombre": "Cerveza Pilsener BUDWEISER Lata 473 Cc",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00002800/00002854.jpg",
+    "stock": 50
+  },
+   {
+    "nombre": "Cerveza Andes Lata 473 CC",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00478400/00478428.jpg",
+    "stock": 50
+  },
+   {
+    "nombre": "Cerveza Ipa Andes Lata 473 CC",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00483200/00483280.jpg",
+    "stock": 50
+  },
+   {
+    "nombre": "Cerveza Black Lager Andes Lata 473 CC ",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00483200/00483289.jpg",
+    "stock": 50
+  },
+   {
+    "nombre": "Cerveza Imperial Cream Stout Lat 473cc",
+    "precio": 1470,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00466600/00466643.jpg",
+    "stock": 50
+  },
+  {
+    "nombre": "Vino Malbec Cordero 750 Ml",
+    "precio": 4333,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00542000/00542087.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Gaseosa pomelo Paso de los Toros 2,25 lts",
+    "precio": 1237,
+    "categoria": "Bebidas",
+    "imagen": "https://carrefourar.vtexassets.com/arquivos/ids/308955/7791813423386_E01.jpg?v=638146793744370000",
+    "stock": 40
+  },
+  
+  {
+    "nombre": "Fernet Branca 750 ml",
+    "precio": 14900,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/mini/00005500/00005525_g01.jpg",
+    "stock": 15
+  },
+  
+  {
+    "nombre": "Jugo CEPITA DEL VALLE Naranja Tentación 1 Lt",
+    "precio": 3200,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00297900/00297931.jpg",
+    "stock": 28
+  },
+  {
+    "nombre": "Energizante RED BULL 250 Cc",
+    "precio": 6100,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00119400/00119491.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Sidra REAL 750ml",
+    "precio": 5500,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00479200/00479243.jpg",
+    "stock": 22
+  },
+  {
+    "nombre": "Vino Cabernet Sauvignon ALMA MORA Bot 750 CC",
+    "precio": 8500,
+    "categoria": "Bebidas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00187000/00187085.jpg",
+    "stock": 18
+  },
+  
+  
+  {
     "nombre": "Fanta 500ml",
     "precio": 1700,
     "categoria": "Bebidas",
     "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/fanta%20500%20ml.jpg?raw=true",
     "stock": 25
   },
+  {
+    "nombre": "Bon o Bon 15 g",
+    "precio": 2800,
+    "categoria": "Golosinas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00118600/00118608.jpgR",
+    "stock": 30
+  },
+  {
+    "nombre": "Milka Oreo 100 g",
+    "precio": 3100,
+    "categoria": "Golosinas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00254700/00254790.jpg",
+    "stock": 25
+  },
+
+  {
+    "nombre": "Caramelos Masticables Sabor Sandia Mogul 120g",
+    "precio": 2400,
+    "categoria": "Golosinas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00583000/00583096.jpg",
+    "stock": 35
+  },
+  
+  {
+    "nombre": "KitKat 4 barras 41.5 g",
+    "precio": 3300,
+    "categoria": "Golosinas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwZ4FFxr6PY_e2khsFjkThmRYntfR0eiuCzQ&s",
+    "stock": 22
+  },
+  {
+    "nombre": "Snickers barra 50 g",
+    "precio": 3500,
+    "categoria": "Golosinas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00491600/00491678.jpg",
+    "stock": 20
+  },
+  
+  {
+    "nombre": "Oreo Mini 90 g",
+    "precio": 2700,
+    "categoria": "Golosinas",
+    "imagen": "https://depositoelmayorista.com.ar/wp-content/uploads/2019/12/productos-nuevos-2.png",
+    "stock": 33
+  },
+    
   {
     "nombre": "Chicles Beldent",
     "precio": 800,
@@ -82,6 +279,27 @@
     "categoria": "Accesorios",
     "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/encendedor%20bic.jpg?raw=true",
     "stock": 25
+  },
+  {
+    "nombre": "Encendedor Cricket Clásico",
+    "precio": 1100,
+    "categoria": "Accesorios",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_701208-MLA40142230270_122019-O.webp",
+    "stock": 40
+  },
+  {
+    "nombre": "Pilas AA Energizer Pack x4",
+    "precio": 4200,
+    "categoria": "Accesorios",
+    "imagen": "https://casa-ambar.com.ar/wp-content/uploads/2018/08/blisterx4-pilas-energizer-AA.jpg",
+    "stock": 30
+  },
+  {
+    "nombre": "Pilas AAA Duracell Pack x4",
+    "precio": 4400,
+    "categoria": "Accesorios",
+    "imagen": "https://alberdisa.vteximg.com.br/arquivos/ids/156590/Pilas-Duracell-Duralock-AAA-x-6-Un.jpg?v=637375296060270000",
+    "stock": 30
   },
   {
     "nombre": "Galletitas Oreo",

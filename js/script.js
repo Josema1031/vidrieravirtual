@@ -193,7 +193,7 @@ async function cargarProductos() {
   document.getElementById("loader").style.display = "block";
   try {
     const snapshot = await getDocs(productosRef);
-    productosCargados = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }))
+  productosCargados = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
       .sort((a, b) => (a.orden ?? 0) - (b.orden ?? 0));
     mostrarProductos(productosCargados);
   } catch (error) {

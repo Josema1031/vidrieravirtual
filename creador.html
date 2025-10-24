@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="stylecreador.css">
- 
+
 </head>
 
 <body>
@@ -21,6 +21,13 @@
         <option value="Premium">Premium</option>
       </select>
     </div>
+
+    <!-- 💡 Mensaje dinámico del plan -->
+    <p id="infoPlan" style="color:#0b5ed7; font-weight:bold; margin-top:-5px; margin-bottom:10px;">
+      🔹 Seleccioná un plan para ver sus límites de productos.
+    </p>
+
+
     <div class="form-group">
       <label>Tipo de tienda</label>
       <select id="rubro" required>
@@ -138,7 +145,7 @@
         </footer>
       </div>
     </div>
-    
+
 
 
     <div class="card">
@@ -169,6 +176,15 @@
     const db = getFirestore(app);
     const storage = getStorage(app);
     const el = id => document.getElementById(id);
+
+    // Mostrar info del plan seleccionado
+    el("plan").addEventListener("change", () => {
+      const plan = el("plan").value;
+      if (plan === "Basico") el("infoPlan").textContent = "🔹 El plan Básico cargará solo 40 productos.";
+      if (plan === "Profesional") el("infoPlan").textContent = "💼 El plan Profesional cargará hasta 100 productos.";
+      if (plan === "Premium") el("infoPlan").textContent = "🚀 El plan Premium cargará todos los productos disponibles.";
+    });
+
 
     // 📦 CREAR TIENDA
     async function crearTienda() {
@@ -272,12 +288,28 @@
       const productosRef = collection(db, "tiendas", tiendaId, "productos");
 
       if (rubro) {
-        // Si hay rubro, cargar los productos base desde la plantilla correspondiente
         try {
           const response = await fetch(`plantillas/${rubro}.json`);
-          const productosBase = await response.json();
-          for (const p of productosBase) await addDoc(productosRef, p);
-          console.log(`✅ Productos base cargados para ${rubro}`);
+          let productosBase = await response.json();
+
+          // 🟦 Obtener el plan y aplicar límite
+          let limite = 0;
+          if (plan === "Basico") limite = 40;
+          else if (plan === "Profesional") limite = 100;
+          else if (plan === "Premium") limite = Infinity;
+
+          // ✂️ Recortar productos según el límite del plan
+          if (limite !== Infinity && productosBase.length > limite) {
+            productosBase = productosBase.slice(0, limite);
+            console.warn(`⚠️ Plan ${plan}: solo se cargarán ${limite} productos de ${productosBase.length} disponibles.`);
+          }
+
+          // 🔄 Subir productos limitados a Firestore
+          for (const p of productosBase) {
+            await addDoc(productosRef, p);
+          }
+
+          console.log(`✅ Cargados ${productosBase.length} productos (${plan}) para ${rubro}`);
         } catch (error) {
           console.warn("⚠️ No se pudieron cargar los productos predeterminados:", error);
         }
@@ -291,6 +323,7 @@
         for (const p of demo) await addDoc(productosRef, p);
         console.log("🧩 Cargados productos demo por defecto (sin rubro)");
       }
+
 
 
       // 🌐 Generar enlaces
@@ -362,7 +395,7 @@
     }
 
 
-    
+
 
 
     // 🔄 Evento al cambiar rubro
@@ -464,16 +497,16 @@
       boton.style.fontWeight = "600";
     }
 
-  ["nombre", "logoUrl", "logoFile", "colorHeader", "colorHeaderText", "colorFooter", "colorFooterText", "colorBoton", "direccion", "horarios", "whatsapp", "rubro"].forEach(id => {
-  const input = el(id);
-  if (input) {
-    input.addEventListener("input", () => {
-      actualizarVistaPrevia();
-      if (id === "rubro") mostrarProductosPreview(); // 🔄 cuando cambie rubro, mostrar productos
+    ["nombre", "logoUrl", "logoFile", "colorHeader", "colorHeaderText", "colorFooter", "colorFooterText", "colorBoton", "direccion", "horarios", "whatsapp", "rubro"].forEach(id => {
+      const input = el(id);
+      if (input) {
+        input.addEventListener("input", () => {
+          actualizarVistaPrevia();
+          if (id === "rubro") mostrarProductosPreview(); // 🔄 cuando cambie rubro, mostrar productos
+        });
+        if (input.type === "file") input.addEventListener("change", actualizarVistaPrevia);
+      }
     });
-    if (input.type === "file") input.addEventListener("change", actualizarVistaPrevia);
-  }
-});
 
 
     actualizarVistaPrevia();

@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <title>SuperAdmin V2 — MultiTiendas Gualeguay</title>
+  <title>SuperAdmin V2 — Vidriera Virtual</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -50,7 +50,7 @@
   </style>
 </head>
 <body>
-  <header>⚙️ SuperAdmin V2 — MultiTiendas Gualeguay</header>
+  <header>⚙️ Panel de Administracion General — Vidriera Virtual</header>
   <main>
     <div class="row">
       <input id="buscar" type="search" placeholder="Buscar por nombre o ID de tienda…" />
@@ -437,15 +437,35 @@ window.cambiarPlan = async function (tiendaId, planActual) {
   }
 
   try {
+    // 🔹 1. Actualizar el plan en Firestore
     const configRef = doc(db, "tiendas", tiendaId, "config", "datos");
     await updateDoc(configRef, { plan: nuevoPlan });
-    alert(`✅ Plan actualizado a ${nuevoPlan}`);
-    loadPage(true); // refrescar tabla
+
+    // 🔹 2. Aviso visual en el superadmin
+    modalMensaje(`✅ Plan de "${tiendaId}" actualizado a ${nuevoPlan}`, "#28a745");
+
+    // 🔹 3. Llamar automáticamente a la sincronización de productos del admin correspondiente
+    const adminUrl = `${BASE_URL}/admin.html?tienda=${encodeURIComponent(tiendaId)}&sync=1`;
+
+    console.log(`🔄 Iniciando sincronización de productos para ${tiendaId} → ${nuevoPlan}`);
+    const iframe = document.createElement("iframe");
+    iframe.src = adminUrl;
+    iframe.style.display = "none";
+    document.body.appendChild(iframe);
+
+    // Esperar un tiempo razonable y limpiar
+    setTimeout(() => {
+      iframe.remove();
+      modalMensaje(`🧩 Productos sincronizados automáticamente para ${tiendaId}`, "#0b5ed7");
+      loadPage(true); // refrescar tabla de tiendas
+    }, 10000); // 10 segundos
+
   } catch (error) {
     console.error("Error al cambiar el plan:", error);
-    alert("⚠️ No se pudo actualizar el plan");
+    modalMensaje("⚠️ No se pudo actualizar el plan", "#dc3545");
   }
 };
+
 
 
   // 🟢 Optimización: actualiza en tiempo real sin recargar toda la tabla

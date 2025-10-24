@@ -44,10 +44,10 @@ const productosRef = collection(db, "tiendas", tiendaId, "productos");
 // ===============================
 const UNIDADES_POR_RUBRO = {
   ropa: ["XS", "S", "M", "L", "XL", "XXL"],
-  carniceria: ["Kg", "Grs","Docena", "Unidad", "Porción"],
-  verduleria: ["Kg", "Grs", "Bolsa","Docena", "Unidad"],
-  polleria: ["Kg", "Grs","Unidad", "Pack"],
-  kiosko: ["Unidad","Kg", "Grs", "Pack", "Caja"],
+  carniceria: ["Kg", "Grs", "Docena", "Unidad", "Porción"],
+  verduleria: ["Kg", "Grs", "Bolsa", "Docena", "Unidad"],
+  polleria: ["Kg", "Grs", "Unidad", "Pack"],
+  kiosko: ["Unidad", "Kg", "Grs", "Pack", "Caja"],
   mates: ["Unidad", "Combo", "Set"],
   default: ["Unidad", "Kg", "Grs"]
 };
@@ -60,7 +60,7 @@ const UNIDADES_POR_RUBRO = {
 // ===============================
 const FEATURES_BY_PLAN = {
   Basico: {
-    maxProductos: 20,
+    maxProductos: 40,
     permitirPersonalizacion: false,   // Colores y título
     permitirEstadisticas: false,      // KPIs avanzadas / gráficos
     permitirDominioPropio: false
@@ -120,47 +120,52 @@ async function initPlanUI() {
 
 
       // Acción de cambio a Profesional
-      btnSubirProfesional.onclick = () => {
-        const numeroWhatsApp = "5492644429646"; // ⚠️ reemplazá con tu número real
-        const mensaje = encodeURIComponent(`Hola! Quiero actualizar mi plan ${plan} a Profesional en MultiTiendas Gualeguay.`);
+      btnSubirProfesional.onclick = async () => {
+        const numeroWhatsApp = "5492644429646";
+        const mensaje = encodeURIComponent(`Hola! Quiero actualizar mi plan ${plan} a Profesional en Vidriera Virtual.`);
         window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, "_blank");
         modalCambiarPlan.style.display = "none";
 
-        // Mostrar confirmación con animación
+        // 🔄 Actualizar en Firestore y sincronizar productos
+        const configRef = doc(db, "tiendas", tiendaId, "config", "datos");
+        await updateDoc(configRef, { plan: "Profesional" });
+        await sincronizarProductosPorPlan();
+
+        // Mostrar confirmación
         const mensajeConfirmacion = document.getElementById("mensaje-confirmacion-plan");
         if (mensajeConfirmacion) {
           mensajeConfirmacion.style.display = "block";
-          // Reinicia la animación por si ya se mostró antes
           mensajeConfirmacion.style.animation = "none";
-          void mensajeConfirmacion.offsetWidth; // forzar reflow
+          void mensajeConfirmacion.offsetWidth;
           mensajeConfirmacion.style.animation = "fadeInOut 6s ease-in-out forwards";
-          setTimeout(() => {
-            mensajeConfirmacion.style.display = "none";
-          }, 6000);
+          setTimeout(() => (mensajeConfirmacion.style.display = "none"), 6000);
         }
-
       };
+
 
       // Acción de cambio a Premium
-      btnSubirPremium.onclick = () => {
-        const numeroWhatsApp = "5492644429649"; // ⚠️ reemplazá con tu número real
-        const mensaje = encodeURIComponent(`Hola! Quiero actualizar mi plan ${plan} a Premium en MultiTiendas Gualeguay.`);
+      btnSubirPremium.onclick = async () => {
+        const numeroWhatsApp = "5492644429649";
+        const mensaje = encodeURIComponent(`Hola! Quiero actualizar mi plan ${plan} a Premium en Vidriera Virtual.`);
         window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`, "_blank");
         modalCambiarPlan.style.display = "none";
-        // Mostrar confirmación con animación
+
+        // 🔄 Actualizar en Firestore y sincronizar productos
+        const configRef = doc(db, "tiendas", tiendaId, "config", "datos");
+        await updateDoc(configRef, { plan: "Premium" });
+        await sincronizarProductosPorPlan();
+
+        // Mostrar confirmación
         const mensajeConfirmacion = document.getElementById("mensaje-confirmacion-plan");
         if (mensajeConfirmacion) {
           mensajeConfirmacion.style.display = "block";
-          // Reinicia la animación por si ya se mostró antes
           mensajeConfirmacion.style.animation = "none";
-          void mensajeConfirmacion.offsetWidth; // forzar reflow
+          void mensajeConfirmacion.offsetWidth;
           mensajeConfirmacion.style.animation = "fadeInOut 6s ease-in-out forwards";
-          setTimeout(() => {
-            mensajeConfirmacion.style.display = "none";
-          }, 6000);
+          setTimeout(() => (mensajeConfirmacion.style.display = "none"), 6000);
         }
-
       };
+
     }
 
 
@@ -228,6 +233,112 @@ async function initPlanUI() {
   }
 }
 
+// 🚀 Sincronizar productos adicionales al cambiar de plan
+// 🚀 Sincronizar productos según el plan (agregar o eliminar automáticamente)
+async function sincronizarProductosPorPlan() {
+  try {
+    const configRef = doc(db, "tiendas", tiendaId, "config", "datos");
+    const configSnap = await getDoc(configRef);
+    if (!configSnap.exists()) return;
+
+    const { plan, rubro } = configSnap.data();
+    if (!rubro) {
+      console.warn("⚠️ No se encontró rubro en la configuración de la tienda.");
+      return;
+    }
+
+    // Obtener productos actuales
+    const productosSnap = await getDocs(collection(db, "tiendas", tiendaId, "productos"));
+    const productosExistentes = productosSnap.docs.map(d => ({
+      id: d.id,
+      ...d.data()
+    }));
+    const cantidadActual = productosExistentes.length;
+
+    // Definir límite según plan
+    let limite = 0;
+    if (plan === "Basico") limite = 40;
+    else if (plan === "Profesional") limite = 100;
+    else if (plan === "Premium") limite = Infinity;
+
+    // 🔍 Determinar la ruta correcta del JSON (según el archivo HTML actual)
+    const basePath = window.location.pathname.includes("superadmin")
+      ? "../plantillas"
+      : "plantillas";
+    const urlJson = `${basePath}/${rubro.toLowerCase()}.json`;
+
+    // Cargar productos base desde la plantilla del rubro
+    const response = await fetch(urlJson);
+    if (!response.ok) {
+      console.error("❌ No se pudo cargar la plantilla:", urlJson);
+      return;
+    }
+    const productosBase = await response.json();
+
+    // Loader visual
+    const loader = document.createElement("div");
+    loader.textContent = `⏳ Sincronizando productos según tu plan (${plan})...`;
+    loader.style.cssText = `
+      text-align:center;
+      padding:20px;
+      font-weight:bold;
+      color:#0b5ed7;
+      background:#eef5ff;
+      border-radius:8px;
+      margin:15px;
+    `;
+    document.body.appendChild(loader);
+
+    // Comparar productos existentes vs plantilla
+    const nombresExistentes = productosExistentes.map(p => p.nombre?.toLowerCase());
+    let nuevosProductos = productosBase.filter(
+      p => !nombresExistentes.includes(p.nombre.toLowerCase())
+    );
+
+    const productosRef = collection(db, "tiendas", tiendaId, "productos");
+
+    // 🟢 Si el plan sube (menos productos actuales que el límite) → agregar faltantes
+    if (cantidadActual < limite) {
+      const disponibles = limite === Infinity ? nuevosProductos.length : limite - cantidadActual;
+      const productosAgregar = nuevosProductos.slice(0, disponibles);
+
+      for (const p of productosAgregar) {
+        await addDoc(productosRef, p);
+      }
+
+      if (productosAgregar.length > 0) {
+        console.log(`✅ Se agregaron ${productosAgregar.length} productos nuevos (${plan}).`);
+        alert(`✅ Se agregaron ${productosAgregar.length} productos nuevos según tu plan ${plan}.`);
+      } else {
+        console.log("ℹ️ No había productos nuevos para agregar.");
+      }
+    }
+
+    // 🔴 Si el plan baja (más productos de los permitidos) → eliminar sobrantes
+    else if (cantidadActual > limite && limite !== Infinity) {
+      const productosOrdenados = productosExistentes.sort((a, b) => (a.orden ?? 0) - (b.orden ?? 0));
+      const sobrantes = productosOrdenados.slice(limite); // los que sobran
+
+      for (const prod of sobrantes) {
+        await deleteDoc(doc(productosRef, prod.id));
+      }
+
+      console.log(`⚠️ Se eliminaron ${sobrantes.length} productos por cambio a plan ${plan}.`);
+      alert(`⚠️ Tu plan ${plan} permite ${limite} productos. Se eliminaron ${sobrantes.length} productos sobrantes.`);
+    }
+
+    loader.remove();
+    await mostrarProductos();
+
+  } catch (error) {
+    console.error("❌ Error al sincronizar productos por cambio de plan:", error);
+    alert("❌ Error al sincronizar productos por cambio de plan. Revisá la consola.");
+  }
+}
+
+
+
+
 
 // 🔑 FUNCIÓN LOGIN MANUAL
 
@@ -244,10 +355,10 @@ window.login = async function () {
     document.getElementById("login-container").style.display = "none";
     document.getElementById("admin-panel").style.display = "block";
 
-   await cargarRubroTienda();
-await cargarCategorias(); 
-mostrarProductos();
-await initPlanUI();
+    await cargarRubroTienda();
+    await cargarCategorias();
+    mostrarProductos();
+    await initPlanUI();
 
 
 
@@ -276,10 +387,10 @@ onAuthStateChanged(auth, async user => {
   if (user && loginManual === "true") {
     login.style.display = "none";
     panel.style.display = "block";
-   await cargarRubroTienda();
-await cargarCategorias(); // 🟢 AGREGAR AQUÍ TAMBIÉN
-mostrarProductos();
-await initPlanUI();
+    await cargarRubroTienda();
+    await cargarCategorias(); // 🟢 AGREGAR AQUÍ TAMBIÉN
+    mostrarProductos();
+    await initPlanUI();
 
 
 
@@ -326,7 +437,9 @@ async function cargarRubroTienda() {
 //📦 MOSTRAR PRODUCTOS (CON CACHÉ)
 
 async function mostrarProductos() {
-  document.getElementById("loader") // mostrar loader
+  const l = document.getElementById("loader");
+  if (l) l.style.display = "block";
+
 
   // Si hay productos cacheados en sessionStorage, mostralos primero
   const cache = sessionStorage.getItem("productosAdmin");
@@ -342,6 +455,7 @@ async function mostrarProductos() {
       id: docSnap.id,
       ...docSnap.data()
     }));
+
 
     productosOriginales = JSON.parse(JSON.stringify(productos));
     sessionStorage.setItem("productosAdmin", JSON.stringify(productos));
@@ -443,7 +557,7 @@ window.agregarProducto = async function () {
 
     // Definir límites según plan
     let limite = 0;
-    if (plan === "Basico") limite = 20;
+    if (plan === "Basico") limite = 40;
     else if (plan === "Profesional") limite = 100;
     else if (plan === "Premium") limite = Infinity;
 
@@ -521,8 +635,8 @@ function renderTabla(lista = productos, filtrado = false) {
         <!-- Tipo de venta (dinámico por rubro) -->
         <select onchange="editar(${inicio + index}, 'tipoVenta', this.value)" style="width: 80px;">
           ${((UNIDADES_POR_RUBRO[rubroActual] || UNIDADES_POR_RUBRO.default)
-            .map(u => `<option value="${u}" ${prod.tipoVenta === u ? "selected" : ""}>${u}</option>`)
-            .join(''))}
+        .map(u => `<option value="${u}" ${prod.tipoVenta === u ? "selected" : ""}>${u}</option>`)
+        .join(''))}
         </select>
       </td>
 
@@ -531,10 +645,10 @@ function renderTabla(lista = productos, filtrado = false) {
         <input type="text" value="${prod.imagen || ''}" onchange="editar(${inicio + index}, 'imagen', this.value)" style="width: 90%; margin-top: 5px; text-align: center;">
         <div style="text-align: center; margin-top: 5px;">
           ${prod.imagen
-            ? `<a href="${prod.imagen}" target="_blank">
+        ? `<a href="${prod.imagen}" target="_blank">
                  <img src="${prod.imagen}" style="max-width: 100px; border-radius:6px; cursor:pointer;">
                </a>`
-            : '❌ Sin imagen'}
+        : '❌ Sin imagen'}
         </div>
       </td>
 
@@ -935,10 +1049,10 @@ function renderGraficoCategorias(productos) {
 async function cargarCategorias() {
   // 🏷️ Categorías predeterminadas por rubro
   const CATEGORIAS_POR_RUBRO = {
-    carniceria: ["Todos", "Carne", "Cerdo", "Pollo", "Embutidos","Achuras", "Ofertas"],
+    carniceria: ["Todos", "Carne", "Cerdo", "Pollo", "Embutidos", "Achuras", "Ofertas"],
     verduleria: ["Todos", "Frutas", "Verduras", "Hortalizas", "Hierbas", "Ofertas"],
-    polleria: ["Todos", "Pollo","Preparados", "Menudencias", "Congelado","Ofertas"],
-    kiosko: ["Todos", "Golosinas", "Bebidas", "Snacks", "Cigarrillos","Lácteos","Almacen","Limpieza","Ofertas"],
+    polleria: ["Todos", "Pollo", "Preparados", "Menudencias", "Congelado", "Ofertas"],
+    kiosko: ["Todos", "Golosinas", "Bebidas", "Snacks", "Cigarrillos", "Lácteos", "Almacen", "Limpieza", "Ofertas"],
     ropa: ["Todos", "Hombre", "Mujer", "Niños", "Accesorios", "Ofertas"],
     mates: ["Todos", "Mates", "Bombillas", "Termos", "Combos", "Ofertas"]
   };
@@ -1082,4 +1196,14 @@ document.getElementById("btnGuardarConfig").addEventListener("click", guardarCon
 
 // Cargar datos al iniciar
 cargarConfigTienda();
+
+// 🧠 Sincronización automática si se abre con ?sync=1
+window.addEventListener("load", async () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get("sync") === "1") {
+    console.log("⚙️ Modo sincronización automática detectado...");
+    await sincronizarProductosPorPlan();
+  }
+});
+
 

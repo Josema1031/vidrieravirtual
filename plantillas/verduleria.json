@@ -324,7 +324,35 @@
     "categoria": "Hierbas",
     "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00037200/00037201.jpg",
     "stock": 30
-  }
+  },
+  {
+    "nombre": "Jengibre X Kg",
+    "precio": 2800,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00092900/00092926.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Chaucha X Kg",
+    "precio": 2200,
+    "categoria": "Verduras",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000800/00000862.jpg",
+    "stock": 30
+  },
+  {
+    "nombre": "Rúcula X Maso",
+    "precio": 1300,
+    "categoria": "Hortalizas",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00039500/00039566.jpg",
+    "stock": 25
+  },
+  {
+  "nombre": "Higo X Kg",
+  "precio": 3200,
+  "categoria": "Frutas",
+  "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000800/00000888.jpg",
+  "stock": 25
+}
   
 ]
 
