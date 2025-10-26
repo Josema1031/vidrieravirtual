@@ -920,6 +920,9 @@ async function cargarConfigTienda() {
     document.getElementById("colorCarritoTienda").value = data.colorCarrito || "#ff6b00";
     document.getElementById("colorTextoTienda").value = data.colorTexto || "#333333";
     document.getElementById("colorTituloTienda").value = data.colorTitulo || "#000000";
+    document.getElementById("mostrarCarritoTienda").checked = data.mostrarCarrito !== false;
+    document.getElementById("estadoCarritoLabel").textContent = data.mostrarCarrito !== false ? "Activo" : "Oculto";
+
 
   } catch (error) {
     console.error("❌ Error al cargar la configuración:", error);
@@ -939,6 +942,8 @@ async function guardarConfigTienda() {
     const horarios = document.getElementById("horariosTienda").value.trim();
     const colorHeader = document.getElementById("colorHeaderTienda").value;
     const colorFooter = document.getElementById("colorFooterTienda").value;
+    const mostrarCarrito = document.getElementById("mostrarCarritoTienda").checked;
+
 
     // 🟢 NUEVOS CAMPOS
     const titulo = document.getElementById("tituloTienda").value.trim();
@@ -989,7 +994,8 @@ async function guardarConfigTienda() {
       colorTexto,
       colorTitulo,
       titulo,
-      logo: logoUrl
+      logo: logoUrl,
+      mostrarCarrito
     }, { merge: true });
 
 
@@ -1207,3 +1213,10 @@ window.addEventListener("load", async () => {
 });
 
 
+// 🎯 Desplazar hacia la sección "Configuración de la Tienda"
+document.getElementById("btnConfigTienda").addEventListener("click", () => {
+  const seccion = document.getElementById("configuracion-tienda");
+  if (seccion) {
+    seccion.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+});

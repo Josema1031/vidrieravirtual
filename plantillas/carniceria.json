@@ -3,7 +3,7 @@
     "nombre": "Asado de tira",
     "precio": 6200,
     "categoria": "Carne",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/asado%20de%20tira.jpg?raw=true",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjZ8v07ZRGtRDCvVI5fY8zl-Fmkdm6wsgMv1SMEEcDePFH0tgS0mqed3dnYZCnepnKQ40&usqp=CAU",
     "stock": 20
   },
   {
@@ -94,7 +94,7 @@
     "nombre": "Bife de chorizo",
     "precio": 6500,
     "categoria": "Carne",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/bife%20de%20chorizo.jpg?raw=true",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00029800/00029804.jpg",
     "stock": 18
   },
   {
@@ -150,7 +150,7 @@
     "nombre": "Vacío",
     "precio": 6300,
     "categoria": "Carne",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/vacio.jpg?raw=true",
+    "imagen": "https://arjosimarprod.vtexassets.com/arquivos/ids/155595/Vacio-de-Novillito-Kg-1-5801.jpg?v=637377692913400000",
     "stock": 20
   },
   {
@@ -164,7 +164,7 @@
     "nombre": "Entraña",
     "precio": 6900,
     "categoria": "Carne",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/entra%C3%B1a.jpg?raw=true",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSc1NrThmHOwKHJYMT1PgthVIevGDk1N3CM7g&s",
     "stock": 18
   },
   {
@@ -200,14 +200,14 @@
     "nombre": "Bondiola de cerdo",
     "precio": 6200,
     "categoria": "Cerdo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/bondiola%20de%20cerdo.jpg?raw=true",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000900/00000943.jpg",
     "stock": 12
   },
   {
     "nombre": "Costilla de cerdo",
     "precio": 5800,
     "categoria": "Cerdo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/costilla%20de%20cerdo.jpg?raw=true",
+    "imagen": "https://arcordiezb2c.vteximg.com.br/arquivos/ids/176372-292-292/Costilla-De-Cerdo-X-Kg-1-5527.jpg?v=638043933857030000",
     "stock": 20
   },
   {
@@ -272,7 +272,7 @@
     "nombre": "Pechuga de pollo",
     "precio": 4200,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/pechuga.jpg?raw=true",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrSRZK0_phB30velCX3dsYfEBVmfV1RnEcKw&s",
     "stock": 25
   },
   
@@ -287,21 +287,21 @@
     "nombre": "Patamuslo",
     "precio": 4000,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/pata%20y%20muslo.jpg?raw=true",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/447446/Patamuslo-De-Pollo-X-Kg-1-247723.jpg?v=636559053608600000",
     "stock": 18
   },
   {
     "nombre": "Pata de pollo",
     "precio": 2500,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/pata%20y%20muslo.jpg?raw=true",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_FLvFqvxXWUl9ej5VqEVQiRINAmtHah2tcw&s",
     "stock": 20
   },
   {
     "nombre": "Milanesa de pollo",
     "precio": 4700,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/milanesa%20de%20nalga.jpg?raw=true",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00010100/00010163.jpg",
     "stock": 16
   },
   {
@@ -337,7 +337,7 @@
     "nombre": "Chorizo parrillero",
     "precio": 3800,
     "categoria": "Embutidos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/chorizo%20parrillero.jpg?raw=true",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00048200/00048297.jpg",
     "stock": 25
   },
   {
@@ -354,19 +354,12 @@
     "imagen": "https://i.postimg.cc/PJndYxBq/salchicha-parrillera.jpg",
     "stock": 18
   },
-  {
-    "nombre": "Salame picado grueso",
-    "precio": 4900,
-    "categoria": "Embutidos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/salame%20casero.jpg?raw=true",
-    "stock": 10
-  },
-  
+    
   {
     "nombre": "Chinchulines",
     "precio": 3400,
     "categoria": "Achuras",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/chinchulines.jpg?raw=true",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00000000/00000028.jpg",
     "stock": 15
   },
   {
@@ -401,7 +394,7 @@
     "nombre": "Riñones",
     "precio": 3300,
     "categoria": "Achuras",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/ri%C3%B1ones.jpg?raw=true",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1hRzb8kjOKzTuQDyDcCIpuF-V4_J_wFCmdg&s",
     "stock": 12
   }
   

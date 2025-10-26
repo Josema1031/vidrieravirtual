@@ -131,107 +131,350 @@ header {
 }
 
 /* ==========================================================
-   🛍️ CARRITO
+   🛒 CARRITO PROFESIONAL RESPONSIVE
    ========================================================== */
-.carrito {
-  padding: 1rem;
-  background: #f7f7f7;
-}
 
-#btn-enviar {
-  padding: 0.5rem 1rem;
-  background: #25d366;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.carrito button {
-  margin-left: 10px;
-  background: red;
-  color: white;
-  border: none;
-  padding: 3px 7px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-/* --- BOTÓN FLOTANTE --- */
 #carrito-flotante {
   position: fixed;
-  bottom: 70px;
-  right: 5px;
+  bottom: 25px;
+  right: 25px;
   z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
 }
 
+/* Botón flotante */
 #toggle-carrito {
-  background: linear-gradient(0deg, rgba(32, 241, 245, 1) 0%, rgba(45, 142, 253, 1) 100%);
-  color: black;
-  padding: 12px 16px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: #fff;
+  padding: 12px 22px;
   border: none;
-  border-radius: 50px;
-  font-size: 18px;
+  border-radius: 40px;
+  font-size: 15px;
+  font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease;
+}
+#toggle-carrito:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #006ad1, #00a4df);
 }
 
+/* Panel del carrito */
 #carrito-contenido {
   position: fixed;
-  bottom: 80px;
-  right: 20px;
-  width: 300px;
-  max-height: 400px;
+  bottom: 85px;
+  right: 25px;
+  width: 350px;
+  max-height: 480px;
   overflow-y: auto;
   background: #fff;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 18px;
+  padding: 18px 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  border: 1px solid #e6e6e6;
+  transition: all 0.3s ease;
+  font-family: "Poppins", system-ui, sans-serif;
 }
 
-#carrito-contenido.oculto {
-  display: none;
-}
-
-#btn-vaciar {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* ==========================================================
-   🪟 MODAL DE PRODUCTO
-   ========================================================== */
-.modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
-
-.modal-contenido {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 400px;
-  width: 90%;
-  position: relative;
+#carrito-contenido h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 6px;
   text-align: center;
 }
 
+/* Items del carrito */
+#lista-carrito {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#lista-carrito li {
+  background: #f8f9fb;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+#lista-carrito li strong {
+  color: #007bff;
+  display: block;
+  margin-bottom: 6px;
+}
+
+#lista-carrito input[type="number"] {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 60px;
+  text-align: center;
+  padding: 5px;
+  margin: 6px 0;
+  font-size: 15px;
+}
+
+/* ==========================================================
+   🧩 Botones del carrito — versión profesional
+   ========================================================== */
+.botones-cantidad {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+  flex-wrap: nowrap;
+}
+
+#lista-carrito button {
+  border: none;
+  cursor: pointer;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s;
+}
+
+#lista-carrito button.btn-menos { background: #e0e7ff; color: #1d4ed8; }
+#lista-carrito button.btn-mas { background: #d1fae5; color: #059669; }
+#lista-carrito button.btn-eliminar { background: #fee2e2; color: #dc2626; }
+
+#lista-carrito button:hover { opacity: 0.85; }
+
+/* Campo de cantidad más compacto */
+#lista-carrito input[type="number"] {
+  width: 45px;            /* 🔹 más angosto */
+  height: 30px;           /* 🔹 más bajo */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: center;
+  padding: 2px;
+  font-size: 14px;
+  margin: 4px 0;
+  background-color: #fff;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+}
+
+
+/* 📱 Responsive móvil */
+@media (max-width: 480px) {
+  #lista-carrito li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
+
+ /* 🔹 Corrección: evitar que el input del carrito se estire en móviles */
+#lista-carrito input[type="number"] {
+  width: 40px !important;   /* forzamos el tamaño real */
+  height: 28px !important;
+  font-size: 13px !important;
+  display: inline-block;
+  text-align: center;
+}
+
+
+  .botones-cantidad {
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  #lista-carrito button {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+}
+
+
+/* ==========================================================
+   📱 RESPONSIVE MOBILE/TABLET
+   ========================================================== */
+@media (max-width: 768px) {
+  #carrito-contenido {
+    right: 5%;
+    width: 90%;
+    bottom: 90px;
+    max-height: 70vh;
+    padding: 16px;
+  }
+
+  #lista-carrito li {
+    padding: 10px;
+  }
+
+  .botones-cantidad {
+    gap: 8px;
+  }
+
+  #lista-carrito button {
+    width: 32px;
+    height: 32px;
+    font-size: 15px;
+  }
+
+  #btn-vaciar,
+  #btn-enviar {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #carrito-contenido {
+    width: 94%;
+    padding: 14px;
+  }
+
+  #carrito-contenido h2 {
+    font-size: 1.1rem;
+  }
+
+  #lista-carrito li {
+    padding: 8px;
+  }
+
+  #lista-carrito input[type="number"] {
+    width: 55px;
+  }
+
+  #lista-carrito button {
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+  }
+
+  .botones-cantidad {
+    gap: 6px;
+  }
+}
+
+
+/* ==========================================================
+   🪟 MODAL DE PRODUCTO — VERSIÓN RESPONSIVE
+   ========================================================== */
+.modal {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 180px;   /* equilibrio en PC */
+  overflow-y: auto;
+  z-index: 999;
+}
+
+/* Caja del modal */
+.modal-contenido {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  max-width: 380px;      /* 🔹 un poco más angosto */
+  width: 90%;
+  position: relative;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  animation: modalFade 0.3s ease;
+}
+
+/* Imagen dentro del modal */
+.modal-contenido img {
+  max-width: 85%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  object-fit: contain;
+}
+
+/* Cierre (X) */
 .cerrar {
   position: absolute;
   top: 10px;
-  right: 15px;
-  font-size: 24px;
+  right: 14px;
+  font-size: 22px;
   cursor: pointer;
+  color: #666;
+  transition: 0.2s;
 }
+.cerrar:hover { color: #000; }
+
+/* Animación suave */
+@keyframes modalFade {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================
+   📱 MODAL RESPONSIVE PARA CELULARES Y TABLETS
+   ========================================================== */
+@media (max-width: 768px) {
+  .modal {
+    padding-top: 100px; /* menos espacio superior */
+  }
+
+  .modal-contenido {
+    width: 92%;
+    max-width: 320px; /* 🔹 más angosto en tablets */
+    padding: 16px;
+  }
+
+  .modal-contenido img {
+    max-width: 80%;
+  }
+
+  .cerrar {
+    top: 8px;
+    right: 10px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding-top: 210px; /* 🔹 centrado visual */
+  }
+
+  .modal-contenido {
+    width: 88%;
+    max-width: 300px; /* 🔹 tamaño ideal en móvil */
+    padding: 14px;
+  }
+
+  .modal-contenido img {
+    max-width: 75%;
+  }
+
+  .modal-contenido h2 {
+    font-size: 1.1rem;
+  }
+
+  .modal-contenido p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 8px 12px;
+  }
+}
+
 
 /* ==========================================================
    ➕ BOTÓN “MOSTRAR MÁS”
@@ -339,7 +582,13 @@ header {
 /* ==========================================================
    🧾 OTROS ESTILOS GENERALES
    ========================================================== */
-.oculto { display: none; }
+/* ✅ Oculta completamente el contenido del carrito */
+.oculto {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
 #footer {
   background: linear-gradient(0deg, rgba(32, 241, 245, 1) 0%, rgba(45, 142, 253, 1) 100%);

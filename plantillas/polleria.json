@@ -3,35 +3,49 @@
     "nombre": "Pechuga de pollo",
     "precio": 4500,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/pechuga.jpg?raw=true",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrSRZK0_phB30velCX3dsYfEBVmfV1RnEcKw&s",
     "stock": 30
   },
   {
     "nombre": "Muslo de pollo",
     "precio": 3900,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/muslo%20de%20pollo.jpg?raw=true",
+    "imagen": "https://media.istockphoto.com/id/599876836/es/foto/primas-pollo-las-piernas.jpg?s=612x612&w=0&k=20&c=GIMCDl-Oy0P-ZtZHB-SgMAGbNUsqGp2XjoxuOS-eqMA=",
     "stock": 25
+  },
+  {
+    "nombre": "Cuartos Traseros",
+    "precio": 7600,
+    "categoria": "Pollo",
+    "imagen": "https://carmendelsauce.com/wp-content/uploads/2025/04/04-1.jpg",
+    "stock": 12
+  },
+  {
+    "nombre": "Muslos",
+    "precio": 8800,
+    "categoria": "Preparados",
+    "imagen": "https://carmendelsauce.com/wp-content/uploads/2025/04/06.-1jpg.jpg",
+    "stock": 10
   },
   {
     "nombre": "Ala de pollo",
     "precio": 3500,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/ala%20de%20pollo.jpg?raw=true",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/472905/Ala-De-Pollo-Por-Kg-1-31806.jpg?v=636695562832770000",
     "stock": 22
   },
     {
     "nombre": "Filet de pechuga",
     "precio": 4600,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/filet.jpg?raw=true",
+    "imagen": "https://web.macpollo.com/app01/719.png",
     "stock": 28
   },
   {
     "nombre": "Patamuslo",
     "precio": 3800,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/pata%20muslo.jpg?raw=true",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/447446/Patamuslo-De-Pollo-X-Kg-1-247723.jpg?v=636559053608600000",
     "stock": 18
   },
   
@@ -39,49 +53,49 @@
     "nombre": "Pollo entero fresco",
     "precio": 7200,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/pollo%20fresco.jpg?raw=true",
+    "imagen": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3300030_f.jpg",
     "stock": 10
   },
   {
     "nombre": "Pollo trozado",
     "precio": 7400,
     "categoria": "Pollo",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/trozado%20de%20pollo.jpg?raw=true",
+    "imagen": "https://eresloquecomes.com.ar/341-large_default/pollo-trozado-en-cuatro-213kg-aprox-coeco.jpg",
     "stock": 12
   },
   {
     "nombre": "Milanesa de pollo casera",
     "precio": 5200,
     "categoria": "Preparados",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/milanesa.jpg?raw=true",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00010100/00010163.jpg",
     "stock": 20
   },
   {
     "nombre": "Albóndigas de pollo",
     "precio": 4800,
     "categoria": "Preparados",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/albondiga%20de%20pollp.jpg?raw=true",
+    "imagen": "https://bravoavicola.es/wp-content/uploads/2024/02/Albondigas-de-pollo.png",
     "stock": 18
   },
   {
     "nombre": "Pollo al spiedo",
     "precio": 8800,
     "categoria": "Preparados",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/pollo%20al%20spiedo.jpg?raw=true",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00006400/00006401.jpg",
     "stock": 8
   },
   {
     "nombre": "Menudos de pollo",
     "precio": 1800,
     "categoria": "Menudencias",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/menudo%20de%20pollo.jpg?raw=true",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_750868-MLA83540782459_042025-O.webp",
     "stock": 30
   },
   {
     "nombre": "Corazones de pollo",
     "precio": 2900,
     "categoria": "Menudencias",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/corazon%20de%20pollo.jpg?raw=true",
+    "imagen": "https://metroio.vtexassets.com/arquivos/ids/504055/CORAZ-N-POLLO-REDONDOS-KG-2-241054.jpg?v=638381721729070000",
     "stock": 15
   },
   {
@@ -95,15 +109,14 @@
     "nombre": "Nuggets de pollo",
     "precio": 4900,
     "categoria": "Preparados",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/nugget%20de%20pollo.jpg?raw=true",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00012500/00012524.jpg",
     "stock": 20
   },
-  
-  {
-    "nombre": "Pollo trozado congelado",
-    "precio": 7200,
-    "categoria": "Congelado",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/imagenes-tienda/trozado%20de%20pollo%20congelado.jpg?raw=true",
-    "stock": 10
+   {
+    "nombre": "Carton de Huevos",
+    "precio": 4900,
+    "categoria": "Preparados",
+    "imagen": "https://polleriakaserito.com/wp-content/uploads/2023/09/huevo-m30-324x324.jpg.png.webp",
+    "stock": 20
   }
 ]

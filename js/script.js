@@ -100,12 +100,12 @@ function renderBotonesCategorias(categorias) {
   cont.innerHTML = "";
 
   // 🟢 Agregar "Todos" solo si no está en la lista
-if (!categorias.includes("Todos")) {
-  const btnTodos = document.createElement("button");
-  btnTodos.textContent = "Todos";
-  btnTodos.onclick = () => filtrarCategoria("Todos");
-  cont.appendChild(btnTodos);
-}
+  if (!categorias.includes("Todos")) {
+    const btnTodos = document.createElement("button");
+    btnTodos.textContent = "Todos";
+    btnTodos.onclick = () => filtrarCategoria("Todos");
+    cont.appendChild(btnTodos);
+  }
 
 
   categorias.forEach(cat => {
@@ -193,7 +193,7 @@ async function cargarProductos() {
   document.getElementById("loader").style.display = "block";
   try {
     const snapshot = await getDocs(productosRef);
-  productosCargados = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
+    productosCargados = snapshot.docs.map(d => ({ id: d.id, ...d.data() }))
       .sort((a, b) => (a.orden ?? 0) - (b.orden ?? 0));
     mostrarProductos(productosCargados);
   } catch (error) {
@@ -275,22 +275,35 @@ function mostrarCarrito() {
     li.appendChild(stockInfo);
 
     // Botones ➖ ➕ ❌
+    // 🧩 Contenedor de botones (alineados en una sola fila)
+    const botonesDiv = document.createElement("div");
+    botonesDiv.className = "botones-cantidad";
+
+    // ➖ Disminuir cantidad
     const btnMenos = document.createElement("button");
+    btnMenos.className = "btn-menos";
     btnMenos.textContent = "➖";
     btnMenos.addEventListener("click", e => { e.stopPropagation(); disminuirCantidad(index); });
+    botonesDiv.appendChild(btnMenos);
 
+    // ➕ Aumentar cantidad
     const btnMas = document.createElement("button");
+    btnMas.className = "btn-mas";
     btnMas.textContent = "➕";
     btnMas.addEventListener("click", e => { e.stopPropagation(); aumentarCantidad(index); });
+    botonesDiv.appendChild(btnMas);
 
+    // ❌ Eliminar
     const btnEliminar = document.createElement("button");
+    btnEliminar.className = "btn-eliminar";
     btnEliminar.textContent = "❌";
     btnEliminar.addEventListener("click", e => { e.stopPropagation(); eliminarDelCarrito(index); });
+    botonesDiv.appendChild(btnEliminar);
 
-    li.appendChild(btnMenos);
-    li.appendChild(btnMas);
-    li.appendChild(btnEliminar);
+    // 👉 Agregar el grupo de botones al elemento li
+    li.appendChild(botonesDiv);
     lista.appendChild(li);
+
   });
 
   // Muestra el total final del carrito
@@ -558,6 +571,25 @@ window.addEventListener("storage", e => {
       botonCarrito.style.color = brillo < 140 ? "#fff" : "#000";
     }
   }
+  (async () => {
+  const config = await cargarConfig();
+  if (config) {
+    const carritoContainer = document.getElementById("carrito-contenido");
+    const botonCarrito = document.getElementById("toggle-carrito");
+    const botonesAgregar = document.querySelectorAll(".card button");
+
+    const ocultar = config.mostrarCarrito === false;
+
+    if (carritoContainer) carritoContainer.style.display = ocultar ? "none" : "block";
+    if (botonCarrito) botonCarrito.style.display = ocultar ? "none" : "block";
+    botonesAgregar.forEach(btn => {
+      if (ocultar && btn.textContent.includes("Agregar")) {
+        btn.style.display = "none";
+      }
+    });
+  }
+})();
+
 
   // ✏️ Cambiar color del texto de las descripciones
   if (config.colorTexto) {
