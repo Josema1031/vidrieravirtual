@@ -3,21 +3,21 @@
     "nombre": "Coca-Cola 500ml",
     "precio": 1800,
     "categoria": "Bebidas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/coca%20cola%20500ml.jpg?raw=true",
+    "imagen": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3080006_f.jpg",
     "stock": 40
   },
   {
     "nombre": "Pepsi 500ml",
     "precio": 1700,
     "categoria": "Bebidas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/pepsi%20500%20ml.jpg?raw=true",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/003/795/536/products/77918134201181-02c1892ab7b2181d5e15952575329430-1024-1024-7d9e54ab089ddab94e169902079956241-90c755834d7f058cb216990208444790-1024-1024.jpg",
     "stock": 35
   },
   {
     "nombre": "Agua mineral 500ml",
     "precio": 1000,
     "categoria": "Bebidas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/agua%20mineral.jpg?raw=true",
+    "imagen": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3040341_f.jpg",
     "stock": 50
   },
   {
@@ -28,7 +28,7 @@
     "stock": 60
   },
   {
-    "nombre": "GGaseosa Coca-Cola Sabor Original 2,25 Lt",
+    "nombre": "Gaseosa Coca-Cola Sabor Original 2,25 Lt",
     "precio": 1237,
     "categoria": "Bebidas",
     "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00014400/00014450.jpg",
@@ -175,14 +175,14 @@
     "nombre": "Fanta 500ml",
     "precio": 1700,
     "categoria": "Bebidas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/fanta%20500%20ml.jpg?raw=true",
+    "imagen": "https://hiperlibertad.vtexassets.com/arquivos/ids/210204/Gaseosa-Fanta-Naranja-500-Ml-1-6606.jpg?v=638210686142230000",
     "stock": 25
   },
   {
     "nombre": "Bon o Bon 15 g",
     "precio": 2800,
     "categoria": "Golosinas",
-    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00118600/00118608.jpgR",
+    "imagen": "https://farmacityar.vtexassets.com/arquivos/ids/239999-800-auto?v=638163005153170000&width=800&height=auto&aspect=true",
     "stock": 30
   },
   {
@@ -228,56 +228,56 @@
     "nombre": "Chicles Beldent",
     "precio": 800,
     "categoria": "Golosinas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/belden.jpg?raw=true",
+    "imagen": "https://dcdn-us.mitiendanube.com/stores/001/484/658/products/chicles-pagina-41-ba90dbf297bbb14bfb16302573840532-1024-1024.png",
     "stock": 60
   },
   {
     "nombre": "Chocolate Milka 100g",
     "precio": 2500,
     "categoria": "Golosinas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/chocolate%20milka.jpg?raw=true",
+    "imagen": "https://carrefourar.vtexassets.com/arquivos/ids/428484/7622300631574_E01.jpg?v=638392062104600000",
     "stock": 20
   },
   {
-    "nombre": "Alfajor Triple",
+    "nombre": "Alfajor Triple Fantoche",
     "precio": 1200,
     "categoria": "Golosinas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/alfajor%20triple.jpg?raw=true",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUbVhwQlBaF6G3i_IuF6mhcXXnbw8cLGr-sg&s",
     "stock": 30
   },
   {
-    "nombre": "Papas fritas Lays 90g",
+    "nombre": "Papas fritas Lays 230g",
     "precio": 2300,
     "categoria": "Snacks",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/papa%20lays.jpg?raw=true",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_984148-MLA92710649571_092025-O.webp",
     "stock": 25
   },
   {
-    "nombre": "Maní salado 100g",
+    "nombre": "Mani Salado Con Piel Mani King 100 Gr",
     "precio": 1100,
     "categoria": "Snacks",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/mani%20salado.jpg?raw=true",
+    "imagen": "https://arcordiezb2c.vteximg.com.br/arquivos/ids/182983/Mani-Salado-Con-Piel-Mani-King-100-Gr-1-18437.jpg?v=638481981784770000",
     "stock": 40
   },
   {
     "nombre": "Cigarrillos Marlboro Box",
     "precio": 5000,
     "categoria": "Cigarrillos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/malboro%20box.jpg?raw=true",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmQkENw0uM0mbqB1bu7PW3Mdtd6PzvuaXEJA&s",
     "stock": 15
   },
   {
     "nombre": "Cigarrillos PhillipMorris Box",
     "precio": 4800,
     "categoria": "Cigarrillos",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/philipmorris.jpg?raw=true",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlCnEQMCaQgQAfPzeA3vFzkxIK07dAJ_-w4A&s",
     "stock": 10
   },
   {
     "nombre": "Encendedor Bic",
     "precio": 1200,
     "categoria": "Accesorios",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/encendedor%20bic.jpg?raw=true",
+    "imagen": "https://dulcilandia.com.ar/par/wp-content/uploads/sites/4/2020/06/50002308-1.png",
     "stock": 25
   },
   {
@@ -305,56 +305,56 @@
     "nombre": "Galletitas Oreo",
     "precio": 1600,
     "categoria": "Golosinas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/galleta%20oreo.jpg?raw=true",
+    "imagen": "https://hiperlibertad.vtexassets.com/arquivos/ids/226836/Galletitas-Oreo-Sabor-Vainilla-Rellenas-con-Crema-118g-4-21720.jpg?v=638531985753400000",
     "stock": 28
   },
   {
     "nombre": "Gaseosa Sprite 1.5L",
     "precio": 3200,
     "categoria": "Bebidas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/sprite%201,5.jpg?raw=true",
+    "imagen": "https://toledodigitalar.vtexassets.com/arquivos/ids/182765-800-auto?v=638824195032170000&width=800&height=auto&aspect=true",
     "stock": 18
   },
   {
     "nombre": "Caramelos Butter Toffees",
     "precio": 950,
     "categoria": "Golosinas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/caramelo%20toffes.jpg?raw=true",
+    "imagen": "https://dcdn-us.mitiendanube.com/stores/001/447/536/products/butter-toffees-surtido-x-200-gr1-85846382a522e2e43f16261756194165-640-0.png",
     "stock": 50
   },
   {
     "nombre": "Turrón de maní Arcor",
     "precio": 900,
     "categoria": "Golosinas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/turron%20arcor.jpg?raw=true",
+    "imagen": "https://camoga.ar/media/catalog/product/cache/17183a23c5d57b885c9e1f3d66234d68/5/0/50050025_turr_n_de_man_arcor_x5.jpg",
     "stock": 35
   },
   {
-    "nombre": "Gomitas Mogul 100g",
+    "nombre": "Gomitas Mogul Extreme Mini Tubitos de Multifruta",
     "precio": 1200,
     "categoria": "Golosinas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/gomita%20mogul.jpg?raw=true",
+    "imagen": "https://arcorencasa.com/wp-content/uploads/2025/07/20250723-15106.webp",
     "stock": 25
   },
   {
     "nombre": "Agua saborizada Levité 500ml",
     "precio": 1600,
     "categoria": "Bebidas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/levite%20500ml.jpg?raw=true",
+    "imagen": "https://arjosimarprod.vtexassets.com/arquivos/ids/166523/Agua-Saborizada-Naranja-Levite-500-cc-1-12560.jpg?v=637952349689400000",
     "stock": 40
   },
   {
-    "nombre": "Palitos salados 100g",
+    "nombre": "Palitos salados 100g Krachitos",
     "precio": 1100,
     "categoria": "Snacks",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/palito%20salados.jpg?raw=true",
+    "imagen": "https://ardiaprod.vtexassets.com/arquivos/ids/308551/Palitos-Salados-Krachitos-110-Gr-_1.jpg?v=638599345289270000",
     "stock": 30
   },
   {
     "nombre": "Cerveza Quilmes 1L",
     "precio": 3500,
     "categoria": "Bebidas",
-    "imagen": "https://github.com/Josema1031/tiendasguay/blob/main/imag/quilmes%201l.jpg?raw=true",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/588362/Cerveza-Rubia-Quilmes-Clasica-1-L-Botella-Retornable-1-18652.jpg?v=637280467092070000",
     "stock": 22
   },
   
@@ -478,7 +478,7 @@
     "nombre": "Desodorante De Ambientes GLADE Aerosol Vainilla 380ml ",
     "precio": 2100,
     "categoria": "Limpieza",
-    "imagen": "hhttps://static.cotodigital3.com.ar/sitios/fotos/large/00579900/00579965.jpg",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00579900/00579965.jpg",
     "stock": 33
   },
   {
@@ -506,7 +506,7 @@
     "nombre": "Cepillo de dientes adulto",
     "precio": 1700,
     "categoria": "Limpieza",
-    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT04wZq9TA9sJE4Hqc35aO_LlCXClBUMUB7Pw&s",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/001/028/684/products/012287_1-fceec32a706fbb264916753859237667-640-0.jpg",
     "stock": 60
   },
   {

@@ -174,6 +174,26 @@ const productosRef = collection(db, "tiendas", tiendaId, "productos");
   }
 })();
 
+// 🛒 === CONTROL DE VISIBILIDAD DEL CARRITO ===
+window.ocultarCarrito = false;
+
+// ✅ Función que oculta/rehace el comportamiento del carrito
+function aplicarOcultarCarritoEnUI() {
+  const ocultar = window.ocultarCarrito === true;
+
+  // Carrito: panel y botón 🛒 por CLASE, no por style.display
+  const cont = document.getElementById("carrito-contenido");
+  const btn = document.getElementById("toggle-carrito");
+  if (cont) cont.classList.toggle("oculto", ocultar);
+  if (btn)  btn.classList.toggle("oculto", ocultar);
+
+  // Botones “Agregar” de todas las cards (incluye las nuevas)
+  document.querySelectorAll(".card button").forEach(b => {
+    const txt = (b.textContent || "").trim().toLowerCase();
+    if (txt.includes("agregar")) b.style.display = ocultar ? "none" : "";
+  });
+}
+
 
 // ============================================
 // 🛒 VARIABLES GLOBALES
@@ -223,6 +243,8 @@ document.getElementById("buscador").addEventListener("input", e => {
   );
 
   mostrarProductos(filtrados);
+  aplicarOcultarCarritoEnUI();
+
 });
 
 
@@ -441,6 +463,8 @@ function mostrarProductos(lista) {
     btn.style.display = "inline-block";
     btn.onclick = () => cargarMasProductos(lista);
   } else btn.style.display = "none";
+  aplicarOcultarCarritoEnUI();
+
 }
 
 // ============================================
@@ -477,6 +501,8 @@ function cargarMasProductos(lista) {
   productosMostrados += fragmento.length;
   const btn = document.getElementById("btn-mostrar-mas");
   if (productosMostrados >= lista.length) btn.style.display = "none";
+  aplicarOcultarCarritoEnUI();
+
 }
 
 // ============================================
@@ -553,6 +579,11 @@ window.addEventListener("storage", e => {
 // ============================================
 (async () => {
   const config = await cargarConfig();
+  if (config) {
+    window.ocultarCarrito = config.mostrarCarrito === false;
+    aplicarOcultarCarritoEnUI(); // aplicar la regla inicial
+  }
+
   if (!config) return;
 
   // 🛒 Cambiar color del botón flotante del carrito
@@ -571,35 +602,14 @@ window.addEventListener("storage", e => {
       botonCarrito.style.color = brillo < 140 ? "#fff" : "#000";
     }
   }
-  (async () => {
-  const config = await cargarConfig();
-  if (config) {
-    const carritoContainer = document.getElementById("carrito-contenido");
-    const botonCarrito = document.getElementById("toggle-carrito");
-    const botonesAgregar = document.querySelectorAll(".card button");
-
-    const ocultar = config.mostrarCarrito === false;
-
-    if (carritoContainer) carritoContainer.style.display = ocultar ? "none" : "block";
-    if (botonCarrito) botonCarrito.style.display = ocultar ? "none" : "block";
-    botonesAgregar.forEach(btn => {
-      if (ocultar && btn.textContent.includes("Agregar")) {
-        btn.style.display = "none";
-      }
-    });
-  }
-})();
-
 
   // ✏️ Cambiar color del texto de las descripciones
   if (config.colorTexto) {
-    // Selecciona los textos de dirección, horario y WhatsApp
-    document.querySelectorAll("#infoTienda, .info-tienda, .descripcion-tienda, .datos-tienda, p.descripcion-local").forEach(el => {
-      el.style.color = config.colorTexto;
-    });
+    document.querySelectorAll("#infoTienda, .info-tienda, .descripcion-tienda, .datos-tienda, p.descripcion-local")
+      .forEach(el => { el.style.color = config.colorTexto; });
   }
 
-  // 🎨 También aplicamos header/footer si aún no estaban
+  // 🎨 Header y Footer
   if (config.colorHeader) {
     const header = document.querySelector("header");
     if (header) header.style.backgroundColor = config.colorHeader;
@@ -609,6 +619,7 @@ window.addEventListener("storage", e => {
     if (footer) footer.style.backgroundColor = config.colorFooter;
   }
 })();
+
 
 
 // ============================================
