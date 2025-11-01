@@ -1,218 +1,394 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <title>Vidriera Virtual — Digitalizamos tu negocio en minutos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Tienda online lista en minutos. Catálogo, QR y pedidos por WhatsApp. Vidriera Virtual." />
-  <link rel="icon" href="imag/LOGO-LADINGPAGE.jpeg" />
+  <meta name="description"
+    content="Tienda online lista en minutos. Catálogo, QR y pedidos por WhatsApp. Vidriera Virtual." />
+  <link rel="icon" href="imag/imagenes-tienda/logo-tienda-vidriera.jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    :root{
-      --c1:#007bff; --c1d:#005dc1; --c2:#28a745; --bg:#f4f7fb; --txt:#333;
+    :root {
+      --c1: #007bff;
+      --c1d: #005dc1;
+      --c2: #0e2513;
+      --bg: #f4f7fb;
+      --txt: #333;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:Poppins,system-ui,Arial,sans-serif;background:var(--bg);color:var(--txt)}
-    header{position:sticky;top:0;background:#fff;box-shadow:0 2px 10px rgba(0,0,0,.06);z-index:10}
-    nav{max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px}
-    nav a{color:#333;text-decoration:none;margin-left:18px;font-weight:600}
-    .cta{background:var(--c1);color:#fff;padding:10px 16px;border-radius:10px}
-    .cta:hover{background:var(--c1d)}
-    .hero{max-width:1100px;margin:30px auto;display:grid;grid-template-columns:1.1fr .9fr;gap:24px;align-items:center;padding:0 16px}
-    .tag{display:inline-block;background:#eaf2ff;color:var(--c1);padding:6px 10px;border-radius:999px;font-weight:700;margin-bottom:10px}
-    h1{font-size:42px;margin:.2rem 0}
-    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:28px 0}
-    .card{background:#fff;border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.06);padding:16px}
-    .precios{max-width:1100px;margin:40px auto;padding:0 16px}
-    .planes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-    .plan{background:#fff;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.06);padding:18px}
-    .plan strong{font-size:28px}
-    .plan ul{padding-left:18px;line-height:1.8}
-    .btn{display:inline-block;background:var(--c2);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none}
-    .btn:hover{filter:brightness(.95)}
-    .grid-tiendas{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:10px}
-    .ti{background:#fff;border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.06);padding:14px;text-align:center}
-    .ti img{height:64px;object-fit:contain}
-    footer{margin-top:40px;background:#0f172a;color:#cbd5e1}
-    .fwrap{max-width:1100px;margin:auto;padding:24px 16px;display:flex;justify-content:space-between;align-items:center}
-    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+
+    * {
+      box-sizing: border-box
+    }
+
+    body {
+      margin: 0;
+      font-family: Poppins, system-ui, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--txt)
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .06);
+      z-index: 10
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      margin-left: 18px;
+      font-weight: 600
+    }
+
+    .cta {
+      background: var(--c1);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 10px
+    }
+
+    .cta:hover {
+      background: var(--c1d)
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 30px auto;
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: center;
+      padding: 0 16px
+    }
+
+    .tag {
+      display: inline-block;
+      background: #eaf2ff;
+      color: var(--c1);
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-weight: 700;
+      margin-bottom: 10px
+    }
+
+    h1 {
+      font-size: 42px;
+      margin: .2rem 0
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin: 28px 0
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+      padding: 16px
+    }
+
+    .precios {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 16px
+    }
+
+    .planes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px
+    }
+
+    .plan {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .06);
+      padding: 18px
+    }
+
+    .plan strong {
+      font-size: 28px
+    }
+
+    .plan ul {
+      padding-left: 18px;
+      line-height: 1.8
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--c2);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 10px;
+      text-decoration: none
+    }
+
+    .btn:hover {
+      filter: brightness(.95)
+    }
+
+    .grid-tiendas {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin-top: 10px
+    }
+
+    .ti {
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+      padding: 14px;
+      text-align: center
+    }
+
+    .ti img {
+      height: 64px;
+      object-fit: contain
+    }
+
+    footer {
+      margin-top: 40px;
+      background: #0f172a;
+      color: #cbd5e1
+    }
+
+    .fwrap {
+      max-width: 1100px;
+      margin: auto;
+      padding: 24px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center
+    }
+
+    @media(max-width:900px) {
+      .hero {
+        grid-template-columns: 1fr
+      }
+    }
+
     @media (max-width: 600px) {
-  .hero {
-    text-align: center;
-    padding: 10px;
-  }
-  h1 {
-    font-size: 28px;
-  }
-  .cards {
-    grid-template-columns: 1fr;
-  }
-  .plan {
-    padding: 14px;
-  }
-  .fwrap {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+      .hero {
+        text-align: center;
+        padding: 10px;
+      }
 
-/* === AJUSTES RESPONSIVE PARA HEADER Y CTA === */
+      h1 {
+        font-size: 28px;
+      }
 
-/* 🔸 General */
-nav img {
-  height: 170px;
-  width: auto;
-  object-fit: contain;
-}
+      .cards {
+        grid-template-columns: 1fr;
+      }
 
-nav .cta {
-  font-size: 15px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  white-space: nowrap;
-}
+      .plan {
+        padding: 14px;
+      }
 
-/* 🔹 Tablet */
-@media (max-width: 768px) {
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
+      .fwrap {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
 
-  nav img {
-    height: 100px;
-  }
+    /* === AJUSTES RESPONSIVE PARA HEADER Y CTA === */
 
-  nav .cta {
-    font-size: 14px;
-    padding: 6px 12px;
-    border-radius: 6px;
-  }
-}
+    /* 🔸 General */
+    nav img {
+      height: 170px;
+      width: auto;
+      object-fit: contain;
+    }
 
-/* 🔹 Celular */
-@media (max-width: 480px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-  }
+    nav .cta {
+      font-size: 15px;
+      padding: 8px 14px;
+      border-radius: 8px;
+      white-space: nowrap;
+    }
 
-  nav img {
-    height: 150px;
-  }
+    /* 🔹 Tablet */
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+      }
 
-  nav .cta {
-    display: block;
-    font-size: 13px;
-    padding: 6px 10px;
-    width: auto;
-    border-radius: 6px;
-  }
+      nav img {
+        height: 100px;
+      }
 
-  nav a {
-    margin-left: 10px;
-    font-size: 13px;
-  }
-}
-/* === Borde uniforme para todas las cards === */
-.plan {
-  border: 3px solid #0b5ed7; /* celeste profesional */
-  border-radius: 12px;
-  box-sizing: border-box;
-}
-.plan.basico { border-color: #2196f3; }     /* Azul claro */
-.plan.profesional { border-color: #0b5ed7; }/* Azul intermedio */
-.plan.premium { border-color: #007bff; }    /* Azul intenso */
+      nav .cta {
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 6px;
+      }
+    }
 
-/* === CENTRADO Y DISTRIBUCIÓN DE BOTONES HERO === */
-.botones-landing {
-  display: flex;
-  justify-content: center;   /* 🔹 Centra horizontalmente */
-  align-items: center;       /* 🔹 Centra verticalmente */
-  gap: 10px;                 /* 🔹 Espacio entre los botones */
-  flex-wrap: wrap;           /* 🔹 Evita desbordes */
-  margin-top: 12px;
-}
+    /* 🔹 Celular */
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
 
-/* 🔹 Botones uniformes */
-.botones-landing a {
-  text-align: center;
-  min-width: 150px;
-  padding: 10px 18px;
-  font-size: 15px;
-  font-weight: 600;
-  border-radius: 8px;
-}
+      nav img {
+        height: 150px;
+      }
 
-/* 🟢 Tablet */
-@media (max-width: 768px) {
-  .botones-landing {
-    flex-wrap: nowrap; /* 🔹 Mantiene uno al lado del otro */
-    gap: 8px;
-  }
-  .botones-landing a {
-    flex: 1 1 auto;
-    font-size: 14px;
-    padding: 8px 14px;
-  }
-}
+      nav .cta {
+        display: block;
+        font-size: 13px;
+        padding: 6px 10px;
+        width: auto;
+        border-radius: 6px;
+      }
 
-/* 📱 Celular */
-@media (max-width: 480px) {
-  .botones-landing {
-    flex-wrap: nowrap; /* 🔹 Siempre lado a lado */
-    justify-content: center;
-    gap: 6px;
-  }
-  .botones-landing a {
-    flex: 1 1 45%;
-    font-size: 13px;
-    padding: 8px 12px;
-  }
-}
+      nav a {
+        margin-left: 10px;
+        font-size: 13px;
+      }
+    }
 
+    /* === Borde uniforme para todas las cards === */
+    .plan {
+      border: 3px solid #0b5ed7;
+      /* celeste profesional */
+      border-radius: 12px;
+      box-sizing: border-box;
+    }
 
+    .plan.basico {
+      border-color: #2196f3;
+    }
 
+    /* Azul claro */
+    .plan.profesional {
+      border-color: #0b5ed7;
+    }
 
+    /* Azul intermedio */
+    .plan.premium {
+      border-color: #007bff;
+    }
 
+    /* Azul intenso */
+
+    /* === CENTRADO Y DISTRIBUCIÓN DE BOTONES HERO === */
+    .botones-landing {
+      display: flex;
+      justify-content: center;
+      /* 🔹 Centra horizontalmente */
+      align-items: center;
+      /* 🔹 Centra verticalmente */
+      gap: 10px;
+      /* 🔹 Espacio entre los botones */
+      flex-wrap: wrap;
+      /* 🔹 Evita desbordes */
+      margin-top: 12px;
+    }
+
+    /* 🔹 Botones uniformes */
+    .botones-landing a {
+      text-align: center;
+      min-width: 150px;
+      padding: 10px 18px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+
+    /* 🟢 Tablet */
+    @media (max-width: 768px) {
+      .botones-landing {
+        flex-wrap: nowrap;
+        /* 🔹 Mantiene uno al lado del otro */
+        gap: 8px;
+      }
+
+      .botones-landing a {
+        flex: 1 1 auto;
+        font-size: 14px;
+        padding: 8px 14px;
+      }
+    }
+
+    /* 📱 Celular */
+    @media (max-width: 480px) {
+      .botones-landing {
+        flex-wrap: nowrap;
+        /* 🔹 Siempre lado a lado */
+        justify-content: center;
+        gap: 6px;
+      }
+
+      .botones-landing a {
+        flex: 1 1 45%;
+        font-size: 13px;
+        padding: 8px 12px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
       <div style="display:flex;align-items:center;gap:10px">
-        <img src="imag/LOGO-LADINGPAGE.jpeg" alt="Logo" height="34" />
-      
+        <img src="imag/imagenes-tienda/logo-tienda-vidriera.jpg" alt="Logo" height="34" />
+
       </div>
       <div>
         <a href="#planes">Planes</a>
-        <a href="#ejemplos">Ejemplos</a>
-        <a class="cta" href="https://wa.me/5492644429649?text=Hola!%20Quiero%20mi%20tienda%20online">Quiero mi tienda</a>
+        <a href="#ejemplos">Tiendas activas</a>
+        <a class="cta" href="https://wa.me/5492644429649?text=Hola!%20Quiero%20mi%20tienda%20online">Quiero mi
+          tienda</a>
       </div>
     </nav>
   </header>
 
   <section class="hero">
     <div>
-      <span class="tag">Tu catálogo online en minutos</span>
+      <span class="tag">Tu tienda online en minutos</span>
       <h1>Digitalizamos tu negocio con <span style="color:var(--c1)">catálogo + QR + WhatsApp</span></h1>
-      <p>Mostrá tus productos, generá pedidos por WhatsApp y compartí un código QR listo para imprimir. Sin vueltas, sin programar.</p>
+      <p>Mostrá tus productos, generá pedidos por WhatsApp y compartí un código QR listo para imprimir. Sin vueltas, sin
+        programar.</p>
       <div class="botones-landing">
-  <a class="btn" href="https://wa.me/5492644429649?text=Hola!%20Quiero%20mi%20tienda%20online">Hablar por WhatsApp</a>
-  <a class="cta" href="#planes">Ver planes</a>
-</div>
+        <a class="btn" href="https://wa.me/5492644429649?text=Hola!%20Quiero%20mi%20tienda%20online">Hablar por
+          WhatsApp</a>
+        <a class="cta" href="#planes">Ver planes</a>
+      </div>
 
 
       <div class="cards">
-        <div class="card"><strong>QR incluido</strong><br/>Descargá PNG y PDF listos para el local.</div>
-        <div class="card"><strong>Pedidos fáciles</strong><br/>Tus clientes te escriben directo a WhatsApp.</div>
-        <div class="card"><strong>Diseño simple</strong><br/>Claro, rápido y funciona en cualquier celular.</div>
+        <div class="card"><strong>QR incluido</strong><br />Descargá PNG y PDF listos para el local.</div>
+        <div class="card"><strong>Pedidos fáciles</strong><br />Tus clientes te escriben directo a WhatsApp.</div>
+        <div class="card"><strong>Diseño simple</strong><br />Claro, rápido y funciona en cualquier celular.</div>
       </div>
     </div>
     <div>
-      <img src="imag/LOGO-LADINGPAGE.jpeg" alt="Vista previa" style="width:100%;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.18)">
+      <img src="imag/imagenes-tienda/logo-tienda-vidriera.jpg" alt="Vista previa"
+        style="width:100%;border-radius:16px;box-shadow:0 12px 40px rgba(0,0,0,.18)">
     </div>
   </section>
 
@@ -221,34 +397,50 @@ nav .cta {
     <div class="planes">
       <div class="plan">
         <strong>Básico</strong>
-        <p>$20.000 / mes</p>
+        <p>$29.999 / mes</p>
         <ul>
           <li>Hasta 40 productos</li>
+          <li>Productos cargados predeterminados</li>
           <li>QR descargable</li>
           <li>Pedidos por WhatsApp</li>
-          <li>Productos Cargados</li>          
+          <li>Capacitación en carga de productos</li>
         </ul>
-        <a class="btn" href="https://wa.me/5492644429649?text=Hola!%20Quiero%20el%20Plan%20B%C3%A1sico">Elegir Básico</a>
+        <a class="btn" href="https://wa.me/5492644429649?text=Hola!%20Quiero%20el%20Plan%20B%C3%A1sico">Elegir
+          Básico</a>
       </div>
       <div class="plan">
         <strong>Profesional</strong>
-        <p>$25.000 / mes</p>
+        <p>$39.999 / mes</p>
         <ul>
           <li>Hasta 100 productos</li>
-          <li>Productos Cargados</li>   
-          <li>Logo y colores</li>
+          <li>Productos cargados predeterminados</li>
+          <li>QR descargable</li>
+          <li>Pedidos por WhatsApp/catálogo</li>
+          <li>Capacitación en carga de productos</li>
+          <li>Configuracion logo y colores</li>
+          <li>Estadísticas</li>
           <li>Soporte prioritario</li>
+          <li>Difusion Orgánica y en RRSS</li>
         </ul>
-        <a class="btn" href="https://wa.me/5492644429649?text=Hola!%20Quiero%20el%20Plan%20Profesional">Elegir Profesional</a>
+        <a class="btn" href="https://wa.me/5492644429649?text=Hola!%20Quiero%20el%20Plan%20Profesional">Elegir
+          Profesional</a>
       </div>
       <div class="plan">
         <strong>Premium</strong>
-        <p>$35.000 / mes</p>
+        <p>$49.999 / mes</p>
         <ul>
-          <li>Ilimitado + dominio propio</li>
-          <li>Productos Cargados</li>   
+          <li>Produtos Ilimitados</li>
+          <li>Productos cargados predeterminados</li>
+          <li>QR descargable</li>
+          <li>Pedidos por WhatsApp/catálogo</li>
+          <li>Capacitación en carga de productos</li>
+          <li>Configuracion logo y colores</li>
           <li>Estadísticas</li>
-          <li>Capacitación</li>
+          <li>Soporte prioritario</li>
+         <li>Difusion Orgánica y en RRSS</li>
+          <li>Registro de ventas</li>
+          <li>Registro de clientes y Proveedores</li>
+
         </ul>
         <a class="btn" href="https://wa.me/5492644429649?text=Hola!%20Quiero%20el%20Plan%20Premium">Elegir Premium</a>
       </div>
@@ -256,8 +448,7 @@ nav .cta {
   </section>
 
   <section id="ejemplos" class="precios">
-    <h2>Ejemplos de tiendas</h2>
-    <p>Algunas tiendas activas en la plataforma:</p>
+    <h2>Tiendas activas en la plataforma</h2>
     <div id="grid-tiendas" class="grid-tiendas">
       <!-- Se llena dinámicamente -->
     </div>
@@ -288,7 +479,7 @@ nav .cta {
     const app = initializeApp(firebaseConfig);
     const db = getFirestore(app);
 
-    function getBaseURL(){
+    function getBaseURL() {
       const { origin, pathname } = window.location;
       if (origin.includes("127.0.0.1") || origin.includes("localhost")) return origin;
       const repo = pathname.split("/")[1];
@@ -297,14 +488,14 @@ nav .cta {
     const BASE_URL = getBaseURL();
 
     // Carga algunas tiendas (hasta 6) y arma cards con logo y link
-    async function cargarEjemplos(){
+    async function cargarEjemplos() {
       const grid = document.getElementById("grid-tiendas");
       try {
         const snapTiendas = await getDocs(collection(db, "tiendas"));
         let count = 0;
-        for (const t of snapTiendas.docs){
+        for (const t of snapTiendas.docs) {
           const tiendaId = t.id;
-          const cfgSnap = await getDoc(doc(db,"tiendas",tiendaId,"config","datos"));
+          const cfgSnap = await getDoc(doc(db, "tiendas", tiendaId, "config", "datos"));
           if (!cfgSnap.exists()) continue;
           const d = cfgSnap.data();
           const url = `${BASE_URL}/index.html?tienda=${tiendaId}`;
@@ -318,7 +509,7 @@ nav .cta {
           grid.appendChild(div);
           if (++count >= 6) break;
         }
-      } catch(e){
+      } catch (e) {
         grid.innerHTML = "<div class='ti'>No se pudieron cargar ejemplos por ahora.</div>";
         console.error(e);
       }
@@ -328,4 +519,5 @@ nav .cta {
     cargarEjemplos();
   </script>
 </body>
+
 </html>
