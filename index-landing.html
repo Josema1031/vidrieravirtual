@@ -535,7 +535,7 @@
     }
     const BASE_URL = getBaseURL();
 
-    // Carga algunas tiendas (hasta 6) y arma cards con logo y link
+    // Carga algunas tiendas (hasta 8) y arma cards con logo y link
     async function cargarEjemplos() {
       const grid = document.getElementById("grid-tiendas");
       try {
@@ -555,7 +555,7 @@
             <small>Ver tienda →</small>
           `;
           grid.appendChild(div);
-          if (++count >= 6) break;
+          if (++count >= 8) break;
         }
       } catch (e) {
         grid.innerHTML = "<div class='ti'>No se pudieron cargar ejemplos por ahora.</div>";
@@ -567,22 +567,23 @@
     cargarEjemplos();
   </script>
 
- <script>
+<script>
   document.addEventListener("DOMContentLoaded", () => {
 
     const modal = document.getElementById("modalVideo");
     const video = document.getElementById("videoPresentacion");
 
-    // ✅ Mostrar siempre el modal al cargar la página
+    // ✅ Mostrar el modal SIEMPRE al cargar
     modal.classList.add("show");
 
-    // ✅ Primera vez: reproducir automáticamente
+    // ✅ Primera visita: autoplay (Chrome lo permite solo si está muted)
     if (!sessionStorage.getItem("videoReproducido")) {
+      video.muted = true;   // 🔥 Necesario aunque el video no tenga audio
       video.play();
       sessionStorage.setItem("videoReproducido", "1");
     }
 
-    // ✅ Cerrar si clickea afuera
+    // ✅ Cerrar al hacer click afuera
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
         modal.classList.remove("show");
