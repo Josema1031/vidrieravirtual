@@ -15,7 +15,8 @@
     <h1>⚡ Creador de Tiendas Vidriera Virtual </h1>
     <div class="form-group">
       <label>Seleccioná tu plan</label>
-      <select id="plan" required>
+      <select id="plan" required style="font-size: 12px; padding: 10px; height: 33px;">
+
         <option value="Basico">Básico</option>
         <option value="Profesional">Profesional</option>
         <option value="Premium">Premium</option>
@@ -23,14 +24,14 @@
     </div>
 
     <!-- 💡 Mensaje dinámico del plan -->
-    <p id="infoPlan" style="color:#0b5ed7; font-weight:bold; margin-top:-5px; margin-bottom:10px;">
+    <p id="infoPlan" style="color:#0b5ed7; font-weight:bold; margin-top:5px; margin-bottom:10px;">
       🔹 Seleccioná un plan para ver sus límites de productos.
     </p>
 
 
     <div class="form-group">
       <label>Tipo de tienda</label>
-      <select id="rubro" required>
+      <select id="rubro" required style="font-size: 12px; padding: 10px; height: 33px;">
         <option value="">-- Seleccionar rubro --</option>
         <option value="carniceria">Carnicería</option>
         <option value="verduleria">Verdulería</option>
@@ -38,7 +39,8 @@
         <option value="kiosko">Kiosko</option>
         <option value="ropa">Tienda de Ropa</option>
         <option value="mates">Mates y artesanías</option>
-        <option value="Panaderia">Panaderia</option>
+        <option value="panaderia">Panaderia</option>
+        <option value="rostiseria">Rostiseria</option>
       </select>
     </div>
 
@@ -212,6 +214,8 @@
           verduleria: "https://josema1031.github.io/multitiendas/logos/verduleria.png",
           polleria: "https://josema1031.github.io/multitiendas/logos/polleria.png",
           kiosko: "https://josema1031.github.io/multitiendas/logos/kiosko.png",
+          panaderia: "https://josema1031.github.io/multitiendas/logos/panaderia.png",
+          rostiseria: "https://josema1031.github.io/multitiendas/logos/rostiseria.png",
           ropa: "https://josema1031.github.io/multitiendas/logos/ropa.png",
           mates: "https://josema1031.github.io/multitiendas/logos/mates.png"
         };
@@ -351,23 +355,49 @@
       const rubro = el("rubro").value;
       const contenedor = el("preview-productos");
       contenedor.innerHTML = "";
+      // 🟦 NUEVO: GRID RESPONSIVE (2 columnas en celular)
+      contenedor.style.display = "grid";
+      contenedor.style.gridTemplateColumns = "repeat(2, 1fr)";
+      contenedor.style.gap = "12px";
+
 
       const ejemplos = {
         carniceria: [
-          { nombre: "Asado de tira", imagen: "https://github.com/Josema1031/tiendasguay/blob/main/imag/asado%20de%20tira.jpg?raw=true" },
-          { nombre: "Chorizo parrillero", imagen: "https://cdn.pixabay.com/photo/2018/05/12/22/36/sausages-3398567_1280.jpg" }
+          { nombre: "Asado de tira", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjZ8v07ZRGtRDCvVI5fY8zl-Fmkdm6wsgMv1SMEEcDePFH0tgS0mqed3dnYZCnepnKQ40&usqp=CAU" },
+          { nombre: "Chorizo parrillero", imagen: "https://static.cotodigital3.com.ar/sitios/fotos/large/00048200/00048297.jpg" },
+          { nombre: "Vacío", imagen: "https://arjosimarprod.vtexassets.com/arquivos/ids/155595/Vacio-de-Novillito-Kg-1-5801.jpg?v=637377692913400000" },
+          { nombre: "Matambre", imagen: "https://i.postimg.cc/XJdbjWp6/matambre.jpg" }
         ],
         verduleria: [
-          { nombre: "Tomate", imagen: "https://cdn.pixabay.com/photo/2016/03/05/22/24/tomatoes-1239181_1280.jpg" },
-          { nombre: "Lechuga", imagen: "https://cdn.pixabay.com/photo/2018/05/18/17/50/lettuce-3417363_1280.jpg" }
+          { nombre: "Tomate", imagen: "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000684.jpg" },
+          { nombre: "Lechuga", imagen: "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000649.jpg" },
+          { nombre: "Papa Blanca", imagen: "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000695.jpg" },
+          { nombre: "Pimiento rojo ", imagen: "https://static.cotodigital3.com.ar/sitios/fotos/large/00000600/00000671.jpg" }
+
         ],
         polleria: [
-          { nombre: "Pechuga de pollo", imagen: "https://cdn.pixabay.com/photo/2016/03/05/22/34/chicken-1239180_1280.jpg" },
-          { nombre: "Pollo trozado", imagen: "https://cdn.pixabay.com/photo/2018/04/13/21/42/chicken-3319178_1280.jpg" }
+          { nombre: "Pechuga de pollo", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrSRZK0_phB30velCX3dsYfEBVmfV1RnEcKw&s" },
+          { nombre: "Pollo entero fresco", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrSRZK0_phB30velCX3dsYfEBVmfV1RnEcKw&s" },
+          { nombre: "Maple de Huevos", imagen: "https://polleriakaserito.com/wp-content/uploads/2023/09/huevo-m30-324x324.jpg.png.webp" },
+          { nombre: "Pollo trozado", imagen: "https://eresloquecomes.com.ar/341-large_default/pollo-trozado-en-cuatro-213kg-aprox-coeco.jpg" }
         ],
         kiosko: [
-          { nombre: "Gaseosa cola 500ml", imagen: "https://cdn.pixabay.com/photo/2017/01/23/19/40/coca-cola-2002370_1280.jpg" },
-          { nombre: "Papas fritas", imagen: "https://cdn.pixabay.com/photo/2016/03/05/20/07/potato-chips-1239140_1280.jpg" }
+          { nombre: "Gaseosa Sprite 1.5L", imagen: "https://toledodigitalar.vtexassets.com/arquivos/ids/182765-800-auto?v=638824195032170000&width=800&height=auto&aspect=true" },
+          { nombre: "Alfajor Triple Fantoche", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUbVhwQlBaF6G3i_IuF6mhcXXnbw8cLGr-sg&s" },
+          { nombre: "Galletitas Oreo", imagen: "https://hiperlibertad.vtexassets.com/arquivos/ids/226836/Galletitas-Oreo-Sabor-Vainilla-Rellenas-con-Crema-118g-4-21720.jpg?v=638531985753400000" },
+          { nombre: "Papas fritas Lays 230g", imagen: "https://http2.mlstatic.com/D_Q_NP_984148-MLA92710649571_092025-O.webp" }
+        ],
+        panaderia: [
+          { nombre: "Medialunas de Manteca", imagen: "https://arcordiezb2c.vteximg.com.br/arquivos/ids/161523/Medialuna-Manteca-Pastelino-x-Kg-1-5840.jpg?v=637469298083300000" },
+          { nombre: "Pan Francés", imagen: "https://jumboargentina.vtexassets.com/arquivos/ids/473268-800-600?v=636695580460800000&width=800&height=600&aspect=true" },
+          { nombre: "Pastelitos de Membrillo", imagen: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYibWFXz2UcHCNQhn1P8pkHDtqmNiZ2UumAQ&s" },
+          { nombre: "Pan Integral", imagen: "https://static.vecteezy.com/system/resources/previews/011/044/886/non_2x/whole-grain-bread-on-white-background-free-photo.jpg" }
+        ],
+        rostiseria: [
+          { nombre: "Tarta de jamón y queso", imagen: "https://i.postimg.cc/yxHZ8fxw/2021-11-03-62278279.jpg" },
+          { nombre: "Pizza muzzarella", imagen: "https://media.istockphoto.com/id/905492462/es/foto/pizza-margarita-con-queso-mozzarella-albahaca-y-tomate-plantilla-para-su-dise%C3%B1o-y-el-men%C3%BA-del.jpg?s=612x612&w=0&k=20&c=EzqqfeA5rZ87NktFgIo6vgNWfZlO037uP4JtvVx3HhY=" },
+          { nombre: "Papas fritas porción", imagen: "https://i.postimg.cc/YCkbs332/29580407-portion-of-hot-french-fries-on-a-white-background.jpg" },
+          { nombre: "Lasagna de carne", imagen: "https://thumbs.dreamstime.com/b/plancha-de-la-pieza-lasagna-sobre-fondo-blanco-plato-lona-con-carne-picada-y-queso-fundido-al-171715395.jpg" }
         ],
         ropa: [
           { nombre: "Remera básica", imagen: "https://cdn.pixabay.com/photo/2016/03/27/21/16/t-shirt-1281840_1280.jpg" },
@@ -389,7 +419,8 @@
         card.style.textAlign = "center";
         card.style.boxShadow = "0 3px 8px rgba(0,0,0,0.15)";
         card.innerHTML = `
-      <img src="${p.imagen}" alt="${p.nombre}" style="width:100%;height:100px;object-fit:cover;border-radius:8px;">
+        <img src="${p.imagen}" alt="${p.nombre}" 
+     style="width:100%;height:120px;object-fit:contain;border-radius:8px;background:#fff;display:block;margin:auto;">
       <p style="margin-top:8px;font-size:0.9em;color:#111;">${p.nombre}</p>`;
         contenedor.appendChild(card);
       });
@@ -418,7 +449,7 @@
       const horarios = el("horarios").value || "Sin horario";
       const whatsapp = el("whatsapp").value || "---";
 
-      // HEADER PROFESIONAL
+    
       // HEADER PROFESIONAL CON LOGO DESTACADO
       const header = document.getElementById("preview-header");
       header.style.display = "flex";
@@ -487,9 +518,11 @@
         boton = document.createElement("button");
         boton.id = "preview-boton";
         boton.textContent = "🛒 Ver carrito";
-        boton.style.marginTop = "15px";
+        boton.style.marginTop = "-30px";
         document.getElementById("preview-info").appendChild(boton);
       }
+      
+      boton.style.float = "right";// 🟦 POSICIONAR A LA DERECHA AL CARRITO
       boton.style.background = colorBoton;
       boton.style.border = "none";
       boton.style.color = "#000";

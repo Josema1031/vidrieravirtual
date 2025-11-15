@@ -1,0 +1,208 @@
+[
+  {
+    "nombre": "Pan Francés",
+    "precio": 1200,
+    "categoria": "Panes",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/473268-800-600?v=636695580460800000&width=800&height=600&aspect=true",
+    "stock": 40
+  },
+  {
+    "nombre": "Pan Lactal",
+    "precio": 1800,
+    "categoria": "Panes",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTY4lFT9HBMR4IvJ_3tqzY_kqhFCY-VRhfnlA&s",
+    "stock": 30
+  },
+  {
+    "nombre": "Pan Rallado",
+    "precio": 950,
+    "categoria": "Panes",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0y2Dn7dVz5N7A720xtO_-BRRJ9Yabw7i4WHLr4I7KeaWDLzq5qWMFcpOIxCB6EqzIQy0&usqp=CAU",
+    "stock": 25
+  },
+ 
+  {
+    "nombre": "Pan Integral",
+    "precio": 1900,
+    "categoria": "Panes",
+    "imagen": "https://static.vecteezy.com/system/resources/previews/011/044/886/non_2x/whole-grain-bread-on-white-background-free-photo.jpg",
+    "stock": 18
+  },
+  {
+    "nombre": "Pan de Campo",
+    "precio": 2000,
+    "categoria": "Panes",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQHkL--74PGnTndmrOAdOvrT6SWDtei2i-Fg&s",
+    "stock": 22
+  },
+  {
+    "nombre": "Pan Árabe",
+    "precio": 1700,
+    "categoria": "Panes",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3uFCMYEZ7PzkI673eDmaWUoCCzMpj3-Xk7g&s",
+    "stock": 35
+  },
+  {
+    "nombre": "Pan de Viena",
+    "precio": 1800,
+    "categoria": "Panes",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/538834-800-600?v=636985848482670000&width=800&height=600&aspect=true",
+    "stock": 28
+  },
+
+  {
+    "nombre": "Medialunas de Manteca",
+    "precio": 2200,
+    "categoria": "Facturas",
+    "imagen": "https://arcordiezb2c.vteximg.com.br/arquivos/ids/161523/Medialuna-Manteca-Pastelino-x-Kg-1-5840.jpg?v=637469298083300000",
+    "stock": 40
+  },
+  {
+    "nombre": "Medialunas de Grasa",
+    "precio": 2100,
+    "categoria": "Facturas",
+    "imagen": "https://dcdn-us.mitiendanube.com/stores/004/428/327/products/medialuna-grasa-d621d0f26a491d0a1817113892584726-640-0.jpg",
+    "stock": 40
+  },
+  {
+    "nombre": "Facturas Variadas",
+    "precio": 2500,
+    "categoria": "Facturas",
+    "imagen": "https://s7e6w6d2.delivery.rocketcdn.me/wp-content/uploads/2013/07/factuas.jpg",
+    "stock": 35
+  },
+  {
+    "nombre": "Tortitas Negras",
+    "precio": 1500,
+    "categoria": "Facturas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIS1dr2CX798FYosBMVcbJFipXUNh-FcG7dQ&s",
+    "stock": 20
+  },
+  {
+    "nombre": "Churros",
+    "precio": 2000,
+    "categoria": "Facturas",
+    "imagen": "https://thumbs.dreamstime.com/b/deliciosos-churros-con-jarabe-de-fondo-blanco-los-caramelados-y-dispuestos-uno-al-lado-del-otro-se-exhiben-sobre-un-limpio-esta-286204637.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Donas",
+    "precio": 2300,
+    "categoria": "Facturas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZg4jgIVJbdY9hruruqwMMp-iTYm-ivssLJw&s",
+    "stock": 18
+  },
+  {
+    "nombre": "Pastelitos de Membrillo",
+    "precio": 1800,
+    "categoria": "Facturas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYibWFXz2UcHCNQhn1P8pkHDtqmNiZ2UumAQ&s",
+    "stock": 15
+  },
+  {
+    "nombre": "Pastelitos de Batata",
+    "precio": 1800,
+    "categoria": "Facturas",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/536674/Pastelitos-De-Batata-1-483754.jpg?v=636961651181970000",
+    "stock": 15
+  },
+  {
+    "nombre": "Tortas Fritas",
+    "precio": 1200,
+    "categoria": "Facturas",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/473240-800-600?v=636695580187170000&width=800&height=600&aspect=true",
+    "stock": 30
+  },
+
+  {
+    "nombre": "Bizcochos Salados",
+    "precio": 1400,
+    "categoria": "Bizcochos / Galletas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ94ZEemH09iH_MHILw3LH6N93NUnxmy4SLhQ&s",
+    "stock": 20
+  },
+  {
+    "nombre": "Bizcochos Dulces",
+    "precio": 1500,
+    "categoria": "Bizcochos / Galletas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ62xQIfLnu-_NYtc7NCMxkNVGkcUH8MdR4hQ&s",
+    "stock": 20
+  },
+  
+  {
+    "nombre": "Tarta de Manzana",
+    "precio": 3500,
+    "categoria": "Tartas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLi7khP4LQ3l9s8bkzTGP64-tOfGzJXfqwoQ&s",
+    "stock": 10
+  },
+  {
+    "nombre": "Tarta de Ricota",
+    "precio": 3600,
+    "categoria": "Tartas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsvjJUVSVtIFXMwtKClEiHQQPUtI7KC_a7Ww&s",
+    "stock": 10
+  },
+  {
+    "nombre": "Tarta de Frutillas",
+    "precio": 3800,
+    "categoria": "Tartas",
+    "imagen": "https://www.shutterstock.com/image-photo/strawberry-cake-on-white-260nw-60356737.jpg",
+    "stock": 10
+  },
+  {
+    "nombre": "Tarta Lemon Pie",
+    "precio": 3900,
+    "categoria": "Tartas",
+    "imagen": "https://st4.depositphotos.com/8315148/40646/i/450/depositphotos_406467338-stock-photo-one-piece-lemon-tart-cake.jpg",
+    "stock": 10
+  },
+
+  {
+    "nombre": "Masas Finas Variadas",
+    "precio": 4500,
+    "categoria": "Masas Finas",
+    "imagen": "https://prod-resize.tiendainglesa.com.uy/images/medium/P097391-1.jpg?20250130190039,Masas-Finas-480-gr-en-Tienda-Inglesa",
+    "stock": 12
+  },
+  
+
+  {
+    "nombre": "Chipá",
+    "precio": 1800,
+    "categoria": "Salados",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQDn8frGjsnGAbmS6X5AQMIfmItAUd0R4IWUg&s",
+    "stock": 30
+  },
+
+ 
+  {
+    "nombre": "Pan Dulce Clásico",
+    "precio": 5000,
+    "categoria": "Especiales",
+    "imagen": "https://cdn11.bigcommerce.com/s-3stx4pub31/images/stencil/1280x1280/products/2365/35949/Arcor_Pan_Dulce_Con_Frutas_Sweet_Panettone_With_Fruits_Italian_Style_Cake_400_g_14_oz_1__31322.1760712423.jpg?c=2?imbypass=on",
+    "stock": 15
+  },
+  {
+    "nombre": "Pan Dulce con Chips",
+    "precio": 5200,
+    "categoria": "Especiales",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/761343/Pan-Dulce-Con-Chips-De-Chocolate-Bsa-500-Gr-1-378643.jpg?v=638053546035370000",
+    "stock": 15
+  },
+  {
+    "nombre": "Rosca de Pascua",
+    "precio": 4800,
+    "categoria": "Especiales",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqwcLoIxiB-1urrRfQuxbCuCS96VB6sBWARg&s",
+    "stock": 10
+  },
+
+  {
+    "nombre": "Pan de Ajo",
+    "precio": 2100,
+    "categoria": "Salados",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSufLfWBdNFxR96FTyO2X6gP0-Snp8wxspLTQ&s",
+    "stock": 18
+  }
+]

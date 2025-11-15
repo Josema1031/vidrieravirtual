@@ -1,0 +1,307 @@
+[
+  {
+    "nombre": "Pollo asado entero",
+    "precio": 8500,
+    "categoria": "Rotisería",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaDWGgh1ZHkL6hj4ffzse68Btpe0Oiiz6KoA&s",
+    "stock": 10
+  },
+  {
+    "nombre": "1/4 de pollo con guarnición",
+    "precio": 3000,
+    "categoria": "Rotisería",
+    "imagen": "https://i.postimg.cc/vmrpfmG0/pdp-un-cuarto-papas-ensalada-1000x1000px.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Pata muslo al horno",
+    "precio": 2600,
+    "categoria": "Rotisería",
+    "imagen": "https://media.istockphoto.com/id/1659162091/photo/plate-of-baked-chicken-leg-with-french-fries-on-white-background.jpg?s=612x612&w=0&k=20&c=-HQTo92WVQCGah2CcDCSDhr0gIKgq1P9TrfwBthvtDM=",
+    "stock": 15
+  },
+  {
+    "nombre": "Milanesa napolitana con fritas",
+    "precio": 5200,
+    "categoria": "Minutas",
+    "imagen": "https://www.shutterstock.com/image-photo/milanesa-la-napolitana-argentina-breaded-260nw-1849889338.jpg",
+    "stock": 12
+  },
+  {
+    "nombre": "Milanesa de carne",
+    "precio": 3000,
+    "categoria": "Minutas",
+    "imagen": "https://media.istockphoto.com/id/1393265447/es/foto/schnitzel-de-pollo-empanizado-casero-aislado-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=kxeJautnRQEkD_-vjugZNjaDvBRQMyymbNheL-SzCWY=",
+    "stock": 18
+  },
+  {
+    "nombre": "Milanesa de pollo",
+    "precio": 2900,
+    "categoria": "Minutas",
+    "imagen": "https://media.istockphoto.com/id/1393265447/es/foto/schnitzel-de-pollo-empanizado-casero-aislado-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=kxeJautnRQEkD_-vjugZNjaDvBRQMyymbNheL-SzCWY=",
+    "stock": 18
+  },
+  {
+    "nombre": "Ravioles con salsa bolognesa",
+    "precio": 4200,
+    "categoria": "Pastas",
+    "imagen": "https://jumboargentina.vtexassets.com/arquivos/ids/644755/Ravioles-A-La-Bolognesa-Presentacion-Ii-A-La-Bolo-esa-Sin-Atributo-Sin-Atributo-1-20986.jpg?v=637576825120730000",
+    "stock": 12
+  },
+  {
+    "nombre": "Ravioles con salsa blanca",
+    "precio": 4200,
+    "categoria": "Pastas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKABighHn2-c78pfmO6tdv0-4xB01RvWQg-dVMG0cSHnA9XZLF3pWpJYktYQpL4Z2r_DQ&usqp=CAU",
+    "stock": 10
+  },
+  {
+    "nombre": "Ñoquis con bolognesa",
+    "precio": 4300,
+    "categoria": "Pastas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ49YqG53XmDnrR-D1XcbNnbcgeS_Z4NyU9iQ&s",
+    "stock": 14
+  },
+  {
+    "nombre": "Lasagna de carne",
+    "precio": 5500,
+    "categoria": "Pastas",
+    "imagen": "https://thumbs.dreamstime.com/b/plancha-de-la-pieza-lasagna-sobre-fondo-blanco-plato-lona-con-carne-picada-y-queso-fundido-al-171715395.jpg",
+    "stock": 8
+  },
+  {
+    "nombre": "Tarta de jamón y queso",
+    "precio": 2800,
+    "categoria": "Rotisería",
+    "imagen": "https://i.postimg.cc/yxHZ8fxw/2021-11-03-62278279.jpg",
+    "stock": 16
+  },
+  {
+    "nombre": "Tarta de verdura",
+    "precio": 2600,
+    "categoria": "Rotisería",
+    "imagen": "https://i.postimg.cc/bwWtkzmf/tarta-verdura.jpg",
+    "stock": 14
+  },
+  {
+    "nombre": "Tarta de pollo",
+    "precio": 2800,
+    "categoria": "Rotisería",
+    "imagen": "https://www.shutterstock.com/image-photo/baking-dish-tasty-chicken-pot-600nw-2095757374.jpg",
+    "stock": 12
+  },
+  {
+    "nombre": "Empanadas de carne (unidad)",
+    "precio": 550,
+    "categoria": "Empanadas",
+    "imagen": "https://media.istockphoto.com/id/1411820061/es/foto/empanada-argentina-aislada-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=a-kr4wRzvhTpqwiw-lwxgP2yY5j78HVwX6gE2XJ6fFk=",
+    "stock": 60
+  },
+  {
+    "nombre": "Empanadas de pollo (unidad)",
+    "precio": 550,
+    "categoria": "Empanadas",
+    "imagen": "https://st.depositphotos.com/1354142/5147/i/450/depositphotos_51476145-stock-photo-chicken-empanada-argentina-food.jpg",
+    "stock": 40
+  },
+  {
+    "nombre": "Empanadas de jamón y queso (unidad)",
+    "precio": 550,
+    "categoria": "Empanadas",
+    "imagen": "https://i.postimg.cc/6pNmNwBc/empanada-jyq.png",
+    "stock": 40
+  },
+  {
+    "nombre": "Hamburguesa completa",
+    "precio": 3500,
+    "categoria": "Minutas",
+    "imagen": "https://media.istockphoto.com/id/520410807/es/foto/hamburguesa-con-queso.jpg?s=612x612&w=0&k=20&c=YDYCsfNMOHATJlvcswo7mjebVeLOtctrQeUPJGlR3jc=",
+    "stock": 20
+  },
+  {
+    "nombre": "Lomo completo",
+    "precio": 5500,
+    "categoria": "Minutas",
+    "imagen": "https://i.postimg.cc/CxmvgfMH/sandwich-submarino-jamon-queso-lechuga-tomatecebolla-mortadela-salchicha-aislado-sobre-fondo-blanco.jpg",
+    "stock": 15
+  },
+  {
+    "nombre": "Sandwich de milanesa completo",
+    "precio": 4800,
+    "categoria": "Minutas",
+    "imagen": "https://i.postimg.cc/gcgr3zJm/27fd2bbafe1afd4a22ee439e7b3fc0c3.jpg",
+    "stock": 18
+  },
+  {
+    "nombre": "Pizza muzzarella",
+    "precio": 4300,
+    "categoria": "Pizzas",
+    "imagen": "https://media.istockphoto.com/id/905492462/es/foto/pizza-margarita-con-queso-mozzarella-albahaca-y-tomate-plantilla-para-su-dise%C3%B1o-y-el-men%C3%BA-del.jpg?s=612x612&w=0&k=20&c=EzqqfeA5rZ87NktFgIo6vgNWfZlO037uP4JtvVx3HhY=",
+    "stock": 12
+  },
+  {
+    "nombre": "Pizza napolitana",
+    "precio": 4700,
+    "categoria": "Pizzas",
+    "imagen": "https://i.postimg.cc/qRgSYx8w/1670890054177.jpg",
+    "stock": 12
+  },
+  {
+    "nombre": "Pizza fugazzeta",
+    "precio": 4800,
+    "categoria": "Pizzas",
+    "imagen": "https://media.istockphoto.com/id/909176550/es/foto/pizza-fugazzeta.jpg?s=170667a&w=0&k=20&c=l3PZuqtp4HGVpBJnSi0WfJULbXq2mSMuLrgbmWKj31U=",
+    "stock": 10
+  },
+  {
+    "nombre": "Tortilla de papas",
+    "precio": 2500,
+    "categoria": "Guarniciones",
+    "imagen": "https://i.postimg.cc/RhS9NHf4/35254055-potato-omelette-isolated-spanish-white-background.jpg",
+    "stock": 18
+  },
+  {
+    "nombre": "Papas fritas porción",
+    "precio": 1800,
+    "categoria": "Guarniciones",
+    "imagen": "https://i.postimg.cc/YCkbs332/29580407-portion-of-hot-french-fries-on-a-white-background.jpg",
+    "stock": 30
+  },
+  {
+    "nombre": "Ensalada rusa",
+    "precio": 2500,
+    "categoria": "Guarniciones",
+    "imagen": "https://i.postimg.cc/fb1fzcGm/64271829-russian-salad-isolated-on-white-background.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Ensalada mixta",
+    "precio": 2000,
+    "categoria": "Guarniciones",
+    "imagen": "https://i.postimg.cc/0jY7YThM/ensalada-mixta-tomates-frescos-alimentos-saludables-arriba-aislado-blanco-770123-11483.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Matambre a la pizza",
+    "precio": 7500,
+    "categoria": "Rotisería",
+    "imagen": "https://static.cotodigital3.com.ar/sitios/fotos/large/00088200/00088266.jpg",
+    "stock": 10
+  },
+  {
+    "nombre": "Carne al horno porción",
+    "precio": 3800,
+    "categoria": "Rotisería",
+    "imagen": "https://media.istockphoto.com/id/540233806/es/foto/filetes-de-ternera-a-la-parrilla.jpg?s=612x612&w=0&k=20&c=A9Z58r36iUpv6qrkYzCccv_P6NO11ASS0UdoQGmkJGM=",
+    "stock": 15
+  },
+  {
+    "nombre": "Cerdo al horno porción",
+    "precio": 3800,
+    "categoria": "Rotisería",
+    "imagen": "https://www.shutterstock.com/image-photo/roasted-glazed-shoulder-pork-isolated-260nw-2387972841.jpg",
+    "stock": 12
+  },
+  
+  {
+    "nombre": "Albóndigas con arroz",
+    "precio": 3600,
+    "categoria": "Rotisería",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaTf43U5pH1C1f415Nbj6traTK8_dxDasQHQ&s",
+    "stock": 12
+  },
+  {
+    "nombre": "Arroz con pollo",
+    "precio": 3500,
+    "categoria": "Rotisería",
+    "imagen": "https://www.shutterstock.com/image-photo/plate-grilled-chicken-breast-rice-600nw-2351912631.jpg",
+    "stock": 14
+  },
+  {
+    "nombre": "Tallarines con estofado",
+    "precio": 4200,
+    "categoria": "Pastas",
+    "imagen": "https://media.istockphoto.com/id/1482150115/es/foto/espaguetis-con-salsa-bolo%C3%B1esa-aislados-sobre-fondo-blanco.jpg?s=612x612&w=0&k=20&c=1GWD4yV8b_-LbLUcmALP1hgS6yk4SO-imeCtPfhSSh0=",
+    "stock": 12
+  },
+  {
+    "nombre": "Canelones de verdura",
+    "precio": 4900,
+    "categoria": "Pastas",
+    "imagen": "https://i.postimg.cc/6psjcNjh/recipes-19780.jpg",
+    "stock": 10
+  },
+  {
+    "nombre": "Canelones de pollo",
+    "precio": 4900,
+    "categoria": "Pastas",
+    "imagen": "https://i.postimg.cc/SQ3W9s9z/CANELONES-min.webp",
+    "stock": 10
+  },
+  {
+    "nombre": "Tortilla de acelga",
+    "precio": 2400,
+    "categoria": "Guarniciones",
+    "imagen": "https://www.shutterstock.com/image-photo/spanish-potato-omelette-spinach-traditional-260nw-1906255198.jpg",
+    "stock": 20
+  },
+  {
+    "nombre": "Suprema de pollo con puré",
+    "precio": 4500,
+    "categoria": "Minutas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQC92_t2mynEdLjNFLdEtEd8OFW1PlXKZz0gg&s",
+    "stock": 15
+  },
+ 
+  {
+    "nombre": "Bondiola braseada",
+    "precio": 6800,
+    "categoria": "Rotisería",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_892075-MLA80873644032_122024-O.webp",
+    "stock": 8
+  },
+ 
+  {
+    "nombre": "Pechito de cerdo a la parrilla",
+    "precio": 5900,
+    "categoria": "Rotisería",
+    "imagen": "https://www.shutterstock.com/image-photo/grilled-pork-ribs-barbecue-sauce-600nw-2530753869.jpg",
+    "stock": 10
+  },
+  {
+    "nombre": "Fideos con manteca y queso",
+    "precio": 2500,
+    "categoria": "Pastas",
+    "imagen": "https://st2.depositphotos.com/3262633/45179/i/450/depositphotos_451792058-stock-photo-italian-pasta-carbonara-bacon-egg.jpg",
+    "stock": 25
+  },
+  {
+    "nombre": "Sándwich de pollo",
+    "precio": 3200,
+    "categoria": "Minutas",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXzEx9IRTnmAFzDlh_ZZmT9yTKtK3M96OjJQ&s",
+    "stock": 16
+  },
+  
+  {
+    "nombre": "Coca Cola 500ml",
+    "precio": 900,
+    "categoria": "Bebidas",
+    "imagen": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3080006_f.jpg",
+    "stock": 50
+  },
+  {
+    "nombre": "Agua mineral 500ml",
+    "precio": 700,
+    "categoria": "Bebidas",
+    "imagen": "https://statics.dinoonline.com.ar/imagenes/full_600x600_ma/3040341_f.jpg",
+    "stock": 40
+  },
+  {
+    "nombre": "Sprite 500ml",
+    "precio": 900,
+    "categoria": "Bebidas",
+    "imagen": "https://hiperlibertad.vtexassets.com/arquivos/ids/213539-800-auto?v=638300433665300000&width=800&height=auto&aspect=true",
+    "stock": 45
+  }
+]

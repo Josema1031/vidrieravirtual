@@ -4,7 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-import { getFirestore, collection, setDoc, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+import { getFirestore, collection, setDoc, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp, query, where } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
@@ -46,6 +46,8 @@ const UNIDADES_POR_RUBRO = {
   ropa: ["XS", "S", "M", "L", "XL", "XXL"],
   carniceria: ["Kg", "Grs", "Docena", "Unidad", "Porción"],
   verduleria: ["Kg", "Grs", "Bolsa", "Docena", "Unidad"],
+  panaderia: ["Kg", "Grs", "Bolsa", "Docena", "Unidad"],
+  rostiseria: ["Kg", "Grs", "Porcion", "Docena", "Unidad"],
   polleria: ["Kg", "Grs", "Unidad", "Pack"],
   kiosko: ["Unidad", "Kg", "Grs", "Pack", "Caja"],
   mates: ["Unidad", "Combo", "Set"],
@@ -622,6 +624,7 @@ function renderTabla(lista = productos, filtrado = false) {
     const fila = document.createElement("tr");
     fila.setAttribute("draggable", "true");
     fila.setAttribute("data-id", prod.id);
+    fila.setAttribute("data-index-real", inicio + index);
     fila.addEventListener("dragstart", dragStart);
     fila.addEventListener("dragover", dragOver);
     fila.addEventListener("drop", drop);
@@ -709,8 +712,6 @@ function renderTabla(lista = productos, filtrado = false) {
     tbody.appendChild(fila);
   });
 
-  // 🔸 Reordenar según el campo 'orden'
-  productos.sort((a, b) => (a.orden ?? 0) - (b.orden ?? 0));
 
   // 🔸 Actualizar caché solo si no es filtrado
   if (!filtrado) {
@@ -879,53 +880,63 @@ let dragSrcEl = null;
 // ===============================
 // 🧩 DRAG & DROP — REORDENAMIENTO REAL
 // ===============================
+// ===============================
+// 🧩 DRAG & DROP — FUNCIONES BASE
+// ===============================
 let dragIndex = null;
 
-// Al iniciar arrastre
+// Cuando empieza a arrastrar
 function dragStart(e) {
-  dragIndex = [...e.target.parentNode.children].indexOf(e.target);
+  const fila = e.target.closest("tr");
+  dragIndex = parseInt(fila.getAttribute("data-index-real"));
+  fila.style.opacity = "0.5";
   e.dataTransfer.effectAllowed = "move";
-  e.target.style.opacity = "0.5";
 }
 
-// Mientras arrastra sobre otra fila
+// Cuando está arrastrando sobre otra fila
 function dragOver(e) {
   e.preventDefault();
-  const target = e.target.closest("tr");
-  if (!target) return;
-  const tbody = target.parentNode;
-  const dragging = tbody.children[dragIndex];
-  const targetIndex = [...tbody.children].indexOf(target);
-  if (dragIndex !== targetIndex) {
-    tbody.insertBefore(dragging, targetIndex > dragIndex ? target.nextSibling : target);
-    dragIndex = targetIndex;
-  }
+
+  const fila = e.target.closest("tr");
+  if (!fila) return;
+
+  fila.style.borderTop = "3px solid #007bff";
+
+  setTimeout(() => {
+    fila.style.borderTop = "none";
+  }, 120);
 }
 
-// Al soltar el elemento
+// Cuando suelta encima de una fila
 async function drop(e) {
   e.preventDefault();
-  e.target.style.opacity = "1";
 
-  const filas = [...document.querySelectorAll("#tabla-productos tbody tr")];
-  // 🔢 Actualizar orden local en memoria
-  productos = filas.map((tr, i) => {
-    const id = tr.getAttribute("data-id");
-    const p = productos.find(prod => prod.id === id);
-    return { ...p, orden: i };
-  });
+  const filaDestino = e.target.closest("tr");
+  if (!filaDestino) return;
 
-  // 💾 Guardar el nuevo orden en Firestore
-  const batchUpdates = [];
+  const indexDestino = parseInt(filaDestino.getAttribute("data-index-real"));
+
+  // Reordenar array
+  const productoMovido = productos.splice(dragIndex, 1)[0];
+  productos.splice(indexDestino, 0, productoMovido);
+
+  // Recalcular orden
+  productos.forEach((p, i) => (p.orden = i));
+
+  // Guardar en Firebase
+  const batch = [];
   for (const p of productos) {
     if (!p.id) continue;
     const refProd = doc(db, "tiendas", tiendaId, "productos", p.id);
-    batchUpdates.push(updateDoc(refProd, { orden: p.orden }));
+    batch.push(updateDoc(refProd, { orden: p.orden }));
   }
 
-  await Promise.all(batchUpdates);
-  console.log("✅ Orden actualizado correctamente en Firestore");
-  alert("✅ Orden de productos actualizado correctamente.");
+  await Promise.all(batch);
+
+  sessionStorage.setItem("productosAdmin", JSON.stringify(productos));
+  renderTabla();
+
+  alert("Orden guardado correctamente");
 }
 
 
@@ -1101,6 +1112,8 @@ async function cargarCategorias() {
   const CATEGORIAS_POR_RUBRO = {
     carniceria: ["Todos", "Carne", "Cerdo", "Pollo", "Embutidos", "Achuras", "Ofertas"],
     verduleria: ["Todos", "Frutas", "Verduras", "Hortalizas", "Hierbas", "Ofertas"],
+    panaderia: ["Todos", "Panes", "Facturas", "Bizcochos / Galletas", "Tartas", "Masas Finas", "Masas Secas", "Especiales", "Salados", "Ofertas"],
+    rostiseria: ["Todos", "Rotisería", "Minutas", "Pastas", "Empanadas", "Guarniciones", "Pizzas", "Bebidas","Ofertas"],
     polleria: ["Todos", "Pollo", "Preparados", "Menudencias", "Congelado", "Ofertas"],
     kiosko: ["Todos", "Golosinas", "Bebidas", "Snacks", "Cigarrillos", "Lácteos", "Almacen", "Limpieza", "Ofertas"],
     ropa: ["Todos", "Hombre", "Mujer", "Niños", "Accesorios", "Ofertas"],
