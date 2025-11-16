@@ -52,12 +52,15 @@
     <!-- Crear cuenta -->
     <div style="margin-top:10px;">
       <p style="margin-bottom:6px; color:#333; font-size:15px;">¿No tenés cuenta todavía?</p>
-      <button onclick="registrarUsuario()" style="background:#198754;color:white;padding:10px 16px;border:none;
+      <button id="btnCrearCuenta" onclick="registrarUsuario()" style="background:#198754;color:white;padding:10px 16px;border:none;
              border-radius:8px;cursor:pointer;font-weight:600;width:80%;
              font-size:15px; transition:all 0.3s ease;">
         Crear cuenta nueva
       </button>
+
     </div>
+
+
 
     <!-- Recuperar contraseña -->
     <div style="margin-top:16px;">
@@ -381,53 +384,53 @@
   </section>
 
 
- <!-- 📇 Modal Registro de Clientes y Proveedores -->
-<div id="modalRegistroClientes" class="modal-overlay">
-  <div class="modal-content">
+  <!-- 📇 Modal Registro de Clientes y Proveedores -->
+  <div id="modalRegistroClientes" class="modal-overlay">
+    <div class="modal-content">
 
-    <button class="modal-close" onclick="cerrarModalRegistro()">✖</button>
+      <button class="modal-close" onclick="cerrarModalRegistro()">✖</button>
 
-    <h2 class="modal-title">📇 Registro de Clientes y Proveedores</h2>
+      <h2 class="modal-title">📇 Registro de Clientes y Proveedores</h2>
 
-    <div class="form-grid">
-      <input id="nombreRegistro" placeholder="Nombre...">
-      <input id="telefonoRegistro" placeholder="Teléfono...">
-      <select id="tipoRegistro">
-        <option value="Cliente">Cliente</option>
-        <option value="Proveedor">Proveedor</option>
-      </select>
+      <div class="form-grid">
+        <input id="nombreRegistro" placeholder="Nombre...">
+        <input id="telefonoRegistro" placeholder="Teléfono...">
+        <select id="tipoRegistro">
+          <option value="Cliente">Cliente</option>
+          <option value="Proveedor">Proveedor</option>
+        </select>
+      </div>
+
+      <textarea id="notaRegistro" placeholder="Notas..."></textarea>
+
+      <button onclick="agregarRegistro()" class="btn-success">➕ Guardar</button>
+
+      <hr>
+
+      <div class="modal-header-actions">
+        <h3>📄 Lista Registrada</h3>
+        <button onclick="imprimirRegistros()" class="btn-primary">
+          🖨️ Descargar PDF Lista
+        </button>
+      </div>
+
+      <div class="tabla-responsive">
+        <table id="tablaRegistros">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Teléfono</th>
+              <th>Tipo</th>
+              <th>Notas</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
     </div>
-
-    <textarea id="notaRegistro" placeholder="Notas..."></textarea>
-
-    <button onclick="agregarRegistro()" class="btn-success">➕ Guardar</button>
-
-    <hr>
-
-    <div class="modal-header-actions">
-      <h3>📄 Lista Registrada</h3>
-      <button onclick="imprimirRegistros()" class="btn-primary">
-        🖨️ Descargar PDF Lista
-      </button>
-    </div>
-
-    <div class="tabla-responsive">
-      <table id="tablaRegistros">
-        <thead>
-          <tr>
-            <th>Nombre</th>
-            <th>Teléfono</th>
-            <th>Tipo</th>
-            <th>Notas</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-
   </div>
-</div>
 
 
 

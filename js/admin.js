@@ -2,7 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut,createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
 import {
   initializeFirestore,
@@ -377,7 +377,6 @@ async function sincronizarProductosPorPlan() {
 
 
 // 🔑 FUNCIÓN LOGIN MANUAL
-
 window.login = async function () {
   const email = document.getElementById("email").value;
   const password = document.getElementById("password").value;
@@ -385,9 +384,28 @@ window.login = async function () {
 
   try {
     const credencial = await signInWithEmailAndPassword(auth, email, password);
-    sessionStorage.setItem("loginManual", "true");
+    const user = credencial.user;
 
-    // Ahora que el login fue exitoso, forzamos el cambio visual
+    // 🔍 Validar si pertenece a esta tienda
+    const userRef = doc(db, "usuarios", user.uid);
+    const userSnap = await getDoc(userRef);
+
+    if (!userSnap.exists()) {
+      error.textContent = "❌ Tu cuenta no está configurada correctamente.";
+      signOut(auth);
+      return;
+    }
+
+    const userData = userSnap.data();
+
+    if (userData.tiendaId !== tiendaId) {
+      error.textContent = "❌ No tenés permiso para ingresar a esta tienda.";
+      signOut(auth);
+      return;
+    }
+
+    // 🔓 Si todo OK, mostrar panel
+    sessionStorage.setItem("loginManual", "true");
     document.getElementById("login-container").style.display = "none";
     document.getElementById("admin-panel").style.display = "block";
 
@@ -396,21 +414,34 @@ window.login = async function () {
     mostrarProductos();
     await initPlanUI();
 
-
-
-
-
-    // ✅ Mostrar Configuración de la Tienda solo después del login
-    document.getElementById("configuracion-tienda").style.display = "block";
-
-
-
     error.textContent = "";
+
   } catch (e) {
     console.error(e);
     error.textContent = "❌ Correo o contraseña incorrectos.";
   }
 };
+
+async function verificarPrimerAdmin() {
+  try {
+    const usuariosSnap = await getDocs(
+      query(collection(db, "usuarios"), where("tiendaId", "==", tiendaId))
+    );
+
+    const yaHayAdmin = usuariosSnap.size > 0;
+
+    const btnCrearCuenta = document.getElementById("btnCrearCuenta");
+
+    if (btnCrearCuenta) {
+      btnCrearCuenta.style.display = yaHayAdmin ? "none" : "block";
+    }
+
+  } catch (err) {
+    console.error("Error verificando admins:", err);
+  }
+}
+
+
 
 // 🔍 DETECCIÓN DE USUARIO LOGUEADO AL CARGAR
 
@@ -430,10 +461,12 @@ onAuthStateChanged(auth, async user => {
 
 
 
-  } else {
-    login.style.display = "block";
-    panel.style.display = "none";
-  }
+ } else {
+  login.style.display = "block";
+  panel.style.display = "none";
+  verificarPrimerAdmin();   // 👈 AGREGADO
+}
+
 });
 
 //  🚪 FUNCIÓN CERRAR SESIÓN
@@ -442,6 +475,39 @@ window.cerrarSesion = function () {
   sessionStorage.removeItem("loginManual");
   signOut(auth);
 };
+
+// 🔐 REGISTRO DE USUARIO CON TIENDA + FIRESTORE + ROL
+window.registrarUsuario = async function () {
+  const email = prompt("Ingresá un correo electrónico para el nuevo usuario:");
+  const password = prompt("Ingresá una contraseña (mínimo 6 caracteres):");
+
+  if (!email || !password) {
+    alert("⚠ Debés poner un correo y contraseña.");
+    return;
+  }
+
+  try {
+    // 1️⃣ Crear usuario en Firebase Auth
+    const cred = await createUserWithEmailAndPassword(auth, email, password);
+    const uid = cred.user.uid;
+
+    // 2️⃣ Crear registro en Firestore
+    const userRef = doc(db, "usuarios", uid);
+    await setDoc(userRef, {
+      email,
+      tiendaId: tiendaId,   // 🟢 se guarda la tienda automáticamente
+      rol: "admin",         // podés cambiar a "empleado"
+      fechaRegistro: new Date().toISOString()
+    });
+
+    alert(`✅ Cuenta creada correctamente para:\n${email}\n\n📌 Asociada a la tienda: ${tiendaId}`);
+
+  } catch (e) {
+    console.error(e);
+    alert("❌ Error al crear cuenta. " + e.message);
+  }
+};
+
 
 let productos = [];
 let productosOriginales = [];
