@@ -4,8 +4,21 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 
 import { getAuth, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-import { getFirestore, collection, setDoc, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp, query, where } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-
+import {
+  initializeFirestore,
+  enableIndexedDbPersistence,
+  collection,
+  getDoc,
+  getDocs,
+  addDoc,
+  updateDoc,
+  deleteDoc,
+  setDoc,
+  doc,
+  serverTimestamp,
+  query,
+  where
+} from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
 
 // Tu configuración de Firebase
@@ -20,7 +33,12 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app);
+const db = initializeFirestore(app, {});
+
+enableIndexedDbPersistence(db).catch(err => {
+  console.warn("⚠️ Persistencia offline no disponible:", err.code);
+});
+
 const storage = getStorage(app);
 
 
@@ -90,8 +108,10 @@ async function initPlanUI() {
     const f = FEATURES_BY_PLAN[plan] || FEATURES_BY_PLAN.Basico;
     // 🟢 Mostrar panel de ventas si el plan es Premium
     if (plan === "Premium") {
+      document.getElementById("btnRegistroClientes").style.display = "inline-block";
       await initVentasPremium(plan);
     } else {
+      document.getElementById("btnRegistroClientes").style.display = "none";
       const panelVentas = document.getElementById("panel-ventas");
       if (panelVentas) panelVentas.style.display = "none";
     }
@@ -565,7 +585,7 @@ window.editar = function (index, campo, valor) {
 //    ➕ AGREGAR / GUARDAR PRODUCTO
 
 // 🧩 CONTROL DE LÍMITE SEGÚN PLAN
-import { getDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
 
 window.agregarProducto = async function () {
   try {
@@ -1113,7 +1133,7 @@ async function cargarCategorias() {
     carniceria: ["Todos", "Carne", "Cerdo", "Pollo", "Embutidos", "Achuras", "Ofertas"],
     verduleria: ["Todos", "Frutas", "Verduras", "Hortalizas", "Hierbas", "Ofertas"],
     panaderia: ["Todos", "Panes", "Facturas", "Bizcochos / Galletas", "Tartas", "Masas Finas", "Masas Secas", "Especiales", "Salados", "Ofertas"],
-    rostiseria: ["Todos", "Rotisería", "Minutas", "Pastas", "Empanadas", "Guarniciones", "Pizzas", "Bebidas","Ofertas"],
+    rostiseria: ["Todos", "Rotisería", "Minutas", "Pastas", "Empanadas", "Guarniciones", "Pizzas", "Bebidas", "Ofertas"],
     polleria: ["Todos", "Pollo", "Preparados", "Menudencias", "Congelado", "Ofertas"],
     kiosko: ["Todos", "Golosinas", "Bebidas", "Snacks", "Cigarrillos", "Lácteos", "Almacen", "Limpieza", "Ofertas"],
     ropa: ["Todos", "Hombre", "Mujer", "Niños", "Accesorios", "Ofertas"],
@@ -1315,6 +1335,7 @@ document.getElementById("btnConfigTienda").addEventListener("click", () => {
     seccion.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 });
+
 // =========================================================
 // 💵 REGISTRO DE VENTAS Y CIERRE DE CAJA (solo Plan Premium)
 // =========================================================
@@ -1358,20 +1379,38 @@ async function initVentasPremium(plan) {
     }
   });
 
-  // ===============================
-  // 🧾 Cargar ventas existentes del día
-  // ===============================
-  const ventasSnap = await getDocs(ventasRef);
-  cuerpoTabla.innerHTML = "";
-  totalDia = 0;
 
-  ventasSnap.forEach(v => {
-    const data = v.data();
-    totalDia += data.monto;
-    agregarFilaVenta(v.id, data.producto, data.monto, data.fecha);
-  });
 
-  totalCaja.textContent = `Total del día: $${totalDia.toFixed(2)}`;
+// ===============================
+// 📅 Filtrar SOLO ventas del día actual
+// ===============================
+const hoy = new Date();
+hoy.setHours(0, 0, 0, 0);
+
+const inicioDia = hoy;
+const finDia = new Date();
+finDia.setHours(23, 59, 59, 999);
+
+const qHoy = query(
+  ventasRef,
+  where("timestamp", ">=", inicioDia),
+  where("timestamp", "<=", finDia)
+);
+
+const ventasSnap = await getDocs(qHoy);
+
+cuerpoTabla.innerHTML = "";
+totalDia = 0;
+
+ventasSnap.forEach(v => {
+  const data = v.data();
+  totalDia += data.monto;
+  agregarFilaVenta(v.id, data.producto, data.monto, data.fecha);
+});
+
+totalCaja.textContent = `Total del día: $${totalDia.toFixed(2)}`;
+
+
 
   // ===============================
   // ➕ Registrar nueva venta
@@ -1428,9 +1467,7 @@ async function initVentasPremium(plan) {
     initVentasPremium(plan);
   };
 
-  // ===============================
-  // 📦 Cierre de caja con PDF profesional
-  // ===============================
+  
 
   // ===============================
   // 📦 Cierre de caja profesional con PDF completo
@@ -1586,24 +1623,18 @@ async function initVentasPremium(plan) {
       console.error("❌ Error al generar PDF:", error);
       alert("⚠️ El cierre se guardó, pero hubo un error al generar el PDF.");
     }
-    // ===============================
-    // 🧹 ELIMINAR REGISTROS DE VENTAS TRAS EL CIERRE DE CAJA
-    // ===============================
-    try {
-      const ventasRef = collection(db, "ventas"); // Cambiá "ventas" por el nombre real de tu colección
-      const snapshot = await getDocs(ventasRef);
 
-      let totalEliminadas = 0;
-      for (const docu of snapshot.docs) {
-        await deleteDoc(doc(db, "ventas", docu.id));
-        totalEliminadas++;
-      }
+// ===============================
+// 🧹 Eliminar SOLO ventas del día tras el cierre
+// ===============================
+const snapDia = await getDocs(qHoy); // usamos el filtro del día actual
 
-      console.log(`🧹 ${totalEliminadas} registros de ventas eliminados tras el cierre de caja.`);
-    } catch (error) {
-      console.error("⚠️ Error eliminando ventas:", error);
-      alert("⚠️ Hubo un error al eliminar las ventas del día. Revisa la consola para más detalles.");
-    }
+for (const docu of snapDia.docs) {
+  await deleteDoc(doc(ventasRef, docu.id));
+}
+
+console.log("Ventas del día eliminadas correctamente.");
+
 
 
     // 🔁 Reiniciar datos
@@ -1785,3 +1816,220 @@ document.getElementById("btnGenerarFolleto").addEventListener("click", async () 
   }
 });
 
+// ==========================================================
+// 📇 REGISTRO DE CLIENTES / PROVEEDORES (CRUD COMPLETO)
+// ==========================================================
+
+let registroEditandoId = null;
+
+// Abrir modal
+document.getElementById("btnRegistroClientes").onclick = async () => {
+  document.getElementById("modalRegistroClientes").style.display = "block";
+  cargarRegistros();
+};
+
+// Cerrar modal
+window.cerrarModalRegistro = function () {
+  document.getElementById("modalRegistroClientes").style.display = "none";
+  limpiarFormularioRegistro();
+};
+
+// LIMPIAR CAMPOS
+function limpiarFormularioRegistro() {
+  registroEditandoId = null;
+  document.getElementById("nombreRegistro").value = "";
+  document.getElementById("telefonoRegistro").value = "";
+  document.getElementById("tipoRegistro").value = "Cliente";
+  document.getElementById("notaRegistro").value = "";
+}
+
+// GUARDAR / ACTUALIZAR
+window.agregarRegistro = async function () {
+  const nombre = document.getElementById("nombreRegistro").value.trim();
+  const tel = document.getElementById("telefonoRegistro").value.trim();
+  const tipo = document.getElementById("tipoRegistro").value;
+  const nota = document.getElementById("notaRegistro").value.trim();
+
+  if (!nombre) return alert("Ingresá un nombre.");
+
+  if (registroEditandoId) {
+    // 🔵 Actualizar
+    await updateDoc(doc(db, "tiendas", tiendaId, "registrosCP", registroEditandoId), {
+      nombre,
+      telefono: tel,
+      tipo,
+      nota
+    });
+    alert("Registro actualizado correctamente.");
+  } else {
+    // 🟢 Crear nuevo
+    await addDoc(collection(db, "tiendas", tiendaId, "registrosCP"), {
+      nombre,
+      telefono: tel,
+      tipo,
+      nota,
+      fecha: serverTimestamp()
+    });
+    alert("Registro guardado correctamente.");
+  }
+
+  limpiarFormularioRegistro();
+  cargarRegistros();
+};
+
+// CARGAR TABLA
+async function cargarRegistros() {
+  const tbody = document.querySelector("#tablaRegistros tbody");
+  tbody.innerHTML = "";
+
+  const snap = await getDocs(collection(db, "tiendas", tiendaId, "registrosCP"));
+
+  snap.forEach(docu => {
+    const r = docu.data();
+    const id = docu.id;
+
+    tbody.innerHTML += `
+      <tr>
+        <td style="padding:8px;">${r.nombre}</td>
+        <td style="padding:8px;">${r.telefono || ""}</td>
+        <td style="padding:8px;">${r.tipo}</td>
+        <td style="padding:8px;">${r.nota || ""}</td>
+        <td style="padding:8px;">
+
+          <button onclick="editarRegistro('${id}', '${r.nombre}', '${r.telefono || ""}', '${r.tipo}', \`${r.nota || ""}\`)"title="Editar"
+          style="background:none;border:none;cursor:pointer;font-size:18px;margin-right:8px;">✏️ </button>
+
+          <button onclick="eliminarRegistro('${id}')" title="Eliminar" style="background:none;border:none;cursor:pointer;font-size:18px;color:#dc3545;">🗑️</button>
+
+
+        </td>
+      </tr>
+    `;
+  });
+}
+
+// EDITAR
+window.editarRegistro = function (id, nombre, tel, tipo, nota) {
+  registroEditandoId = id;
+
+  document.getElementById("nombreRegistro").value = nombre;
+  document.getElementById("telefonoRegistro").value = tel;
+  document.getElementById("tipoRegistro").value = tipo;
+  document.getElementById("notaRegistro").value = nota;
+
+  alert("Modo edición activado. Modificá los datos y guardá.");
+};
+
+// ELIMINAR
+window.eliminarRegistro = async function (id) {
+  if (!confirm("¿Eliminar este registro?")) return;
+
+  await deleteDoc(doc(db, "tiendas", tiendaId, "registrosCP", id));
+
+  alert("Registro eliminado correctamente.");
+  cargarRegistros();
+};
+
+
+// ==========================================================
+// 🧾 GENERAR PDF DE CLIENTES / PROVEEDORES (VERSIÓN PREMIUM)
+// ==========================================================
+window.imprimirRegistros = async function () {
+  const { jsPDF } = window.jspdf;
+  const pdf = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+
+  const marginX = 15;     // margen izquierdo
+  let y = 20;             // inicio del contenido en Y
+
+  // ===========================
+  // 🖼️ LOGO CENTRADO
+  // ===========================
+  const configRef = doc(db, "tiendas", tiendaId, "config", "datos");
+  const configSnap = await getDoc(configRef);
+
+  if (configSnap.exists() && configSnap.data().logo) {
+    try {
+      const logoUrl = configSnap.data().logo;
+      const imgData = await fetch(logoUrl)
+        .then(res => res.blob())
+        .then(blob => new Promise(resolve => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.readAsDataURL(blob);
+        }));
+
+      // logo centrado
+      pdf.addImage(imgData, "PNG", 90 - 15, y, 40, 40);
+      y += 45;
+    } catch (e) {
+      console.warn("⚠ No se pudo cargar el logo en el PDF.");
+    }
+  }
+
+  // ===========================
+  // 📝 TÍTULO (CENTRADO)
+  // ===========================
+  pdf.setFontSize(20);
+  pdf.setFont("helvetica", "bold");
+  pdf.text("Registro de Clientes / Proveedores", 105, y, { align: "center" });
+
+  y += 12;
+
+  // ===========================
+  // 📅 SUBTÍTULOS
+  // ===========================
+  pdf.setFontSize(12);
+  pdf.setFont("helvetica", "normal");
+
+  pdf.text(`Tienda: ${tiendaId}`, marginX, y);
+  y += 6;
+  pdf.text(`Fecha: ${new Date().toLocaleDateString("es-AR")}`, marginX, y);
+
+  y += 12;
+
+  // ===========================
+  // 📋 ENCABEZADOS DE TABLA
+  // ===========================
+  pdf.setFont("helvetica", "bold");
+  pdf.setFontSize(12);
+
+  pdf.text("Nombre", marginX, y);
+  pdf.text("Teléfono", marginX + 55, y);
+  pdf.text("Tipo", marginX + 105, y);
+  pdf.text("Notas", marginX + 135, y);
+
+  y += 2;
+  pdf.line(marginX, y, 200, y);
+
+  y += 8;
+
+  // ===========================
+  // 📄 DATOS
+  // ===========================
+  const registrosSnap = await getDocs(collection(db, "tiendas", tiendaId, "registrosCP"));
+
+  pdf.setFont("helvetica", "normal");
+  pdf.setFontSize(11);
+
+  registrosSnap.forEach(docu => {
+    const r = docu.data();
+
+    // Salto de página automático
+    if (y > 270) {
+      pdf.addPage();
+      y = 20;
+    }
+
+    pdf.text(r.nombre || "", marginX, y);
+    pdf.text(r.telefono || "", marginX + 55, y);
+    pdf.text(r.tipo || "", marginX + 105, y);
+
+    // notas (recortadas)
+    const nota = r.nota ? r.nota.substring(0, 45) : "";
+    pdf.text(nota, marginX + 135, y);
+
+    y += 8;
+  });
+
+  pdf.save(`Registro_Clientes_Proveedores_${tiendaId}.pdf`);
+};

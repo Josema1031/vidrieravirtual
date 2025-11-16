@@ -1,142 +1,308 @@
 [
   {
-    "nombre": "Mate Imperial de Calabaza",
-    "precio": 14500,
-    "categoria": "Mates",
-    "imagen": "https://cdn.pixabay.com/photo/2020/07/07/16/09/mate-5381224_1280.jpg",
-    "stock": 10
-  },
-  {
-    "nombre": "Mate Camionero de Acero Inoxidable",
-    "precio": 9800,
-    "categoria": "Mates",
-    "imagen": "https://cdn.pixabay.com/photo/2020/02/23/17/01/mate-4872464_1280.jpg",
-    "stock": 14
-  },
-  {
-    "nombre": "Mate de Algarrobo con Virola de Alpaca",
-    "precio": 8500,
-    "categoria": "Mates",
-    "imagen": "https://cdn.pixabay.com/photo/2022/05/15/13/06/mate-7197091_1280.jpg",
-    "stock": 8
-  },
-  {
-    "nombre": "Mate de Madera Tallado a Mano",
-    "precio": 8900,
-    "categoria": "Mates",
-    "imagen": "https://cdn.pixabay.com/photo/2020/02/18/21/59/mate-4860498_1280.jpg",
-    "stock": 6
-  },
-  {
-    "nombre": "Bombilla de Acero Inoxidable",
-    "precio": 2500,
-    "categoria": "Bombillas",
-    "imagen": "https://cdn.pixabay.com/photo/2021/07/03/16/01/mate-6383661_1280.jpg",
-    "stock": 40
-  },
-  {
-    "nombre": "Bombilla Pico de Loro Alpaca",
-    "precio": 4200,
-    "categoria": "Bombillas",
-    "imagen": "https://cdn.pixabay.com/photo/2020/05/07/22/23/mate-5142129_1280.jpg",
-    "stock": 25
-  },
-  {
-    "nombre": "Termo Stanley 1L Original",
-    "precio": 38000,
-    "categoria": "Termos",
-    "imagen": "https://cdn.pixabay.com/photo/2017/03/06/19/58/thermos-2121346_1280.jpg",
-    "stock": 10
-  },
-  {
-    "nombre": "Termo Lumilagro Acero 1L",
-    "precio": 19500,
-    "categoria": "Termos",
-    "imagen": "https://cdn.pixabay.com/photo/2020/09/06/20/41/thermos-5548218_1280.jpg",
-    "stock": 12
-  },
-  {
-    "nombre": "Yerbera y Azucarera de Cuero Grabado",
-    "precio": 12500,
-    "categoria": "Accesorios",
-    "imagen": "https://cdn.pixabay.com/photo/2021/03/04/20/04/mate-6068262_1280.jpg",
-    "stock": 15
-  },
-  {
-    "nombre": "Set Matero de Cuero Repujado",
-    "precio": 28500,
-    "categoria": "Combos",
-    "imagen": "https://cdn.pixabay.com/photo/2020/10/05/21/31/mate-5631557_1280.jpg",
-    "stock": 9
-  },
-  {
-    "nombre": "Bolso Matero de Ecocuero",
-    "precio": 15800,
-    "categoria": "Accesorios",
-    "imagen": "https://cdn.pixabay.com/photo/2022/08/21/18/48/mate-7401927_1280.jpg",
-    "stock": 11
-  },
-  {
-    "nombre": "Set de Mate y Termo Personalizado",
-    "precio": 32000,
-    "categoria": "Combos",
-    "imagen": "https://cdn.pixabay.com/photo/2021/03/04/20/03/mate-6068261_1280.jpg",
-    "stock": 6
-  },
-  {
-    "nombre": "Mate de Vidrio Forrado en Cuero",
-    "precio": 8700,
-    "categoria": "Mates",
-    "imagen": "https://cdn.pixabay.com/photo/2021/02/12/21/59/mate-6009022_1280.jpg",
-    "stock": 10
-  },
-  {
-    "nombre": "Bombilla Filtro de Bronce",
-    "precio": 3100,
-    "categoria": "Bombillas",
-    "imagen": "https://cdn.pixabay.com/photo/2020/06/23/14/31/mate-5332615_1280.jpg",
-    "stock": 30
-  },
-  {
-    "nombre": "Termo Stanley Adventure 750ml",
-    "precio": 34000,
-    "categoria": "Termos",
-    "imagen": "https://cdn.pixabay.com/photo/2016/10/09/16/27/thermos-1721205_1280.jpg",
-    "stock": 7
-  },
-  {
-    "nombre": "Mate Imperial Cuero Grabado",
-    "precio": 15200,
-    "categoria": "Mates",
-    "imagen": "https://cdn.pixabay.com/photo/2020/06/10/01/19/mate-5281572_1280.jpg",
-    "stock": 5
-  },
-  {
-    "nombre": "Set Completo Matero Premium",
-    "precio": 41000,
-    "categoria": "Combos",
-    "imagen": "https://cdn.pixabay.com/photo/2020/05/07/22/23/mate-5142128_1280.jpg",
-    "stock": 8
-  },
-  {
-    "nombre": "Bombilla Rosca Desarmable",
-    "precio": 3500,
-    "categoria": "Bombillas",
-    "imagen": "https://cdn.pixabay.com/photo/2021/07/03/16/00/mate-6383658_1280.jpg",
-    "stock": 25
-  },
-  {
-    "nombre": "Yerbera de Lata Decorada",
-    "precio": 3200,
-    "categoria": "Accesorios",
-    "imagen": "https://cdn.pixabay.com/photo/2021/03/04/20/07/mate-6068274_1280.jpg",
+    "nombre": "Mate Imperial con virola de acero inoxidable",
+    "precio": 21000,
+    "categoria": "Imperial",
+    "imagen": "https://apolomates.com.ar/wp-content/uploads/2023/04/imp-acero-3.png",
     "stock": 20
   },
   {
-    "nombre": "Mate Torpedo Forrado en Cuero",
-    "precio": 9100,
-    "categoria": "Mates",
-    "imagen": "https://cdn.pixabay.com/photo/2020/07/07/16/08/mate-5381221_1280.jpg",
+    "nombre": "Mate Imperial con virola de alpaca cincelada",
+    "precio": 26000,
+    "categoria": "Imperial",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_969005-MLA92585653011_092025-F.webp",
+    "stock": 12
+  },
+  {
+    "nombre": "Mate Imperial premium con base y virola de alpaca",
+    "precio": 32000,
+    "categoria": "Imperial",
+    "imagen": "https://apolomates.com.ar/wp-content/uploads/2022/07/Imperial-base.png",
+    "stock": 10
+  },
+  {
+    "nombre": "Mate Imperial cuero negro con virola de alpaca y base con bolitas",
+    "precio": 23000,
+    "categoria": "Imperial",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_2X_969005-MLA92585653011_092025-F.webp",
+    "stock": 18
+  },
+
+  {
+    "nombre": "Mate Torpedo Premium Calabaza Cuero Croco",
+    "precio": 15000,
+    "categoria": "Torpedo",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/005/821/380/products/fotos-fondo-blanco-tienda-online-2025-06-27t140633-167-7ca22e0f84bd21ab2c17510440095901-1024-1024.webp",
+    "stock": 25
+  },
+  {
+    "nombre": "Mate Torpedo con virola de alpaca cincelada",
+    "precio": 19000,
+    "categoria": "Torpedo",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS148EcN1hngSTS2fntEsewF9W2y38-4CSqCQ&s",
+    "stock": 15
+  },
+  {
+    "nombre": "Mate Torpedo premium reforzado con virola de alpaca",
+    "precio": 22000,
+    "categoria": "Torpedo",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/001/730/036/products/dsc05679-10d1b8983b782a809617090469006799-480-0.webp",
+    "stock": 12
+  },
+  {
+    "nombre": "Mate Torpedo clásico de cuero con virola de acero",
+    "precio": 14000,
+    "categoria": "Torpedo",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/005/821/380/products/fotos-fondo-blanco-tienda-online-2025-06-27t141013-801-efdbe3b64c4cb5044b17510450498367-1024-1024.png",
+    "stock": 30
+  },
+  {
+    "nombre": "Mate Torpedo De Acero Inoxidable Virola Lisa",
+    "precio": 13500,
+    "categoria": "Torpedo",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/005/821/380/products/fotos-fondo-blanco-tienda-online-2025-06-27t142819-367-76bb622f68d40a6b1a17510455951064-1024-1024.png",
+    "stock": 28
+  },
+  {
+    "nombre": "Mate de Algarrobo con virola de acero inoxidable",
+    "precio": 11500,
+    "categoria": "Algarrobo",
+    "imagen": "https://dcdn-us.mitiendanube.com/stores/001/297/377/products/dsc_46241-14ffd981e29319accf16815639460808-480-0.webp",
+    "stock": 35
+  },
+  {
+    "nombre": "Mate de Algarrobo torneado con virola de alpaca",
+    "precio": 15000,
+    "categoria": "Algarrobo",
+    "imagen": "https://estiloaustral.com/wp-content/uploads/2023/09/MATE0097-MATE-ALGARROBO-VIROLA-ALPACA-LISA-_SALTO_-scaled.png",
+    "stock": 20
+  },
+  {
+    "nombre": "Mate Algarrobo barnizado con virola de alpaca cincelada",
+    "precio": 17000,
+    "categoria": "Algarrobo",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeJPMCXy_nSm0Ytux836d8KZzHKX2pU4E72A&s",
+    "stock": 12
+  },
+  {
+    "nombre": "Mate Algarrobo premium con virola de acero macizo",
+    "precio": 13000,
+    "categoria": "Algarrobo",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/103/663/products/1-4d0792ca45fe423fd917240958181453-1024-1024.png",
+    "stock": 25
+  },
+  
+  {
+    "nombre": "Mate Premium cuero negro con virola de acero inoxidable",
+    "precio": 28000,
+    "categoria": "Premium",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/004/988/269/products/fotos-tienda-nube-f630d525f8b467514d17615820507315-1024-1024.webp",
+    "stock": 10
+  },
+  {
+    "nombre": "Mate Premium cincelado con virola de alpaca",
+    "precio": 35000,
+    "categoria": "Premium",
+    "imagen": "https://http2.mlstatic.com/D_Q_NP_665992-MLU78826437528_092024-O.webp",
+    "stock": 7
+  },
+  {
+    "nombre": "Mate Premium tallado con virola de alpaca gruesa",
+    "precio": 38000,
+    "categoria": "Premium",
+    "imagen": "https://jotaempresariales.com/wp-content/uploads/2024/05/Imperial-clasico-virola-de-alpaca-cincelada-Negro.png",
+    "stock": 6
+  },
+  {
+    "nombre": "Mate Premium cuero reptil con virola de acero",
+    "precio": 30000,
+    "categoria": "Premium",
+    "imagen": "https://http2.mlstatic.com/D_NQ_NP_675181-MLA85362797837_052025-O.webp",
     "stock": 9
+  },
+  {
+    "nombre": "Mate Imperial Premium en Cuero Crudo con Base y Bolitas de Alpaca",
+    "precio": 45000,
+    "categoria": "Premium",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/005/821/380/products/fondo-blanco-nuevo-2025-92-24a32711b60580082f17569891849844-1024-1024.png",
+    "stock": 4
+  },
+  {
+    "nombre": "Mate Personalizado grabado láser con virola de acero",
+    "precio": 17000,
+    "categoria": "Personalizado",
+    "imagen": "https://amordemate.com.ar/wp-content/uploads/2025/07/mate-imperial-de-acero-con-caja-para-personalizar-v2-1000x1000.webp",
+    "stock": 25
+  },
+  {
+    "nombre": "Mate Personalizado con nombre y virola de alpaca",
+    "precio": 22000,
+    "categoria": "Personalizado",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfvKK4j8rvT7py0NR1M8OormzsgKvhaRQgWg&s",
+    "stock": 20
+  },
+  
+  
+  {
+    "nombre": "Mate Personalizado premium con virola cincelada",
+    "precio": 26000,
+    "categoria": "Personalizado",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/005/821/380/products/fondo-blanco-nuevo-2025-84-91853e48615a22ce4e17597665043432-1024-1024.png",
+    "stock": 12
+  },
+  {
+    "nombre": "Mate Tradicional calabaza con virola de acero",
+    "precio": 9000,
+    "categoria": "Tradicionales",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo2rW0gVfNoXaJGW2KbRDvDw48mDIQVQsARA&s",
+    "stock": 40
+  },
+  {
+    "nombre": "Mate Tradicional calabaza con virola de alpaca",
+    "precio": 12000,
+    "categoria": "Tradicionales",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSs1fnr9OGJ9fgcsEzjFdXZByMYvP2IsVoiA&s",
+    "stock": 35
+  },
+  {
+    "nombre": "Mate Camionero cuero reforzado con virola de acero",
+    "precio": 16000,
+    "categoria": "Tradicionales",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/001/050/261/products/img-20251029-wa0000-c3b493b1c398d3b69617618282343188-640-0.webp",
+    "stock": 28
+  },
+  {
+    "nombre": "Mate Camionero artesanal con virola de alpaca",
+    "precio": 19000,
+    "categoria": "Tradicionales",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7e-DmJ5iKx8RkqsxM4ekkoBut7FpHa95NOQ&s",
+    "stock": 18
+  },
+ 
+  {
+    "nombre": "Mate Camionero XL con virola de acero",
+    "precio": 18000,
+    "categoria": "Tradicionales",
+    "imagen": "",
+    "stock": 25
+  },
+  {
+    "nombre": "Mate de vidrio forrado con virola de acero",
+    "precio": 11000,
+    "categoria": "Tradicionales",
+    "imagen": "",
+    "stock": 25
+  },
+  {
+    "nombre": "Mate envío económico con virola simple de acero",
+    "precio": 8000,
+    "categoria": "Tradicionales",
+    "imagen": "",
+    "stock": 50
+  },
+  {
+    "nombre": "Matera de cuero grande",
+    "precio": 18000,
+    "categoria": "Materas",
+    "imagen": "",
+    "stock": 22
+  },
+  {
+    "nombre": "Matera de cuero chica",
+    "precio": 16000,
+    "categoria": "Materas",
+    "imagen": "",
+    "stock": 30
+  },
+  {
+    "nombre": "Matera con correa reforzada",
+    "precio": 19000,
+    "categoria": "Materas",
+    "imagen": "",
+    "stock": 20
+  },
+  {
+    "nombre": "Matera de lona premium",
+    "precio": 15000,
+    "categoria": "Materas",
+    "imagen": "",
+    "stock": 30
+  },
+  {
+    "nombre": "Bolso matero full cuero vacuno",
+    "precio": 24000,
+    "categoria": "Materas",
+    "imagen": "",
+    "stock": 15
+  },
+  {
+    "nombre": "Bombilla de acero inoxidable pico de loro",
+    "precio": 5000,
+    "categoria": "Bombillas",
+    "imagen": "",
+    "stock": 50
+  },
+  {
+    "nombre": "Bombilla premium de alpaca artesanal",
+    "precio": 15000,
+    "categoria": "Bombillas",
+    "imagen": "",
+    "stock": 18
+  },
+  {
+    "nombre": "Bombilla recta tradicional de acero",
+    "precio": 4500,
+    "categoria": "Bombillas",
+    "imagen": "",
+    "stock": 40
+  },
+  {
+    "nombre": "Bombilla con filtro desmontable",
+    "precio": 7500,
+    "categoria": "Bombillas",
+    "imagen": "",
+    "stock": 25
+  },
+  {
+    "nombre": "Bombilla curvada de alpaca",
+    "precio": 17000,
+    "categoria": "Bombillas",
+    "imagen": "",
+    "stock": 15
+  },
+  {
+    "nombre": "Termo Stanley original 1L",
+    "precio": 58000,
+    "categoria": "Accesorios",
+    "imagen": "",
+    "stock": 12
+  },
+  {
+    "nombre": "Termo Lumilagro 1L acero",
+    "precio": 20000,
+    "categoria": "Accesorios",
+    "imagen": "",
+    "stock": 20
+  },
+  {
+    "nombre": "Termo mate de acero inoxidable 750ml",
+    "precio": 15000,
+    "categoria": "Accesorios",
+    "imagen": "",
+    "stock": 25
+  },
+  {
+    "nombre": "Porta termo de cuero",
+    "precio": 18000,
+    "categoria": "Accesorios",
+    "imagen": "",
+    "stock": 18
+  },
+  {
+    "nombre": "Kit matero premium completo",
+    "precio": 85000,
+    "categoria": "Accesorios",
+    "imagen": "",
+    "stock": 8
   }
 ]
