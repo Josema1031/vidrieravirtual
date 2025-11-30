@@ -4,6 +4,18 @@
 <head>
   <meta charset="utf-8" />
   <title>Vidriera Virtual — Digitalizamos tu negocio en minutos</title>
+  <!-- ========================= -->
+  <!-- 🌐 OPEN GRAPH (WhatsApp / Facebook / Instagram) -->
+  <!-- ========================= -->
+  <meta property="og:title" content="Vidriera Virtual — Digitalizamos tu negocio en minutos" />
+  <meta property="og:description"
+    content="Creá tu tienda online en minutos. Catálogo, QR y pedidos por WhatsApp. Mostrate al mundo, desde tu lugar." />
+  <meta property="og:image"
+    content="https://josema1031.github.io/vidrieravirtual/index-landing.html/imag/logo-192.png" />
+  <meta property="og:url" content="https://josema1031.github.io/vidrieravirtual/index-landing.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vidriera Virtual" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
     content="Tienda online lista en minutos. Catálogo, QR y pedidos por WhatsApp. Vidriera Virtual." />
@@ -64,7 +76,7 @@
       background: var(--c1d)
     }
 
-  
+
     .tag {
       display: inline-block;
       background: #eaf2ff;
@@ -170,10 +182,10 @@
       align-items: center
     }
 
-  
+
 
     @media (max-width: 600px) {
-      
+
 
       .cards {
         grid-template-columns: 1fr;
@@ -397,6 +409,7 @@
       height: 100%;
 
     }
+       
 
     .overlay-text {
       position: absolute;
@@ -485,6 +498,46 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
     }
 
+    @media (max-width: 600px) {
+  .asesores {
+    margin: 40px auto; /* Antes: 60px */
+  }
+
+  .asesores h2 {
+    font-size: 26px;  /* Antes: 32px */
+    margin-bottom: 20px;
+  }
+
+  .asesores-grid {
+    gap: 18px;  /* Antes: 26px */
+  }
+
+  .asesor-card {
+    padding: 12px;  /* Antes: 20px */
+  }
+
+  .asesor-card img {
+    border-radius: 12px;
+    margin-bottom: 5px;
+  }
+
+  .asesor-card h3 {
+    font-size: 18px;  /* Antes: 22px */
+    
+  }
+
+  .asesor-card p {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .btn-whatsapp {
+    padding: 10px 14px; /* Más pequeño */
+    font-size: 14px;
+  }
+}
+
+
     /* ⭐ Precio Antes (tachado elegante) */
     .precio-antes {
       font-size: 18px;
@@ -515,10 +568,11 @@
       border-radius: 8px;
       box-shadow: 0 3px 8px rgba(0, 0, 0, .2);
     }
+
     .tachado li {
-  text-decoration: line-through !important;
-  color: #777 !important;
-}
+      text-decoration: line-through !important;
+      color: #777 !important;
+    }
 
 
     /* Asegurar que la tarjeta permita contenido absoluto */
@@ -527,56 +581,68 @@
     }
 
     /* ======================= */
-/* ⭐ FOOTER SIMPLIFICADO  */
-/* ======================= */
+    /* ⭐ FOOTER SIMPLIFICADO  */
+    /* ======================= */
 
-.footer {
-  background: #0f172a;
-  color: #cbd5e1;
-  padding: 40px 20px;
-  margin-top: 40px;
-}
+    .footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 40px 20px;
+      margin-top: 40px;
+    }
 
-.footer-container {
-  max-width: 1100px;
-  margin: auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 30px;
-}
+    .footer-container {
+      max-width: 1100px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
 
-.footer-col h4 {
-  font-size: 18px;
-  margin-bottom: 12px;
-  color: #fff;
-  font-weight: 700;
-}
+    .footer-col h4 {
+      font-size: 18px;
+      margin-bottom: 12px;
+      color: #fff;
+      font-weight: 700;
+    }
 
-.footer-col a {
-  display: block;
-  color: #cbd5e1;
-  text-decoration: none;
-  margin-bottom: 8px;
-  font-size: 15px;
-}
+    .footer-col a {
+      display: block;
+      color: #cbd5e1;
+      text-decoration: none;
+      margin-bottom: 8px;
+      font-size: 15px;
+    }
 
-.footer-col a:hover {
-  color: #fff;
-}
+    .footer-col a:hover {
+      color: #fff;
+    }
 
-.footer-col p {
-  margin: 4px 0;
-  font-size: 14px;
-  color: #cbd5e1;
-}
+    .footer-col p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #cbd5e1;
+    }
 
-/* 📱 Responsive */
-@media(max-width: 500px) {
-  .footer {
-    text-align: center;
-  }
-}
+    /* 📱 Centrar solo la última columna en celulares */
+    @media(max-width: 600px) {
+      .footer-brand {
+        grid-column: span 2;
+        /* 🔥 Ocupa las dos columnas */
+        text-align: center;
+        /* 🔥 Centra el texto */
+        margin-top: 10px;
+      }
+    }
 
+
+
+    /* 📱 Responsive */
+    @media(max-width: 500px) {
+      .footer {
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -590,7 +656,8 @@
       <div>
         <a href="#planes">Planes</a>
         <a href="#ejemplos">Tiendas activas</a>
-        <a class="cta" href="https://wa.me/5493444518917?text=Hola!%20Quiero%20mi%20tienda%20online">Quiero mi
+        <a class="cta" href="https://wa.me/5493444518917?text=Hola!%20Quiero%20mi%20tienda%20online"
+          target="_blank">Quiero mi
           tienda</a>
       </div>
     </nav>
@@ -676,7 +743,7 @@
           <li>Registro de clientes y Proveedores</li>
         </ul>
 
-        <a class="btn" href="https://wa.me/5493444518917?text=Hola!%20Quiero%20el%20Plan%20B%C3%A1sico">
+        <a class="btn" href="https://wa.me/5493444518917?text=Hola!%20Quiero%20el%20Plan%20B%C3%A1sico" target="_blank">
           Elegir Básico
         </a>
       </div>
@@ -708,7 +775,7 @@
           <li>Registro de clientes y Proveedores</li>
         </ul>
 
-        <a class="btn" href="https://wa.me/5493444518917?text=Hola!%20Quiero%20el%20Plan%20Profesional">
+        <a class="btn" href="https://wa.me/5493444518917?text=Hola!%20Quiero%20el%20Plan%20Profesional" target="_blank">
           Elegir Profesional
         </a>
       </div>
@@ -738,7 +805,7 @@
           <li>Registro de clientes y Proveedores</li>
         </ul>
 
-        <a class="btn" href="https://wa.me/5493444518917?text=Hola!%20Quiero%20el%20Plan%20Premium">
+        <a class="btn" href="https://wa.me/5493444518917?text=Hola!%20Quiero%20el%20Plan%20Premium" target="_blank">
           Elegir Premium
         </a>
       </div>
@@ -756,33 +823,34 @@
 
 
   <footer class="footer">
-  <div class="footer-container">
+    <div class="footer-container">
 
-    <!-- Columna 1 -->
-    <div class="footer-col">
-      <h4>Plataforma</h4>
-      <a href="#planes">Planes</a>
-      <a href="#ejemplos">Tiendas activas</a>
-      <a href="https://wa.me/5493444518917">Crear tienda</a>
+      <!-- Columna 1 -->
+      <div class="footer-col">
+        <h4>Plataforma</h4>
+        <a href="#planes">Planes</a>
+        <a href="#ejemplos">Tiendas activas</a>
+        <a href="https://wa.me/5493444518917" target="_blank">Crear tienda</a>
+      </div>
+
+      <!-- Columna 2 -->
+      <div class="footer-col">
+        <h4>Soporte</h4>
+        <a href="https://wa.me/5493444518917" target="_blank">WhatsApp</a>
+        <a href="mailto:vidrieravirtual@gmail.com">Email</a>
+        <a href="https://www.instagram.com/vidrieravirtual.guay/" target="_blank">Instagram</a>
+      </div>
+
+      <!-- Columna 3 -->
+      <div class="footer-col footer-brand">
+        <h4>Vidriera Virtual</h4>
+        <p>Hecho con ❤️ en Gualeguay</p>
+        <p>© <span id="y"></span> Todos los derechos reservados.</p>
+      </div>
+
+
     </div>
-
-    <!-- Columna 2 -->
-    <div class="footer-col">
-      <h4>Soporte</h4>
-      <a href="https://wa.me/5493444518917" target="_blank">WhatsApp</a>
-      <a href="mailto:contacto@vidrieravirtual.com">Email</a>
-      <a href="https://www.instagram.com/vidrieravirtual.guay/" target="_blank">Instagram</a>
-    </div>
-
-    <!-- Columna 3 -->
-    <div class="footer-col">
-      <h4>Vidriera Virtual</h4>
-      <p>Hecho con ❤️ en Gualeguay</p>
-      <p>© <span id="y"></span> Todos los derechos reservados.</p>
-    </div>
-
-  </div>
-</footer>
+  </footer>
 
 
 
