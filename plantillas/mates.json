@@ -183,126 +183,100 @@
     "nombre": "Mate Camionero XL con virola de acero",
     "precio": 18000,
     "categoria": "Tradicionales",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2caR3lKuzFfUgPcaiWuhiPU2KX91n0d61TQ&s",
     "stock": 25
   },
   {
     "nombre": "Mate de vidrio forrado con virola de acero",
     "precio": 11000,
     "categoria": "Tradicionales",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmcNt2AJWXh8tEzHGG23TqnKxPxaFng__BCQ&s",
     "stock": 25
   },
-  {
-    "nombre": "Mate envío económico con virola simple de acero",
-    "precio": 8000,
-    "categoria": "Tradicionales",
-    "imagen": "",
-    "stock": 50
-  },
-  {
+    {
     "nombre": "Matera de cuero grande",
     "precio": 18000,
     "categoria": "Materas",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9fI2wBIMl6aHZs__2HaCHSKg2D4AxFzMbQg&s",
     "stock": 22
   },
   {
     "nombre": "Matera de cuero chica",
     "precio": 16000,
     "categoria": "Materas",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMoLp7YdBbkawebcVWaUxhpD1IhjRPBETscQ&s",
     "stock": 30
   },
   {
     "nombre": "Matera con correa reforzada",
     "precio": 19000,
     "categoria": "Materas",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHPgJAWmnmbmpMNB2T3GvUnqlY60iAY4qtNg&s",
     "stock": 20
   },
-  {
-    "nombre": "Matera de lona premium",
-    "precio": 15000,
-    "categoria": "Materas",
-    "imagen": "",
-    "stock": 30
-  },
-  {
-    "nombre": "Bolso matero full cuero vacuno",
-    "precio": 24000,
-    "categoria": "Materas",
-    "imagen": "",
-    "stock": 15
-  },
+
   {
     "nombre": "Bombilla de acero inoxidable pico de loro",
     "precio": 5000,
     "categoria": "Bombillas",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNdWBwJCL0txd4Nd3WfxXtaOYIm8BTwhAVhfMeOCHGnw&s",
     "stock": 50
   },
   {
     "nombre": "Bombilla premium de alpaca artesanal",
     "precio": 15000,
     "categoria": "Bombillas",
-    "imagen": "",
+    "imagen": "https://acdn-us.mitiendanube.com/stores/003/859/300/products/project_20211207_1647254-01-1-607305c191d388755a17017939289705-1024-1024.webp",
     "stock": 18
   },
   {
     "nombre": "Bombilla recta tradicional de acero",
     "precio": 4500,
     "categoria": "Bombillas",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsdluCRP3PaqmHl9zJ3Eal1AQj_UDB3BZD4Q&s",
     "stock": 40
   },
   {
     "nombre": "Bombilla con filtro desmontable",
     "precio": 7500,
     "categoria": "Bombillas",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzvAk7Tjmgh4Dy7Wr9MPja3U7MUNzG0LJNmQ&s",
     "stock": 25
   },
   {
     "nombre": "Bombilla curvada de alpaca",
     "precio": 17000,
     "categoria": "Bombillas",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFipzX3caG2psPmD6b-2cvSCrHQYBkrnr-0w&s",
     "stock": 15
   },
   {
     "nombre": "Termo Stanley original 1L",
     "precio": 58000,
     "categoria": "Accesorios",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkmOudEpmqD_ROIqNkSenlVruItpJVdeAVmw&s",
     "stock": 12
   },
   {
     "nombre": "Termo Lumilagro 1L acero",
     "precio": 20000,
     "categoria": "Accesorios",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR23eDpppHUSv4CXep_O1xW-a8SxT4KgffvVA&s",
     "stock": 20
   },
-  {
-    "nombre": "Termo mate de acero inoxidable 750ml",
-    "precio": 15000,
-    "categoria": "Accesorios",
-    "imagen": "",
-    "stock": 25
-  },
+  
   {
     "nombre": "Porta termo de cuero",
     "precio": 18000,
     "categoria": "Accesorios",
-    "imagen": "",
+    "imagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4zAFWzn2uwTo4IAn_fKomD9B6GvVpzGmwCw&s",
     "stock": 18
   },
   {
     "nombre": "Kit matero premium completo",
     "precio": 85000,
     "categoria": "Accesorios",
-    "imagen": "",
+    "imagen": "https://images.fravega.com/f1000/a04f68319b79bb610ff4d05d3888783e.jpg",
     "stock": 8
   }
 ]
