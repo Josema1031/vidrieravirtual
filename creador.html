@@ -11,8 +11,43 @@
 </head>
 
 <body>
-  <div class="wrap">
+  <!-- =========================
+     🔐 LOGIN (GATE)
+========================= -->
+  <div id="loginGate" class="login-gate">
+    <div class="login-card">
+      <h2>🔐 Ingreso al Creador</h2>
+      <p class="login-sub">Ingresá con tu usuario y contraseña.</p>
+
+      <label for="loginUser">Usuario</label>
+      <input id="loginUser" type="text" placeholder="admin" autocomplete="username" />
+
+      <label for="loginPass">Contraseña</label>
+      <div class="pass-wrap">
+        <input id="loginPass" type="password" placeholder="••••••••" autocomplete="current-password" />
+        <button id="togglePass" class="btn-eye" type="button" aria-label="Mostrar contraseña">👁️</button>
+      </div>
+
+      <div class="login-row">
+        <label class="check">
+          <input id="rememberMe" type="checkbox" />
+          Recordarme
+        </label>
+        <button id="btnLogin" class="btn-login" type="button">Ingresar</button>
+      </div>
+
+      <div id="loginMsg" class="login-msg"></div>
+    </div>
+  </div>
+
+  <div class="wrap" id="appWrap">
+
     <h1>⚡ Creador de Tiendas Vidriera Virtual </h1>
+
+    <button id="btnLogout" class="btn-logout" type="button" style="display:none;">
+      🔒 Cerrar sesión
+    </button>
+
     <div class="form-group">
       <label>Seleccioná tu plan</label>
       <select id="plan" required style="font-size: 12px; padding: 10px; height: 35px;">
@@ -48,7 +83,7 @@
     <div class="card">
       <div class="row">
         <div>
-          <label>Tienda ID (sin espacios)</label>
+          <label>ID Tienda </label>
           <input id="tiendaId" placeholder="MATES-GUAY-LOCAL-12" />
         </div>
         <div>
@@ -59,11 +94,11 @@
 
       <div class="row">
         <div>
-          <label>WhatsApp (solo números, con país)</label>
-          <input id="whatsapp" placeholder="5492644429649" />
+          <label>WhatsApp</label>
+          <input id="whatsapp" placeholder="34429649" />
         </div>
         <div>
-          <label>Imagen para redes (OpenGraph/Twitter) – opcional</label>
+          <label>Imagen para redes </label>
           <input id="metaImage" placeholder="https://.../600x315.png" />
         </div>
       </div>
@@ -92,7 +127,7 @@
 
       <div class="row">
         <div style="width:100%;">
-          <label>Horarios (Opción A: por días)</label>
+          <label>Horarios</label>
 
           <!-- ✅ Campo oculto para compatibilidad (se llena solo) -->
           <input id="horarios" type="hidden" />
@@ -196,7 +231,7 @@
               </div>
             </div>
 
-           
+
           </div>
         </div>
       </div>
@@ -303,6 +338,101 @@
     const db = getFirestore(app);
     const storage = getStorage(app);
     const el = id => document.getElementById(id);
+
+    // =========================
+    // 🔐 LOGIN SIMPLE (Front-end)
+    // =========================
+
+    // ✅ Cambiá estos datos por los tuyos
+    const AUTH_USERS = [
+      { user: "admin", pass: "1234",
+        user: "admin", pass: "Josema"
+       },
+      // { user: "jose", pass: "miClaveSegura" },
+    ];
+
+    const AUTH_KEY = "vv_creador_login_ok";
+
+    const appWrap = document.getElementById("appWrap");
+    const gate = document.getElementById("loginGate");
+    const loginMsg = document.getElementById("loginMsg");
+    const btnLogout = document.getElementById("btnLogout");
+
+    function setAppVisible(isLogged) {
+      if (isLogged) {
+        gate.style.display = "none";
+        appWrap.style.display = "block";
+        btnLogout.style.display = "inline-flex";
+      } else {
+        gate.style.display = "flex";
+        appWrap.style.display = "none";
+        btnLogout.style.display = "none";
+      }
+    }
+
+    function isLogged() {
+      return localStorage.getItem(AUTH_KEY) === "1";
+    }
+
+    function doLogin() {
+      const u = (document.getElementById("loginUser").value || "").trim();
+      const p = (document.getElementById("loginPass").value || "").trim();
+      const remember = document.getElementById("rememberMe").checked;
+
+      const ok = AUTH_USERS.some(x => x.user === u && x.pass === p);
+
+      if (!ok) {
+        loginMsg.textContent = "❌ Usuario o contraseña incorrectos.";
+        loginMsg.classList.remove("ok");
+        loginMsg.classList.add("bad");
+        return;
+      }
+
+      loginMsg.textContent = "✅ Acceso permitido.";
+      loginMsg.classList.remove("bad");
+      loginMsg.classList.add("ok");
+
+      if (remember) localStorage.setItem(AUTH_KEY, "1");
+      else sessionStorage.setItem(AUTH_KEY, "1");
+
+      setAppVisible(true);
+    }
+
+    function doLogout() {
+      localStorage.removeItem(AUTH_KEY);
+      sessionStorage.removeItem(AUTH_KEY);
+
+      // limpiar inputs (opcional)
+      document.getElementById("loginUser").value = "";
+      document.getElementById("loginPass").value = "";
+      document.getElementById("rememberMe").checked = false;
+      loginMsg.textContent = "";
+
+      setAppVisible(false);
+    }
+
+    // Mostrar/Ocultar password 👁️
+    const togglePass = document.getElementById("togglePass");
+    togglePass.addEventListener("click", () => {
+      const inp = document.getElementById("loginPass");
+      const isPass = inp.type === "password";
+      inp.type = isPass ? "text" : "password";
+      togglePass.textContent = isPass ? "🙈" : "👁️";
+    });
+
+    // Enter para ingresar
+    ["loginUser", "loginPass"].forEach(id => {
+      document.getElementById(id).addEventListener("keydown", (e) => {
+        if (e.key === "Enter") doLogin();
+      });
+    });
+
+    document.getElementById("btnLogin").addEventListener("click", doLogin);
+    btnLogout.addEventListener("click", doLogout);
+
+    // Estado inicial
+    setAppVisible(localStorage.getItem(AUTH_KEY) === "1" || sessionStorage.getItem(AUTH_KEY) === "1");
+
 
     // Mostrar info del plan seleccionado
     el("plan").addEventListener("change", () => {
